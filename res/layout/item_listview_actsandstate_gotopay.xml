@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+    
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#ffffff" >
+	    
+	    <LinearLayout
+	        android:layout_margin="10dp"
+	        android:id="@+id/ll_actscontent"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        >
+        <TextView 
+            android:id="@+id/tv_actsdesc"
+            style="@style/w_full_h_wrap"
+            android:text="刷各行黑紧级信用卡消费买一送一"
+            android:textSize="14dp"
+            android:textColor="@color/text_gray1"
+            />
+        <TextView
+             android:id="@+id/tv_actsdegree"
+            android:layout_marginTop="5dp" 
+            style="@style/w_full_h_wrap"
+            android:text="黑金级/餐饮美食/咖啡"
+            android:textSize="14dp"
+            android:textColor="@color/text_gray2"
+            />
+        <TextView 
+            android:id="@+id/tv_actseffectivetime"
+              android:layout_marginTop="7.5dp" 
+            style="@style/w_full_h_wrap"
+            android:text="2015/06/06 至 2015/07/05"
+            android:textSize="14dp"
+            android:textColor="@color/text_gray1"
+            />
+        
+        
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/ll_actscontent"
+        android:id="@+id/ll_singleline"
+        android:layout_width="1dp"
+        android:layout_height="60dp"
+        style="@style/line_style_1"
+        
+        >
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_toRightOf="@id/ll_singleline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        
+        
+        >
+        <ImageView 
+            android:id="@+id/iv_actsstatue"
+	        style="@style/w_40_h_40"
+	        android:src="@drawable/icon_gotopay"/>
+         <TextView 
+             android:id="@+id/tv_actsstatue"
+             android:layout_marginTop="5dp"
+             android:text="待支付"
+             style="@style/w_wrap_h_wrap"
+             android:textColor="@color/text_gray2"/>
+        
+    </LinearLayout>
+ </RelativeLayout>
+  
+    <View
+        android:layout_marginTop="5dp"
+         style="@style/line_style_3"
+          />
+
+</LinearLayout>

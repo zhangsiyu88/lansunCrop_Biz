@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#efefef">
+    
+     <!-- 意见核问题反馈  的tittle -->
+    <RelativeLayout
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff">
+	      
+        <ImageView 
+          android:id="@+id/iv_back_checkinfo"
+          android:layout_width="10dp"
+	      android:layout_height="15dp"
+	      android:layout_marginLeft="10dp"
+	      android:background="@drawable/back_arrow"
+	      android:layout_alignParentLeft="true"
+	      android:layout_centerVertical="true"
+            />
+         <TextView
+               android:id="@+id/tv_brotherrank"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_centerInParent="true"
+	           android:text="核对信息"
+	           android:textColor="#a1c9e2"
+	           android:textSize="20dp" />
+        </RelativeLayout>
+         <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	 </LinearLayout>
+
+         <!--您选择的门店  -->
+         <TextView 
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="您选择的门店"
+	      	 android:textColor="#50000000"
+             />
+         
+         <LinearLayout 
+             android:layout_marginTop="5dp"
+             android:layout_width="match_parent"
+	      	 android:layout_height="90dp"
+	      	 android:background="#ffffff"
+	      	 android:orientation="vertical"
+	      	 android:padding="10dp"
+             >
+             <TextView 
+              android:layout_marginTop="5dp"
+              android:layout_width="match_parent"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="星巴克（创智店）"
+	      	  android:textColor="#99000000"
+              />
+             
+              <TextView 
+              android:layout_marginTop="5dp"
+              android:layout_width="match_parent"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="上海市杨浦区淞沪路252-256号A1-24号创智天地下沉广场内（近政民路）"
+	      	  android:textColor="#50000000"
+              />
+        </LinearLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+         
+         <!--您的基本信息  -->
+         <TextView 
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="您的基本信息 "
+	      	 android:textColor="#50000000"
+             />
+         
+        <RelativeLayout 
+            android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+	      	 android:layout_height="50dp"
+	      	 android:background="#ffffff"
+	      	 android:padding="5dp"
+	      	android:layout_gravity="center_vertical"
+             >
+              <TextView 
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_realname"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="真实姓名："
+	      	  android:textColor="#99000000"
+              />
+              <TextView 
+              android:id="@+id/tv_check_realname"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_realname"
+              android:layout_width="match_parent"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="摩卡"
+	      	  android:textSize="16dp"
+	      	  android:textColor="#99000000"
+              />
+        </RelativeLayout>
+        
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+        
+     	<RelativeLayout 
+             android:layout_width="match_parent"
+	      	 android:layout_height="50dp"
+	      	 android:background="#ffffff"
+	      	 android:padding="5dp"
+	      	 android:layout_gravity="center_vertical"
+             >
+              <TextView 
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_idcardnum"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="身份证号："
+	      	  android:textColor="#99000000"
+              />
+              <TextView 
+              android:id="@+id/tv_check_idnum"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_idcardnum"
+              android:layout_width="match_parent"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="310110198210292864"
+	      	  android:textSize="16dp"
+	      	  android:textColor="#99000000"
+              />
+        </RelativeLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+     	     <RelativeLayout 
+             android:layout_width="match_parent"
+	      	 android:layout_height="50dp"
+	      	 android:background="#ffffff"
+	      	 android:padding="5dp"
+             >
+              <TextView 
+              
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_degree"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="门店职位："
+	      	  android:textColor="#99000000"
+              />
+              <TextView 
+              android:id="@+id/tv_check_storedegree"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_degree"
+              android:layout_width="match_parent"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="店长"
+	      	  android:textSize="16dp"
+	      	  android:textColor="#99000000"
+              />
+        </RelativeLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+         <!--请按要求上传下列资料  -->
+         <TextView 
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="请按要求上传下列资料"
+	      	 android:textColor="#50000000"
+             />
+         
+         
+          <LinearLayout 
+             android:layout_marginTop="5dp"
+             android:layout_width="match_parent"
+	      	 android:layout_height="wrap_content"
+	      	 android:background="#ffffff"
+	      	 android:orientation="vertical">
+              
+	            <RelativeLayout 
+		             android:layout_marginTop="5dp"
+		             android:layout_width="match_parent"
+			      	 android:layout_height="wrap_content"
+			      	 android:background="#ffffff"
+	             	>
+		             <TextView 
+		              android:id="@+id/tv_shenfezhneg"
+		              android:layout_marginTop="5dp"
+		              android:layout_marginLeft="10dp"
+		              android:layout_width="wrap_content"
+			      	  android:layout_height="wrap_content"
+			      	  android:text="认证人手持身份证清晰大头照一张"
+			      	  android:textColor="#99000000"/>
+		             
+		             
+		              
+             </RelativeLayout>
+             <FrameLayout 
+                 android:layout_width="match_parent"
+                 android:layout_height="150dp"
+                 android:layout_gravity="center"
+                 android:layout_margin="10dp"
+                 
+                 >
+		             <ImageView 
+                     android:id="@+id/iv_checkinfo_manandid"
+	                 android:layout_width="match_parent"
+	                 android:layout_height="150dp"
+	                 android:layout_margin="5dp"
+	                 android:layout_gravity="center"
+	                 android:background="@drawable/photo_dashedline_rectangle"/>
+		             
+             </FrameLayout>
+        </LinearLayout>
+        
+          <LinearLayout 
+             android:layout_width="match_parent"
+	      	 android:layout_height="wrap_content"
+	      	 android:background="#ffffff"
+	      	 android:orientation="vertical" >
+              
+	         <RelativeLayout 
+		             android:layout_marginTop="5dp"
+		             android:layout_width="match_parent"
+			      	 android:layout_height="wrap_content"
+			      	 android:background="#ffffff"
+	             	>
+		             <TextView 
+		              android:layout_marginTop="5dp"
+		              android:layout_marginLeft="10dp"
+		              android:layout_width="wrap_content"
+			      	  android:layout_height="wrap_content"
+			      	  android:text="认证人与门店合照一张"
+			      	  android:textColor="#99000000"
+		              />
+		             
+             </RelativeLayout>
+             <FrameLayout 
+                 android:layout_width="match_parent"
+                 android:layout_height="150dp"
+                 android:layout_gravity="center"
+                 android:layout_margin="10dp"
+                 
+                 >
+		             <ImageView 
+                     android:id="@+id/iv_checkinfo_manandstore"
+	                 android:layout_width="match_parent"
+	                 android:layout_height="150dp"
+	                 android:layout_margin="5dp"
+	                 android:layout_gravity="center"
+	                 android:background="@drawable/photo_dashedline_rectangle"/>
+                 
+             </FrameLayout>
+             
+        </LinearLayout>
+        
+          
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+         
+        <!--门店照片 -->
+         <TextView 
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="门店照片"
+	      	 android:textColor="#50000000"
+             />
+         
+         <LinearLayout 
+             android:layout_marginTop="10dp"
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+          <RelativeLayout 
+             
+             android:layout_width="match_parent"
+	      	 android:layout_height="80dp"
+	      	 android:background="#ffffff"
+	      	  >
+            
+               <!-- 第1行第1个的虚线框 -->
+             <FrameLayout
+                 android:id="@+id/fl_mendianphoto1" 
+                 android:layout_width="90dp"
+                 android:layout_height="60dp"
+                 android:layout_gravity="center"
+                 
+                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="10dp"
+                 >
+		       <ImageView 
+                     android:id="@+id/iv_checkinfo_photo1"
+	                 android:layout_width="90dp"
+	                 android:layout_height="60dp"
+	                 android:layout_margin="5dp"
+	                 android:layout_gravity="center"
+	                 android:background="@drawable/photo_dashedline_rectangle"/> 
+                 <ImageView 
+                     android:visibility="gone"
+                     android:id="@+id/iv_checkinfo_sendphoto1"
+	                 android:layout_width="20dp"
+	                 android:layout_height="20dp"
+	                 android:src="@drawable/send_photo"
+	                 android:layout_gravity="center"/>
+             </FrameLayout>
+             
+              <!-- 第1行第2个的虚线框 -->
+              <FrameLayout
+                  android:layout_toRightOf="@id/fl_mendianphoto1"
+                 android:id="@+id/fl_mendianphoto2" 
+                 android:layout_width="90dp"
+                 android:layout_height="60dp"
+                 android:layout_gravity="center"
+                  android:layout_marginTop="10dp"
+                 android:layout_marginLeft="15dp"
+               
+                 >
+                  <ImageView 
+                     android:id="@+id/iv_checkinfo_photo2"
+	                 android:layout_width="90dp"
+	                 android:layout_height="60dp"
+	                 android:layout_gravity="center"
+	                 android:background="@drawable/photo_dashedline_rectangle"/> 
+                 <ImageView 
+                     android:visibility="gone"
+                     android:id="@+id/iv_checkinfo_sendphoto2"
+	                 android:layout_width="20dp"
+	                 android:layout_height="20dp"
+	                 android:src="@drawable/send_photo"
+	                 android:layout_gravity="center"/>
+             </FrameLayout>
+             
+              <!-- 第1行第3个的虚线框 -->
+              <FrameLayout
+                 android:layout_toRightOf="@id/fl_mendianphoto2"
+                 android:id="@+id/fl_mendianphoto3" 
+                 android:layout_width="90dp"
+                 android:layout_height="60dp"
+                 android:layout_gravity="center"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="15dp"
+                
+                
+                 >
+                 <ImageView 
+                     android:id="@+id/iv_checkinfo_photo3"
+	                 android:layout_width="90dp"
+	                 android:layout_height="60dp"
+	                 
+	                 android:background="@drawable/photo_dashedline_rectangle"/> 
+                 <ImageView 
+                     android:visibility="gone"
+                     android:id="@+id/iv_checkinfo_sendphoto3"
+	                 android:layout_width="20dp"
+	                 android:layout_height="20dp"
+	                 android:src="@drawable/send_photo"
+	                 android:layout_gravity="center"/>
+             </FrameLayout>
+            
+        </RelativeLayout>
+        <RelativeLayout 
+             android:layout_width="match_parent"
+	      	 android:layout_height="80dp"
+	      	 android:background="#ffffff"
+	      	  >
+             <FrameLayout
+                 android:id="@+id/fl_mendianphoto4" 
+                 android:layout_width="90dp"
+                 android:layout_height="60dp"
+                 android:layout_gravity="center"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="10dp"
+                
+                 >
+                  <ImageView 
+                     android:id="@+id/iv_checkinfo_photo4"
+	                 android:layout_width="90dp"
+	                 android:layout_height="60dp"
+	                 android:layout_margin="5dp"
+	                 android:layout_gravity="center"
+	                 android:background="@drawable/photo_dashedline_rectangle"/> 
+                 <ImageView 
+                     android:visibility="gone"
+                     android:id="@+id/iv_checkinfo_sendphoto4"
+	                 android:layout_width="20dp"
+	                 android:layout_height="20dp"
+	                 android:src="@drawable/send_photo"
+	                 android:layout_gravity="center"/>
+             </FrameLayout>
+             
+              <FrameLayout
+                  android:layout_toRightOf="@id/fl_mendianphoto4"
+                 android:id="@+id/fl_mendianphoto5" 
+                 android:layout_width="90dp"
+                 android:layout_height="60dp"
+                 android:layout_gravity="center"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="15dp"
+                 android:background="@drawable/photo_dashedline_rectangle"
+                 >
+                 <ImageView 
+	                 android:layout_width="20dp"
+	                 android:layout_height="20dp"
+	                 android:src="@drawable/send_photo"
+	                 android:layout_gravity="center"/>
+             </FrameLayout>
+           
+            
+        </RelativeLayout>
+         
+    	<LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+    	  <Button 
+    	      android:id="@+id/bt_checkok"
+    	      android:layout_margin="20dp"
+    	      android:padding="5dp"
+    	      android:layout_width="match_parent"
+    	      android:layout_height="30dp"
+    	      android:background="@drawable/rectangle_blue"
+    	      android:text="立即认证"
+    	      android:textSize="14dp"
+    	      android:textColor="#ffffff"
+    	      />
+        
+         
+
+   </LinearLayout>
+</ScrollView>

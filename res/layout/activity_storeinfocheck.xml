@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_bg" >
+      
+    <include layout="@layout/activity_com"/>
+    
+    <TextView 
+        style="@style/w_m_h_45"
+        android:text="门店基本信息"
+        android:textColor="@color/text_gray2"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"/>
+	<LinearLayout 
+	    style="@style/w_full_h_wrap"
+	    android:orientation="vertical"
+    >
+    
+	    <!-- 门店名称  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_storeadd_storename"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/storename"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	         <TextView 
+	            android:layout_toRightOf="@id/tv_storeadd_storename"
+	            
+	            style="@style/w_wrap_h_wrap"
+	            android:text="星巴克（xxx店）"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        
+	    </RelativeLayout>
+	    
+	    <View style="@style/line_style_1"/>
+	    
+	    
+	    <!-- 城市、区县、商圈  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            
+	            style="@style/w_wrap_h_wrap"
+	            android:text="上海市/杨浦区/五角场商圈"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	       
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	     
+	    
+	    <!-- 具体地址  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_concreteaddress"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="淞沪路xxx"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	     
+	     
+	     
+	      <!-- 门店电话  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_storephonenumber"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/storephonenumber"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        <TextView 
+	            android:layout_marginLeft="5dp"
+	             style="@style/w_wrap_h_wrap"
+	             android:text="(021)65431234"
+	             android:layout_centerVertical="true"
+	             android:layout_toRightOf="@id/tv_storephonenumber"
+	             android:textSize="12dp"
+	            />
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	     
+	    <!-- 门店的营业时间  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_storebussinesshour"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/storebussinesshour"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        
+	        <TextView 
+	            android:layout_marginLeft="5dp"
+	             style="@style/w_wrap_h_wrap"
+	             android:text="xxz至xxx"
+	             android:layout_centerVertical="true"
+	             android:layout_toRightOf="@id/tv_storebussinesshour"
+	             android:textSize="12dp"
+	            />
+	      
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	    
+	     <TextView 
+	         style="@style/w_m_h_45"
+	         android:text="门店所属分类"
+	         android:textColor="@color/text_gray2"
+	         android:gravity="center_vertical"
+	         android:layout_marginLeft="5dp"/>
+	     
+	     
+	     <View style="@style/line_style_1"/>
+	     <!-- 一级分类  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            style="@style/w_wrap_h_wrap"
+	            android:text="餐饮/咖啡"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	      
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	    
+	     
+	   
+    </LinearLayout>
+    
+	 <Button 
+   	      android:id="@+id/bt_nextstep_addstore"
+   	      android:layout_margin="10dp"
+   	      android:padding="5dp"
+   	      android:layout_width="match_parent"
+   	      android:layout_height="30dp"
+   	      android:background="@drawable/rectangle_blue"
+   	      android:text="确认提交"
+   	      android:textSize="14dp"
+   	      android:textColor="#ffffff"
+   	      />
+
+</LinearLayout>

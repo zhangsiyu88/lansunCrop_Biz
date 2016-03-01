@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#efefef">
+ 
+      <!-- 粉丝数量详情  的tittle -->
+    <RelativeLayout
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff">
+	      
+        <ImageView 
+          android:id="@+id/im_backfrontarrow"
+          android:layout_width="10dp"
+	      android:layout_height="15dp"
+	      android:layout_marginLeft="10dp"
+	      android:background="@drawable/back_arrow"
+	      android:layout_alignParentLeft="true"
+	      android:layout_centerVertical="true"/>
+        
+         <TextView
+               android:id="@+id/tv_brotherrank"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_centerInParent="true"
+	           android:text="选择我的门店"
+	           android:textColor="#a1c9e2"
+	           android:textSize="20dp" />
+          <TextView
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_alignParentRight="true"
+	           android:layout_alignBaseline="@id/tv_brotherrank"
+	           android:layout_marginRight="5dp"
+	           android:text="奖励说明"
+	           android:textColor="#50000000"
+	           android:textSize="15dp" />
+        </RelativeLayout>
+        
+         <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	 </LinearLayout>
+     	 
+     	  <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="40dp"
+	      	  android:orientation="vertical"
+	      	  android:layout_gravity="center_vertical"
+	      	
+	      >
+          <TextView 
+	          android:layout_marginTop="10dp"
+	          android:layout_marginLeft="10dp"
+	          android:gravity="center_vertical"
+	          android:layout_width="match_parent"
+		      android:layout_height="wrap_content"
+		      android:text="我的门店"
+		      android:textColor="#50000000"
+		      android:textSize="15dp" 
+              />
+     	 </LinearLayout>
+     	 
+     	 <include layout="@layout/item_mymarketdetails"/>
+     	 
+     	 
+
+</LinearLayout>

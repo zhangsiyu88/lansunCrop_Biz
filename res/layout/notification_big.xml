@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:alwaysDrawnWithCache="false"
+    android:fadingEdge="none" >
+
+    <ImageView
+        android:id="@+id/dada_notify_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/update_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/dada_notify_icon" >
+
+        <TextView
+            android:id="@+id/notify_title"
+            style="@style/NotificationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="迈界商户更新"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/notify_content"
+            style="@style/NotificationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notify_title"
+            android:maxLines="4"
+            android:paddingBottom="3dp"
+            android:text="迈界商户更新"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

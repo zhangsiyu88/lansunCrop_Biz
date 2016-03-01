@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/activity_com"/>
+    
+    
+    <!--  android:layout_height="@dimen/expandtab_view_h" -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal" 
+            android:background="#ffffff">
+          <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_actsfourstate_auditing"
+                    style="@style/text_style_nomal_30"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="审核中"
+                    android:textColor="@color/bg_blue" 
+                    android:textSize="14dp"/>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="@dimen/expand_line_h"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/line_bg" />
+            </RelativeLayout>
+              <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_actsfourstate_gotopay"
+                    style="@style/text_style_nomal_30"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="待支付"
+                    android:textColor="@color/text_gray2" 
+                    android:textSize="14dp"/>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="@dimen/expand_line_h"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/line_bg" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_actsfourstate_online"
+                    style="@style/text_style_nomal_30"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="已上线"
+                    android:textColor="@color/text_gray2" 
+                    android:textSize="14dp"/>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="@dimen/expand_line_h"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/line_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_actsfourstate_offline"
+                    style="@style/text_style_nomal_30"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:text="已下线" 
+                    android:textColor="@color/text_gray2"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            style="@style/line_style_3"
+          />
+        
+        <com.lansunmedia.maijie.base.MyListView
+	        android:id="@+id/lv_actsandstate"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:cacheColorHint="#00000000"
+	        android:divider="@null"
+	        android:listSelector="@android:color/transparent"
+	        android:scrollbars="none" />
+
+</LinearLayout>

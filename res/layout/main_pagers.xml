@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.lansunmedia.maijie.base.NoScrollViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+    
+    <LinearLayout style="@style/line_style_1"/>
+    
+
+    <RadioGroup
+        android:id="@+id/rg_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" 
+        android:layout_marginBottom="2dp"
+        android:paddingTop="4dp"
+        
+        >
+
+        <RadioButton
+            android:layout_weight="1"
+            
+            android:id="@+id/rb_bottom_home"
+            android:drawableTop="@drawable/shoye_selector"
+            style="@style/bottom_tab"
+            android:text="首页"
+            android:textSize="10dp"
+             />
+        
+        <!--android:background="@drawable/shoye_selector"  
+         android:drawableTop="@drawable/shoye_selector"-->
+
+        <RadioButton
+             android:layout_weight="1"
+            android:id="@+id/rb_bottom_koubei"
+            style="@style/bottom_tab"
+            android:drawableTop="@drawable/koubeijingying_selector"
+            android:text="口碑经营"
+            android:textSize="10dp"
+            />
+
+        <RadioButton
+           
+             android:layout_weight="1"
+            android:id="@+id/rb_bottom_my"
+            style="@style/bottom_tab"
+            android:drawableTop="@drawable/wode_selector"
+            android:text="我的" 
+            android:textSize="10dp"/>
+
+        <RadioButton
+           android:id="@+id/rb_bottom_helpcenter"
+           
+           android:layout_gravity="center_vertical"
+           android:layout_weight="1"
+           android:drawableTop="@drawable/bangzhuzhongxin_selector"
+            style="@style/bottom_tab"
+            android:text="帮助中心" 
+            android:textSize="10dp"/>
+        
+        <!--  style="@style/bottom_tab" -->
+
+    </RadioGroup>
+
+</LinearLayout>

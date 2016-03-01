@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lansunmedia.maijie.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipelayout"
+    android:layout_width="fill_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_height="90dp"
+    android:minHeight="70dp"
+     >
+
+    <com.lansunmedia.maijie.swipe.FrontLayout
+        android:id="@+id/front"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff" 
+        android:paddingTop="10dp"
+        
+      
+        >
+
+	      <LinearLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" >
+	    
+		   	 <RelativeLayout 
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:background="#ffffff" >
+			    
+			    <LinearLayout
+			        android:layout_marginLeft="10dp"
+			        android:layout_marginRight="10dp"
+			        android:layout_marginBottom="5dp"
+			        android:id="@+id/ll_actscontent"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        >
+			        <TextView 
+			            android:id="@+id/tv_actsdesc"
+			            style="@style/w_full_h_wrap"
+			            android:text="刷各行黑紧级信用卡消费买一送一"
+			            android:textSize="14dp"
+			            android:textColor="@color/text_gray1"
+			            />
+			        <TextView
+			             android:id="@+id/tv_actsdegree"
+			            android:layout_marginTop="5dp" 
+			            style="@style/w_full_h_wrap"
+			            android:text="黑金级/餐饮美食/咖啡"
+			            android:textSize="14dp"
+			            android:textColor="@color/text_gray2"
+			            />
+			        <TextView 
+			            android:id="@+id/tv_actseffectivetime"
+			              android:layout_marginTop="7.5dp" 
+			            style="@style/w_full_h_wrap"
+			            android:text="2015/06/06 至 2015/07/05"
+			            android:textSize="14dp"
+			            android:textColor="@color/text_gray1"
+			            />
+	   			 </LinearLayout>
+	    
+		    <LinearLayout 
+		        android:layout_centerVertical="true"
+		        android:layout_toRightOf="@id/ll_actscontent"
+		        android:id="@+id/ll_singleline"
+		        android:layout_width="1dp"
+		        android:layout_height="60dp"
+		        style="@style/line_style_1">
+		    </LinearLayout>
+	    
+			 <LinearLayout 
+			        android:layout_toRightOf="@id/ll_singleline"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:layout_centerVertical="true"
+			        android:gravity="center_horizontal">
+			        <ImageView 
+			            android:id="@+id/iv_actsstatue"
+				        style="@style/w_40_h_40"
+				        android:src="@drawable/icon_gotopay"/>
+			         <TextView 
+			             android:id="@+id/tv_actsstatue"
+			             android:layout_marginTop="5dp"
+			             android:text="待支付"
+			             style="@style/w_wrap_h_wrap"
+			             android:textColor="@color/text_gray2"/>
+				</LinearLayout>
+			 </RelativeLayout>
+		  
+		    <View android:layout_marginTop="10dp"
+		         style="@style/line_style_3"  />
+		
+			</LinearLayout>
+
+    </com.lansunmedia.maijie.swipe.FrontLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/bt_call"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="#888888"
+            android:gravity="center"
+            android:text="拨号"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="#ff0000"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</com.lansunmedia.maijie.swipe.SwipeLayout>

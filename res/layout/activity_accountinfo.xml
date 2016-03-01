@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/activity_com" />
+
+    <RelativeLayout
+        android:id="@+id/rl_person_center_head"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginLeft="@dimen/l_r_35"
+        android:layout_marginRight="@dimen/l_r_35"
+        android:background="@color/app_white"
+        android:textColor="@color/text_gray1" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/text_style_nomal_28"
+            android:layout_centerVertical="true"
+            android:text="头像"
+            android:textColor="@color/text_gray1" />
+        
+        
+
+        <ImageView
+            android:id="@+id/iv_arrow_1"
+           style="@style/w_20_h_20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow" />
+        
+        
+         <RelativeLayout
+            style="@style/w_wrap_h_wrap"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/l_r_25"
+            android:layout_toLeftOf="@id/iv_arrow_1" >
+
+            <ImageView
+                style="@style/w_wrap_h_wrap"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/portrait_personal" />
+
+            <com.lansunmedia.maijie.activities.view.CircularImage
+                android:id="@+id/iv_person_center_head"
+                style="@style/user_head_small"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/l_r_35"
+                android:background="@drawable/person_center_default_head" />
+        </RelativeLayout>
+        
+         
+         
+       <!--    <FrameLayout
+		               android:layout_centerInParent="true"
+                       android:id="@+id/rl_user_reg_login"
+                       android:layout_width="50dp"
+                       android:layout_height="50dp"
+                       android:layout_gravity="center"
+                       android:background="@drawable/picture_frame" >
+
+                    <com.lansunmedia.majie.view.CircularImage
+                        android:id="@+id/iv_mine_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/default_avatar" />
+                   </FrameLayout>  --> 
+
+    </RelativeLayout>
+
+    
+    
+    <View style="@style/line_style_1" />
+
+    <RelativeLayout
+        android:id="@+id/iv_person_center_edit_person_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_menu_h"
+        android:layout_marginLeft="@dimen/l_r_35"
+        android:layout_marginRight="@dimen/l_r_35"
+        android:background="@color/app_white" >
+
+        <TextView
+            style="@style/text_style_nomal_28"
+            android:layout_centerVertical="true"
+            android:text="手机号： 13761234986"
+            android:textColor="@color/text_gray1" />
+
+        <ImageView
+            
+          style="@style/w_20_h_20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow" />
+    </RelativeLayout>
+
+    
+    <View style="@style/line_style_1" />
+      
+    <RelativeLayout
+        android:id="@+id/iv_person_center_reset_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_menu_h"
+        android:layout_marginLeft="@dimen/l_r_35"
+        android:layout_marginRight="@dimen/l_r_35"
+        android:background="@color/app_white" >
+
+        <TextView
+            style="@style/text_style_nomal_28"
+            android:layout_centerVertical="true"
+            android:text="重置登录密码"
+            android:textColor="@color/text_gray1" />
+
+        <ImageView
+            style="@style/w_20_h_20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow" />
+    </RelativeLayout>
+
+  
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_person_center_exit"
+            style="@style/w_full_h_wrap"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="@dimen/l_r_35"
+            android:layout_marginRight="@dimen/l_r_35"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle_pink"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/app_white" />
+    </LinearLayout>
+
+</LinearLayout>

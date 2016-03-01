@@ -1,0 +1,272 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    android:id="@+id/ll_headerfragment"
+    >
+
+   
+    <FrameLayout 
+        android:layout_width="match_parent"
+    	android:layout_height="180dp">
+    	 
+        <LinearLayout
+             android:layout_width="match_parent"
+    		 android:layout_height="wrap_content"
+    		 android:background="@drawable/home_bg">
+        </LinearLayout>
+    	 
+    	<TextView 
+    	        android:layout_marginTop="40dp"
+    	        android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:text="立刻入驻迈界品牌店长"
+		    	android:textSize="20sp"
+		    	android:textColor="#ffffff"
+		    	android:layout_gravity="center_horizontal"/>
+
+    	  <TextView
+    	      android:layout_marginTop="70dp"
+    	      android:layout_width="wrap_content"
+    	      android:layout_height="wrap_content"
+    	      android:layout_gravity="center_horizontal"
+    	      android:text="认领属于您的消费大众"
+    	      android:textColor="#ffffff"
+    	      android:textSize="20dp"
+    	      />
+
+    	  <Button 
+    	         android:id="@+id/bt_sureStore"
+    	      	 android:layout_marginTop="115dp"
+    	       	 android:layout_gravity="center_horizontal"
+    	      	 android:layout_width="170dp"
+			     android:layout_height="33dp"
+			     android:text="立即认领门店"
+			     android:textSize="15dp"
+		    	 android:textColor="#ffffff"
+		    	 android:background="@drawable/rectangle_pink"
+		    	 />
+    </FrameLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+    	android:layout_height="120dp"
+    	android:background="#ffffff"
+    	android:layout_gravity="center_horizontal"
+    	>
+    	  
+     <LinearLayout 
+        android:layout_centerInParent="true"
+        android:layout_width="320dp"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:background="#ffffff"
+    	android:layout_gravity="center_horizontal"
+    	>
+       <LinearLayout 
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_weight="1"
+	    	
+	    	>
+	           <ImageView 
+	                android:id="@+id/im_releaseacts"
+			        android:layout_width="68dp"
+			    	android:layout_height="68dp"
+			    	android:src="@drawable/declareactivity_selector"
+			    	android:onClick="ClickToFabu"
+			    	android:layout_weight="1"
+			    	android:layout_gravity="center_horizontal"/>
+	           
+	           <!-- android:src="@drawable/declareactivity_ispress" -->
+	           
+	           <TextView 
+	               android:layout_marginTop="7.5dp"
+	                android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:text="发布活动"
+			    	android:textSize="13dp"
+			    	android:textColor="@color/text_gray1"
+			    	android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        
+         <LinearLayout 
+           
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_weight="1"
+	    	>
+	          <ImageView 
+	            android:id="@+id/im_saoyisao"
+		        android:layout_width="68dp"
+		    	android:layout_height="68dp"
+		    	android:src="@drawable/saoyisao_selector"
+		    	android:layout_weight="1"
+		    	android:layout_gravity="center_horizontal"/>
+	          <!-- android:src="@drawable/saoyisao_unclick" -->
+	          
+	           <TextView 
+	                 android:layout_marginTop="7.5dp"
+	                android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:text="扫一扫"
+			    	android:textSize="13dp"
+			    	android:textColor="@color/text_gray1"
+			    	android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        
+       <LinearLayout 
+            
+	        android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="vertical"
+	    	android:layout_weight="1">
+	           
+	         <ImageView
+	             android:id="@+id/iv_messagercenter"
+		        android:layout_width="68dp"
+		        android:layout_height="68dp"
+		       android:src="@drawable/messagecenter_selector"
+		        android:layout_weight="1"
+		        android:layout_gravity="center_horizontal" />
+	         <!--  android:src="@drawable/message_center" -->
+	           <TextView 
+	               android:layout_marginTop="7.5dp"
+	                android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:text="消息中心"
+			    	android:textSize="13dp"
+			    	android:textColor="@color/text_gray1"
+			    	android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        
+      </LinearLayout>
+    </RelativeLayout>
+
+    
+    
+    <!-- 迈界商户联合活动申请  的 LinearLayout -->
+   <LinearLayout 
+       android:id="@+id/ll_shenqinghuodong"
+       android:layout_marginTop="17.5dp"
+       android:layout_width="match_parent"
+       android:layout_height="90dp"
+       android:layout_gravity="center_vertical"
+       android:background="#ffffff"
+       >
+       
+        <RelativeLayout 
+            android:layout_margin="17.5dp"
+            android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" 
+		    android:layout_gravity="center"
+		    android:background="@drawable/home_activity_bg"
+		    android:alpha="10"
+		    android:gravity="center">
+	         <!--  android:background="@drawable/activity_send" -->
+           
+            <ImageView 
+                android:id="@+id/iv_home_activity_icon"
+               android:layout_width="20dp"
+	           android:layout_height="20dp"
+	           android:src="@drawable/home_activity_icon"
+                />
+            <!--  android:src="@drawable/message_center" -->
+            
+            <TextView 
+                android:id="@+id/tv_apply_activity"
+               android:layout_marginLeft="5dp"
+               android:layout_toRightOf="@id/iv_home_activity_icon"
+           	   android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="迈界商户联合活动申请 "
+	           android:textColor="#ffffff"
+	           android:textSize="15dp"  />
+            
+              <ImageView 
+                  android:layout_centerHorizontal="true"
+               android:layout_marginLeft="5dp"
+               android:layout_toRightOf="@id/tv_apply_activity"
+               android:layout_width="15dp"
+	           android:layout_height="15dp"
+	           android:src="@drawable/home_arrow"
+                />
+        </RelativeLayout>
+   </LinearLayout> 
+   
+    <!-- 我的活动 的 item -->
+      <RelativeLayout 
+          android:id="@+id/rl_myacts"
+          android:layout_marginTop="17.5dp"
+          android:layout_width="match_parent"
+	      android:layout_height="45dp"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	        <ImageView
+	            android:layout_centerInParent="true"
+	            android:layout_alignParentLeft="true"
+	            android:layout_marginLeft="10dp"
+	            android:layout_gravity="center_vertical"
+	            android:id="@+id/iv_myAction"
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:src="@drawable/icon_my_activities" />
+	       <TextView
+	           android:layout_toRightOf="@id/iv_myAction"
+	            android:layout_centerInParent="true"
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="我的活动"
+	           android:textColor="@color/text_gray1"
+	           android:textSize="14dp" />
+
+	        <TextView
+	           android:gravity="center"
+	           android:layout_gravity="center_vertical"
+	           android:layout_alignParentRight="true"
+	           android:layout_marginRight="17.5dp"
+	           android:id="@+id/point"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           
+	           android:background="@drawable/green_white_button"
+	           android:layout_centerVertical="true"
+	           android:textColor="@android:color/white"
+	           android:text="10"
+	           android:textSize="12sp" />
+	       
+
+      </RelativeLayout>
+      
+      <!-- 门店管理的 item -->
+       <LinearLayout 
+              android:id="@+id/ll_tomystore"
+	          android:layout_marginTop="1dp"
+		      style="@style/w_m_h_45"
+		      android:background="#ffffff"
+		      android:layout_gravity="center"
+		      android:orientation="horizontal">
+	        <ImageView
+	            android:layout_marginLeft="10dp"
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:layout_gravity="center_vertical"
+		        android:src="@drawable/icon_store_management" />
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="门店管理"
+	           android:textColor="@color/text_gray1"
+	           android:textSize="14dp" />
+    </LinearLayout>
+ 
+
+</LinearLayout>

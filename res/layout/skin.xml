@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_root_panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+   
+    <!-- 皮肤背景 -->
+    <ImageView
+        android:id="@+id/bgskin"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" 
+        android:background="@color/skin_bg"/>
+    
+    <!-- 透明浮层 -->
+      <!--   <View
+        android:id="@+id/bgskinmask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00000000"/> -->
+
+</RelativeLayout>

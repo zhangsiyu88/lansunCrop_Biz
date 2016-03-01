@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#efefef">
+    
+      <!-- 门店详情  的tittle -->
+    <RelativeLayout
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff">
+	      
+        <ImageButton 
+          android:id="@+id/ib_backarrow_storedetails"
+          android:layout_width="10dp"
+	      android:layout_height="15dp"
+	      android:layout_marginLeft="10dp"
+	      android:background="@drawable/back_arrow"
+	      android:layout_alignParentLeft="true"
+	      android:layout_centerVertical="true"/>
+        
+         <TextView
+               android:id="@+id/tv_brotherrank"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_centerInParent="true"
+	           android:text="门店详情"
+	           android:textColor="#a1c9e2"
+	           android:textSize="20dp" />
+          <TextView
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_alignParentRight="true"
+	           android:layout_alignBaseline="@id/tv_brotherrank"
+	           android:layout_marginRight="5dp"
+	           android:text="刷新"
+	           android:textColor="#50000000"
+	           android:textSize="15dp" />
+        </RelativeLayout>
+        
+         <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	 </LinearLayout>
+ 
+         
+         
+    <!-- 星巴克 的 item -->
+    <LinearLayout 
+          android:layout_marginTop="20dp"
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>
+      
+      <LinearLayout 
+          
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+          <ImageView
+	            android:layout_marginLeft="15dp"
+	            android:layout_gravity="center_vertical"
+		        android:layout_width="30dp"
+		        android:layout_height="30dp"
+		        android:src="@drawable/same_range" />
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="星巴克（东方商厦杨浦店）"
+	           android:textColor="#5e5e5e"
+	           android:textSize="16dp" />
+      </LinearLayout>
+      
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>
+      
+     <!-- 活动品质 item -->
+      <LinearLayout 
+          
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	      
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="活动品质："
+	           android:textColor="#5e5e5e"
+	           android:textSize="14dp" />
+	       
+	       <LinearLayout 
+		           android:layout_width="100dp"
+		           android:layout_height="20dp"
+		           android:orientation="horizontal"
+		           android:layout_gravity="center_vertical">
+			        <ImageView
+			          android:layout_weight="1"
+			          android:layout_alignParentLeft="true"
+			          android:id="@+id/iv_first_bar"
+		              android:layout_width="20dp"
+		              android:layout_height="20dp"
+		           
+		              android:src="@drawable/full_light" 
+		               />
+			        <ImageView
+			          android:layout_weight="1"
+		              android:layout_width="20dp"
+		              android:layout_height="20dp"
+		              android:layout_marginLeft="5dp"
+		              android:src="@drawable/full_light" />
+			        <ImageView
+			          android:layout_weight="1"
+		              android:layout_width="20dp"
+		              android:layout_height="20dp"
+		              android:layout_marginLeft="5dp"
+		              android:src="@drawable/full_light" />
+			        <ImageView
+			          android:layout_weight="1"
+		              android:layout_width="20dp"
+		              android:layout_height="20dp"
+		              android:layout_marginLeft="5dp"
+		              android:src="@drawable/full_light" />
+			        <ImageView
+			            android:layout_weight="1"
+			            android:layout_width="20dp"
+			            android:layout_height="20dp"
+			            android:layout_marginLeft="5dp"
+			            android:src="@drawable/full_light" />
+	       </LinearLayout>
+      </LinearLayout>
+      
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>
+      
+     <!-- 粉丝数量 item -->
+      <LinearLayout 
+          
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	   
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="粉丝数量："
+	           android:textColor="#5e5e5e"
+	           android:textSize="14dp" />
+	        <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center"
+	           android:layout_width="wrap_content"
+	           android:layout_height="40dp"
+	           android:text="3206"
+	           android:textColor="#a1c9e2"
+	           android:textSize="30dp" />
+	        <RelativeLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:gravity="center_vertical" >
+	            <ImageButton 
+	               android:id="@+id/ib_fansnum_arrow"
+		           android:layout_width="10dp"
+		           android:layout_height="15dp" 
+		           android:layout_marginRight="10dp"
+		           android:layout_alignParentRight="true"
+		           android:background="@drawable/arrow"
+	            />
+	        </RelativeLayout>
+	        
+      </LinearLayout>
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>
+    
+    <!-- 发布活动总数 item -->
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	      
+	      
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="发布活动总数："
+	           android:textColor="#5e5e5e"
+	           android:textSize="14dp" />
+	        <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center"
+	           android:layout_width="wrap_content"
+	           android:layout_height="40dp"
+	           android:text="128"
+	           android:textColor="#a1c9e2"
+	           android:textSize="30dp" />
+	       
+      </LinearLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/app_bg"
+    >
+    
+    <!-- 口碑经营 的tittle  -->
+    <RelativeLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff"
+	      >
+         <TextView
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_centerInParent="true"
+	           android:text="口碑经营"
+	           android:textColor="#a1c9e2"
+	           android:textSize="20dp" />
+         
+        </RelativeLayout>
+         <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>                         
+    
+    <!-- 粉丝数量 item -->
+   <LinearLayout 
+          android:layout_marginTop="17.5dp"
+          android:layout_width="match_parent"
+	      android:layout_height="1dp"
+	      android:background="#20000000">
+      </LinearLayout>
+      <LinearLayout 
+         style="@style/w_m_h_45"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	        <ImageView
+	            android:layout_marginLeft="15dp"
+	            android:layout_gravity="center_vertical"
+		       style="@style/w_20_h_20"
+		        android:src="@drawable/fans" />
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="粉丝数量"
+	           android:textColor="@color/text_gray1"
+	           android:textSize="14dp" />
+      </LinearLayout>
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="1dp"
+	      android:background="#20000000">
+      </LinearLayout>
+      
+     <!-- 投诉管理 item -->
+      <LinearLayout 
+          
+           style="@style/w_m_h_45"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	        <ImageView
+	            android:layout_marginLeft="15dp"
+	            android:layout_gravity="center_vertical"
+		        style="@style/w_20_h_20"
+		        android:src="@drawable/damnit" />
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="投诉管理"
+	           android:textColor="@color/text_gray1"
+	           android:textSize="14dp" />
+      </LinearLayout>
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="1dp"
+	      android:background="#20000000">
+      </LinearLayout>
+     <!-- 兄弟门店排名 item -->
+      <LinearLayout
+          android:id="@+id/ll_brorank" 
+           style="@style/w_m_h_45"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	        <ImageView
+	            android:layout_marginLeft="15dp"
+	            android:layout_gravity="center_vertical"
+		        style="@style/w_20_h_20"
+		        android:src="@drawable/bro_rank" />
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="兄弟门店排名"
+	           android:textColor="@color/text_gray1"
+	           android:textSize="14dp" />
+      </LinearLayout>
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="1dp"
+	      android:background="#20000000">
+      </LinearLayout>
+    
+    <!-- 同业排名 item -->
+      <LinearLayout 
+           style="@style/w_m_h_45"
+	      android:background="#ffffff"
+	      android:orientation="horizontal">
+	        <ImageView
+	            android:layout_marginLeft="15dp"
+	            android:layout_gravity="center_vertical"
+		        style="@style/w_20_h_20"
+		        android:src="@drawable/same_range" />
+	       <TextView
+	           android:layout_marginLeft="10dp"
+	           android:layout_gravity="center_vertical"
+	           android:layout_width="wrap_content"
+	           android:layout_height="20dp"
+	           android:text="同业排名"
+	           android:textColor="@color/text_gray1"
+	           android:textSize="14dp" />
+      </LinearLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+      </LinearLayout>
+
+</LinearLayout>

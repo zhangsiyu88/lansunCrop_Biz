@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_bg">
+    
+    <include layout="@layout/activity_com"/>
+    
+    <TextView 
+        style="@style/w_m_h_45"
+        android:text="门店基本信息"
+        android:textColor="@color/text_gray2"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"/>
+	<LinearLayout 
+	    style="@style/w_full_h_wrap"
+	    android:orientation="vertical"
+    >
+    
+	    <!-- 门店名称  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_storeadd_storename"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/storename"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        <EditText 
+	            style="@style/w_wrap_h_wrap"
+	             android:layout_marginLeft="5dp"
+	             android:hint="输入样例：星巴克（创智店）"
+	             android:background="@null"
+	             android:layout_centerVertical="true"
+	             android:layout_toRightOf="@id/tv_storeadd_storename"
+	             android:textSize="12dp"
+	            />
+	    </RelativeLayout>
+	    
+	    <View style="@style/line_style_1"/>
+	    
+	    
+	    <!-- 城市、区县、商圈  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/cityconuntrypart"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	       <ImageView 
+	           style="@style/w_15_h_15"
+	           android:src="@drawable/arrow"
+	           android:layout_centerVertical="true"
+	           android:layout_alignParentRight="true"
+	           android:layout_marginRight="5dp"/>
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	     
+	    
+	    
+	    
+	    
+	    
+	    <!-- 具体地址  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_concreteaddress"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/concreteaddress"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        <EditText 
+	            style="@style/w_wrap_h_wrap"
+	             android:layout_marginLeft="5dp"
+	             android:hint="请输入您的门店具体地址"
+	             android:background="@null"
+	             android:layout_centerVertical="true"
+	             android:layout_toRightOf="@id/tv_concreteaddress"
+	             android:textSize="12dp"
+	            />
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	     
+	     
+	     
+	      <!-- 门店电话  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            android:id="@+id/tv_storephonenumber"
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/storephonenumber"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	        <EditText 
+	            style="@style/w_wrap_h_wrap"
+	             android:layout_marginLeft="5dp"
+	             android:hint="输入样例：（021）65431234"
+	             android:background="@null"
+	             android:layout_centerVertical="true"
+	             android:layout_toRightOf="@id/tv_storephonenumber"
+	             android:textSize="12dp"
+	            />
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	     
+	    <!-- 门店的营业时间  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/storebussinesshour"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	       <ImageView 
+	           style="@style/w_15_h_15"
+	           android:src="@drawable/arrow"
+	           android:layout_centerVertical="true"
+	           android:layout_alignParentRight="true"
+	           android:layout_marginRight="5dp"/>
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	    
+	     <TextView 
+	         style="@style/w_m_h_45"
+	         android:text="门店所属分类"
+	         android:textColor="@color/text_gray2"
+	         android:gravity="center_vertical"
+	         android:layout_marginLeft="5dp"/>
+	     
+	     
+	     <View style="@style/line_style_1"/>
+	     <!-- 一级分类  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/firstclassify"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	       <ImageView 
+	           style="@style/w_15_h_15"
+	           android:src="@drawable/arrow"
+	           android:layout_centerVertical="true"
+	           android:layout_alignParentRight="true"
+	           android:layout_marginRight="5dp"/>
+	    </RelativeLayout>
+	     <View style="@style/line_style_1"/>
+	    
+	     
+	     <!-- 二级分类  -->
+	    <RelativeLayout 
+	        style="@style/w_m_h_45"
+	        android:background="#ffffff"
+	        >
+	        <TextView 
+	            style="@style/w_wrap_h_wrap"
+	            android:text="@string/secondclassify"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="5dp"
+	            />
+	       <ImageView 
+	           style="@style/w_15_h_15"
+	           android:src="@drawable/arrow"
+	           android:layout_centerVertical="true"
+	           android:layout_alignParentRight="true"
+	           android:layout_marginRight="5dp"/>
+	    </RelativeLayout>
+    </LinearLayout>
+    
+	 <Button 
+   	      android:id="@+id/bt_nextstep_addstore"
+   	      android:layout_margin="10dp"
+   	      android:padding="5dp"
+   	      android:layout_width="match_parent"
+   	      android:layout_height="30dp"
+   	      android:background="@drawable/rectangle_blue"
+   	      android:text="下一步"
+   	      android:textSize="14dp"
+   	      android:textColor="#ffffff"
+   	      />
+	
+</LinearLayout>

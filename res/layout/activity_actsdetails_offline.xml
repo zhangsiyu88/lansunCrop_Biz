@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#efefef">
+    
+     <!-- 意见核问题反馈  的tittle -->
+    <RelativeLayout
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff">
+	      
+        <ImageView 
+            android:id="@+id/iv_back_insertinfo"
+          android:layout_width="10dp"
+	      android:layout_height="15dp"
+	      android:layout_marginLeft="10dp"
+	      android:background="@drawable/back_arrow"
+	      android:layout_alignParentLeft="true"
+	      android:layout_centerVertical="true"
+            />
+         <TextView
+               android:id="@+id/tv_brotherrank"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_centerInParent="true"
+	           android:text="活动详情"
+	           android:textColor="#a1c9e2"
+	           android:textSize="20dp" />
+         
+        <TextView
+              
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	          android:layout_alignParentRight="true"
+	          android:layout_centerVertical="true"
+	          android:layout_marginRight="10dp"
+	           android:text="预览"
+	           android:textColor="@color/text_gray2"
+	           android:textSize="12dp" />
+         
+        </RelativeLayout>
+        
+         <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	 </LinearLayout>
+     	 
+       <!-- 发布活动的门店  -->
+         <TextView 
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="发布活动的门店"
+	      	 android:textColor="#50000000"
+	      	 android:textSize="12dp"
+             />
+         
+         
+         <RelativeLayout 
+             android:layout_marginTop="5dp"
+             android:layout_width="match_parent"
+	      	 android:layout_height="wrap_content"
+	      	 android:background="#ffffff"
+	      	 android:padding="10dp"
+             >
+			<ImageView 
+			    android:layout_centerVertical="true"
+			    android:id="@+id/iv_store_icon"
+			    style="@style/w_20_h_20"
+			    android:src="@drawable/mine_now"
+			    />
+             
+            <TextView 
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_store_icon"
+	             android:layout_width="wrap_content"
+		      	 android:layout_height="wrap_content"
+		      	 android:text="星巴克（东方商厦杨浦店）"
+		      	 android:textSize="12dp"
+		      	 android:textColor="@color/text_gray1"
+             />
+
+        </RelativeLayout>
+        
+         
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+         
+
+         <!--活动标题  -->
+         <TextView 
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="活动的基本信息"
+	      	 android:textColor="#50000000"
+	      	 android:textSize="12dp"
+             />
+         
+         
+         
+             
+            <!-- 光标是否闪烁! 
+             android:cursorVisible="false" -->
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="#ffffff"
+                  android:orientation="vertical" >
+
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="10dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginTop="15dp"
+                      android:text="活动标题"
+                      android:textColor="@color/text_gray2"
+                      android:textSize="12dp" />
+
+                  <TextView
+                      android:id="@+id/tv_actsdesc"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="10dp"
+                      android:layout_marginLeft="10dp"
+                      android:text="刷各行黑金级信用卡消费买一送一"
+                      android:textColor="@color/text_gray1"
+                      android:textSize="14dp" />
+              </LinearLayout>
+     
+        
+
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+         
+        
+         
+        <RelativeLayout 
+             
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+	      	 android:layout_gravity="center_vertical"
+             >
+            
+            
+            <TextView 
+              android:layout_marginLeft="10dp"
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_actsdegree_infochecked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动级别:"
+	      	  android:textColor="@color/text_gray1"
+              />
+            
+            
+              
+              <TextView 
+                  android:id="@+id/tv_actsdegree"
+                  android:layout_marginLeft="5dp"
+                  android:layout_toRightOf="@id/tv_actsdegree_infochecked"
+	              android:layout_marginRight="5dp"
+	              android:layout_centerVertical="true"
+	              
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="黑金级"
+		      	  android:textColor="@color/text_gray1"
+              />
+              
+             
+              
+             
+              <!-- 光标是否闪烁! 
+               android:cursorVisible="false" -->
+        </RelativeLayout>
+        
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+        
+     	<RelativeLayout 
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+	      	 
+             >
+              <TextView 
+              android:layout_marginLeft="10dp"
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_actsclassify_infochecked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动分类:"
+	      	  android:textColor="#99000000"
+              />
+             
+              
+             <TextView 
+              android:layout_marginLeft="5dp"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_actsclassify_infochecked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="餐饮美食/咖啡"
+	      	  android:textColor="@color/text_gray1"
+              />
+              
+              
+              
+              
+              
+              
+        </RelativeLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+     	<RelativeLayout 
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+	      	 
+             >
+              <TextView 
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_actstag_infochecked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动标签:"
+	      	  android:textColor="#99000000"
+	      	  android:layout_marginLeft="10dp"
+              />
+
+               <TextView 
+              android:layout_marginLeft="5dp"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_actstag_infochecked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="普通"
+	      	  android:textColor="@color/text_gray1"
+              />
+             
+              
+        </RelativeLayout>
+        
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+        <RelativeLayout 
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+           >
+              <TextView 
+                  android:id="@+id/tv_actsvalidtime_checked"
+	              android:layout_centerVertical="true"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="活动时效："
+		      	  android:textColor="#99000000"
+		      	  android:layout_marginLeft="10dp"
+              />
+              
+               <TextView 
+              android:layout_marginLeft="5dp"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_actsvalidtime_checked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="30天"
+	      	  android:textColor="@color/text_gray1"
+              />
+
+             
+              
+        </RelativeLayout>
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+        
+        
+        <!-- 活动开始时间 -->
+        <RelativeLayout 
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+	      	 
+             >
+              <TextView 
+              android:layout_marginLeft="10dp"
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_actsstarttime_checked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动开始时间:"
+	      	  android:textColor="#99000000"
+              />
+             
+             <TextView 
+              android:layout_marginLeft="5dp"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_actsstarttime_checked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="2015年6月6日 19：00"
+	      	  android:textColor="@color/text_gray1"
+              />
+              
+        </RelativeLayout>
+        
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+        
+      
+          <!-- 活动结束时间 -->
+        <RelativeLayout 
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+	      	 
+             >
+              <TextView 
+              android:layout_marginLeft="10dp"
+              android:layout_centerVertical="true"
+              android:id="@+id/tv_actsendtime_checked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动结束时间:"
+	      	  android:textColor="#99000000"
+              />
+             
+             <TextView 
+              android:layout_marginLeft="5dp"
+              android:layout_centerVertical="true"
+              android:layout_toRightOf="@id/tv_actsendtime_checked"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="2015年7月5日 19：00"
+	      	  android:textColor="@color/text_gray1"
+              />
+              
+        </RelativeLayout>
+        
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+        
+     	
+        
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="wrap_content"
+	      android:background="#ffffff"
+	      android:orientation="vertical">
+             <TextView 
+                 android:layout_marginTop="15dp"
+                 android:layout_marginBottom="10dp"
+               
+                  android:layout_marginLeft="10dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="活动详情描述"
+                  android:textColor="@color/text_gray2"
+                  android:textSize="12dp"
+                  /> 
+                  <TextView 
+                
+                 android:layout_marginBottom="10dp"
+                  
+                  android:layout_marginLeft="10dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="活动时间内到店刷卡即可享受此优惠"
+                  android:textColor="@color/text_gray1"
+                  android:textSize="14dp"
+                  /> 
+             
+     	</LinearLayout>
+     	
+        
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+        
+        
+         
+        <!--活动照片 -->
+         <TextView 
+             android:layout_marginTop="5dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="活动图片"
+	      	 android:textColor="#50000000"
+	      	 android:textSize="12dp"
+             />
+         
+         <LinearLayout 
+          android:layout_marginTop="5dp"
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+         <LinearLayout 
+          
+          android:layout_width="match_parent"
+	      android:layout_height="wrap_content"
+	      android:background="@color/white"
+	      android:orientation="vertical">
+	         <GridView
+	             android:layout_margin="5dp"
+	             android:id="@+id/photoGridView"
+	             android:layout_width="match_parent"
+	             android:layout_height="125dp"
+	             android:columnWidth="90dp"
+	             android:gravity="center_horizontal"
+	             android:numColumns="auto_fit"
+	             android:stretchMode="columnWidth"
+	             android:verticalSpacing="5dp" 
+	             android:horizontalSpacing="5dp">
+			</GridView>
+      </LinearLayout>
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     
+         
+    	<LinearLayout 
+    	  android:layout_marginTop="10dp"
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+     	
+    	
+    	<RelativeLayout 
+             style="@style/w_m_h_45"
+	      	 android:background="#ffffff"
+	      	
+           >
+              <TextView 
+                 
+	              android:layout_centerVertical="true"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="活动发布费用"
+		      	  android:textColor="#99000000"
+		      	  android:layout_marginLeft="10dp"
+              />
+              
+           <TextView 
+              android:layout_alignParentRight="true"
+              android:layout_marginRight="10dp"
+              android:layout_centerVertical="true"
+              
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="￥200.00"
+	      	  android:textColor="@color/text_gray1"
+              />
+              
+        </RelativeLayout>
+        
+    	<LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="1dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+    	  
+    	  <Button 
+    	      android:id="@+id/bt_nextstep"
+    	      android:layout_margin="10dp"
+    	      android:padding="5dp"
+    	      android:layout_width="match_parent"
+    	      android:layout_height="30dp"
+    	      android:background="@drawable/rectangle_green"
+    	      android:text="活动进行中"
+    	      android:textSize="14dp"
+    	      android:textColor="#ffffff"
+    	      />
+    	  
+    	   <Button 
+    	      
+    	      android:layout_marginLeft="10dp"
+    	      android:layout_marginRight="10dp"
+    	      android:layout_marginBottom="10dp"
+    	      android:layout_marginTop="5dp"
+    	      android:padding="5dp"
+    	      android:layout_width="match_parent"
+    	      android:layout_height="30dp"
+    	      android:background="@drawable/rectangle_white"
+    	      android:text="我要手动下线"
+    	      android:textSize="14dp"
+    	      android:textColor="@color/text_gray1"
+    	      />
+    	   
+        <TextView 
+              android:layout_gravity="center_horizontal"
+              android:layout_centerVertical="true"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="请谨慎选择手动下线，一经下线无法再次上线操作"
+	      	  android:textColor="@color/text_gray"
+	      	  android:textSize="12dp"
+              />
+         
+
+   </LinearLayout>
+</ScrollView>
+
+

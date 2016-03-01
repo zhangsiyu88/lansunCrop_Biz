@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#10000000">
+    
+    <RelativeLayout
+          android:layout_width="match_parent"
+	      android:layout_height="50dp"
+	      android:background="#ffffff">
+	      
+        <ImageView
+           android:id="@+id/iv_back_offansandactivities" 
+          android:layout_centerInParent="true"
+          android:layout_width="10dp"
+	      android:layout_height="15dp"
+	      android:layout_marginLeft="10dp"
+	      android:background="@drawable/back_arrow"
+	      android:layout_alignParentLeft="true"
+	      android:layout_centerVertical="true"
+          />
+        
+        <LinearLayout
+            android:layout_centerInParent="true"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:orientation="horizontal" >
+
+	       <TextView
+	           		
+		           android:id="@+id/tv_fans"
+		           android:paddingLeft="20dp"
+		           android:paddingRight="20dp"
+		           android:paddingTop="5dp"
+		           android:paddingBottom="5dp"
+	               
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:background="@drawable/leftcorner_blue_rectangle"
+		           android:text="粉丝数"
+		           android:textColor="#ffffff"
+		           android:textSize="16dp" />
+	       <TextView
+		           android:paddingLeft="20dp"
+		           android:paddingRight="20dp"
+		           android:paddingTop="5dp"
+		           android:paddingBottom="5dp"
+	               android:id="@+id/tv_actions"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:background="@drawable/rightcorner_gary_rectangle"
+		           android:text="活动数"
+		           android:textColor="#ffffff"
+		           android:textSize="16dp" />
+         </LinearLayout>
+         
+         
+          <TextView
+               android:layout_centerInParent="true"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_alignParentRight="true"
+	           android:layout_alignBaseline="@id/tv_brotherrank"
+	           android:layout_marginRight="5dp"
+	           android:text="我的"
+	           android:textColor="#50000000"
+	           android:textSize="15dp" />
+     </RelativeLayout>
+     
+     <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="1dp"
+	      android:background="#20000000">
+     </LinearLayout>
+     
+     
+        
+      
+      
+     
+     
+     
+      <!-- 粉丝数的整个（包含RadioGroup部分的）FrameLayout -->
+      <FrameLayout 
+             android:id="@+id/fl_fansnumframe"
+              android:layout_width="match_parent"
+	          android:layout_height="match_parent"
+	          android:orientation="vertical"
+	          android:visibility="visible">
+          
+	   <LinearLayout 
+              android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:orientation="vertical"
+	          android:visibility="visible"
+	          >
+	          
+     <!-- 一个月 半年 一年的RadioGroup -->
+     <LinearLayout
+            android:layout_centerInParent="true"
+	        android:layout_width="match_parent"
+	        android:layout_height="30dp"
+	        android:layout_gravity="center"
+	        android:orientation="horizontal" 
+	        android:background="#ffffff">
+         <RadioGroup 
+             android:layout_gravity="center"
+             android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal"
+             >
+	       <RadioButton 
+	           android:id="@+id/rb_fans_bt1"
+	           android:gravity="center"
+	           android:layout_weight="1"
+	         android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		      android:button="@android:color/transparent"
+             android:background="@android:color/transparent"
+             android:textColor="@color/text_blue"
+		     android:text="一个月"
+		     
+	           />
+	       <LinearLayout 
+	      android:layout_gravity="center_vertical"
+	     
+          android:layout_width="1dp"
+	      android:layout_height="20dp"
+	      android:background="#20000000">
+         </LinearLayout>
+	      
+	       <RadioButton 
+	             android:id="@+id/rb_fans_bt2"
+	         android:gravity="center"
+	         android:layout_weight="1"
+	         android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		       android:button="@android:color/transparent"
+             android:background="@android:color/transparent"
+		     android:text="半年"
+		     android:textColor="@color/text_gray"
+		     
+	           />
+	         <LinearLayout 
+	             android:layout_gravity="center_vertical"
+	         
+	          android:layout_width="1dp"
+		      android:layout_height="20dp"
+		      android:background="#20000000">
+	         </LinearLayout>
+         
+	       <RadioButton 
+	         android:id="@+id/rb_fans_bt3"
+	         android:gravity="center"
+	         android:layout_weight="1"
+	         android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:button="@android:color/transparent"
+             android:background="@android:color/transparent"
+		     android:text="一年"
+		     android:textColor="@color/text_gray"
+		     
+	           />
+	         </RadioGroup>
+         </LinearLayout>
+         
+          
+        <FrameLayout 
+	          android:id="@+id/fl_fans_listshow"
+              android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:orientation="vertical"
+	          android:visibility="visible">
+	       
+          <LinearLayout 
+              android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:orientation="vertical"
+         >
+	     
+	  <!-- No.1 -->
+      <LinearLayout 
+          android:id="@+id/ll_firstitem_fans"
+          android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" 
+		    >
+	         <RelativeLayout 
+	              android:layout_width="match_parent"
+		    	  android:layout_height="wrap_content"
+		    	  android:layout_marginTop="10dp"
+	             >
+	             <TextView 
+	                    android:layout_centerInParent="true"
+		                android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				    	android:text="NO.1"
+					    android:textSize="30dp"
+					    android:textColor="#a1c9e2"
+		    	  
+	                 />
+	             <RelativeLayout 
+	                 android:layout_marginRight="5dp"
+	                android:layout_centerInParent="true"
+	                 android:layout_alignParentRight="true"
+	                 android:layout_width="wrap_content"
+		    	     android:layout_height="wrap_content"
+		    	     
+	                 >
+	                 <ImageView 
+	                     android:id="@+id/iv_fans"
+	                     android:layout_width="20dp"
+		    	    	 android:layout_height="20dp"
+		    	    	 android:src="@drawable/fans"/>
+	                 <TextView
+	                     android:layout_toRightOf="@id/iv_fans"
+	                     android:layout_marginLeft="5dp"
+	                      android:layout_width="wrap_content"
+		    	    	  android:layout_height="wrap_content"
+		    	    	  android:text="3206"
+						    android:textSize="16dp"
+						    android:textColor="#60000000"
+		    	    	 />
+	             </RelativeLayout>
+	             
+	         </RelativeLayout>
+	         <TextView 
+	             android:layout_marginTop="5dp"
+	             android:layout_marginLeft="10dp"
+	            android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="星巴克（东方商厦杨浦店）"
+			    android:textSize="16dp"
+			    android:textColor="#80000000"
+			    android:layout_marginBottom="10dp"
+	             />
+          </LinearLayout>
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+         
+           
+           <!-- No.2 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" 
+		    >
+	         <RelativeLayout 
+	              android:layout_width="match_parent"
+		    	  android:layout_height="wrap_content"
+		    	  android:layout_marginTop="10dp"
+	             >
+	             <TextView 
+	                    android:layout_centerInParent="true"
+		                android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				    	android:text="NO.2"
+					    android:textSize="30dp"
+					    android:textColor="#a1c9e2"
+		    	  
+	                 />
+	             <RelativeLayout 
+	                 android:layout_marginRight="5dp"
+	                android:layout_centerInParent="true"
+	                 android:layout_alignParentRight="true"
+	                 android:layout_width="wrap_content"
+		    	     android:layout_height="wrap_content"
+		    	     
+	                 >
+	                 <ImageView 
+	                     android:id="@+id/iv_fans1"
+	                     android:layout_width="20dp"
+		    	    	 android:layout_height="20dp"
+		    	    	 android:src="@drawable/fans"/>
+	                 <TextView
+	                     android:layout_toRightOf="@id/iv_fans1"
+	                     android:layout_marginLeft="5dp"
+	                      android:layout_width="wrap_content"
+		    	    	  android:layout_height="wrap_content"
+		    	    	  android:text="3111"
+						    android:textSize="16dp"
+						    android:textColor="#60000000"
+		    	    	 />
+	             </RelativeLayout>
+	             
+	         </RelativeLayout>
+	         <TextView 
+	             android:layout_marginTop="5dp"
+	             android:layout_marginLeft="10dp"
+	            android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="星巴克（上海书城店）"
+			    android:textSize="16dp"
+			    android:textColor="#80000000"
+			    android:layout_marginBottom="10dp"
+	             />
+          </LinearLayout>
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+                
+           <!-- No.3 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" 
+		    >
+	         <RelativeLayout 
+	              android:layout_width="match_parent"
+		    	  android:layout_height="wrap_content"
+		    	  android:layout_marginTop="10dp"
+	             >
+	             <TextView 
+	                    android:layout_centerInParent="true"
+		                android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				    	android:text="NO.3"
+					    android:textSize="30dp"
+					    android:textColor="#a1c9e2"
+		    	  
+	                 />
+	             <RelativeLayout 
+	                 android:layout_marginRight="5dp"
+	                android:layout_centerInParent="true"
+	                 android:layout_alignParentRight="true"
+	                 android:layout_width="wrap_content"
+		    	     android:layout_height="wrap_content"
+		    	     
+	                 >
+	                 <ImageView 
+	                     android:id="@+id/iv_fans2"
+	                     android:layout_width="20dp"
+		    	    	 android:layout_height="20dp"
+		    	    	 android:src="@drawable/fans"/>
+	                 <TextView
+	                     android:layout_toRightOf="@id/iv_fans2"
+	                     android:layout_marginLeft="5dp"
+	                      android:layout_width="wrap_content"
+		    	    	  android:layout_height="wrap_content"
+		    	    	  android:text="3006"
+						    android:textSize="16dp"
+						    android:textColor="#60000000"
+		    	    	 />
+	             </RelativeLayout>
+	        </RelativeLayout>
+	        
+	        <TextView 
+	             android:layout_marginTop="5dp"
+	             android:layout_marginLeft="10dp"
+	            android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="星巴克（来福士一店）"
+			    android:textSize="16dp"
+			    android:textColor="#80000000"
+			    android:layout_marginBottom="10dp"
+	             />
+          </LinearLayout>
+          
+         
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+          
+         <!-- No.4 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" 
+		    android:orientation="horizontal"
+		    android:paddingTop="5dp"
+		    android:paddingBottom="5dp"
+		    >
+	         
+              <RelativeLayout 
+		            android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:background="#ffffff" 
+			        >
+		             <TextView 
+			            android:layout_marginTop="10dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="星巴克（西藏路店）"
+					    android:textSize="16dp"
+					    android:textColor="#80000000"
+					    />
+		            
+	             <RelativeLayout 
+		                 android:layout_marginRight="5dp"
+		                 android:layout_marginBottom="10dp"
+		                 android:layout_marginTop="15dp"
+		                 android:layout_centerInParent="true"
+		                 android:layout_alignParentRight="true"
+		                 android:layout_width="wrap_content"
+			    	     android:layout_height="wrap_content"
+			    	     
+		                 >
+		                 <ImageView 
+		                     
+		                     android:id="@+id/iv_fans3"
+		                     android:layout_width="20dp"
+			    	    	 android:layout_height="20dp"
+			    	    	 android:src="@drawable/fans"/>
+		                 <TextView
+		                     android:layout_centerInParent="true"
+		                     android:layout_toRightOf="@id/iv_fans3"
+		                     android:layout_marginLeft="5dp"
+		                      android:layout_width="wrap_content"
+			    	    	  android:layout_height="wrap_content"
+			    	    	  android:text="2506"
+							  android:textSize="16dp"
+							  android:textColor="#60000000"
+			    	    	 />
+		             </RelativeLayout>
+		           </RelativeLayout> 
+          </LinearLayout >
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+           
+                <!-- No.5 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" 
+		    android:orientation="horizontal"
+		    android:paddingTop="5dp"
+		    android:paddingBottom="5dp"
+		    >
+	         
+              <RelativeLayout 
+		            android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    
+				    android:background="#ffffff" 
+			        >
+		             <TextView 
+			            android:layout_marginTop="5dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="星巴克（西藏路店）"
+					    android:textSize="16dp"
+					    android:textColor="#80000000"
+					    />
+		            
+	             <RelativeLayout 
+		                 android:layout_marginRight="5dp"
+		                 android:layout_marginBottom="10dp"
+		                 android:layout_marginTop="15dp"
+		                 android:layout_centerInParent="true"
+		                 android:layout_alignParentRight="true"
+		                 android:layout_width="wrap_content"
+			    	     android:layout_height="wrap_content"
+			    	     
+		                 >
+		                 <ImageView 
+		                     
+		                     android:id="@+id/iv_fans4"
+		                     android:layout_width="20dp"
+			    	    	 android:layout_height="20dp"
+			    	    	 android:src="@drawable/fans"/>
+		                 <TextView
+		                     android:layout_centerInParent="true"
+		                     android:layout_toRightOf="@id/iv_fans4"
+		                     android:layout_marginLeft="5dp"
+		                      android:layout_width="wrap_content"
+			    	    	  android:layout_height="wrap_content"
+			    	    	  android:text="2506"
+							  android:textSize="16dp"
+							  android:textColor="#60000000"
+			    	    	 />
+		             </RelativeLayout>
+		           </RelativeLayout> 
+          </LinearLayout >
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+            
+         <!-- No.6 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" 
+		    android:orientation="horizontal"
+		    android:paddingTop="5dp"
+		    android:paddingBottom="5dp"
+		    >
+	         
+              <RelativeLayout 
+		            android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    
+				    android:background="#ffffff" 
+			        >
+		             <TextView 
+			            android:layout_marginTop="5dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="星巴克（西藏路店）"
+					    android:textSize="16dp"
+					    android:textColor="#80000000"
+					    />
+		            
+	             <RelativeLayout 
+		                 android:layout_marginRight="5dp"
+		                 android:layout_marginBottom="10dp"
+		                 android:layout_marginTop="15dp"
+		                 android:layout_centerInParent="true"
+		                 android:layout_alignParentRight="true"
+		                 android:layout_width="wrap_content"
+			    	     android:layout_height="wrap_content"
+			    	     
+		                 >
+		                 <ImageView 
+		                     
+		                     android:id="@+id/iv_fans5"
+		                     android:layout_width="20dp"
+			    	    	 android:layout_height="20dp"
+			    	    	 android:src="@drawable/fans"/>
+		                 <TextView
+		                     android:layout_centerInParent="true"
+		                     android:layout_toRightOf="@id/iv_fans5"
+		                     android:layout_marginLeft="5dp"
+		                      android:layout_width="wrap_content"
+			    	    	  android:layout_height="wrap_content"
+			    	    	  android:text="2506"
+							  android:textSize="16dp"
+							  android:textColor="#60000000"
+			    	    	 />
+		             </RelativeLayout>
+		           </RelativeLayout> 
+               </LinearLayout >
+               
+               <LinearLayout 
+		          android:layout_width="match_parent"
+			      android:layout_height="1dp"
+			      android:background="#20000000">
+         	  </LinearLayout>
+         	 
+               </LinearLayout><!-- 将ListView的部分按顺序的展示出来 -->
+           </FrameLayout>   <!-- ListViewde 展示部分 --> 
+             
+           </LinearLayout><!-- 成功的将一个FrameLayout能够塞入更多的内容 -->
+       </FrameLayout><!-- 粉丝数的FrameLayout整体，包含上面的RdioGroup -->
+      
+      
+      
+      
+      <!-- 活动数 的整个包含RadioGroup 的  FrameLayout -->
+      <FrameLayout
+              android:id="@+id/fl_actionsframe"
+              android:layout_width="match_parent"
+	          android:layout_height="match_parent"
+	          android:visibility="gone"
+          >
+	      
+       <LinearLayout 
+            android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+              >
+	    
+      <!-- 一个月 半年 一年 的RadioGroup-->
+      <LinearLayout
+            android:layout_centerInParent="true"
+	        android:layout_width="match_parent"
+	        android:layout_height="30dp"
+	        android:layout_gravity="center"
+	        android:orientation="horizontal" 
+	        android:background="#ffffff">
+
+         <RadioGroup 
+             android:layout_gravity="center"
+             android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal"
+             >
+	       <RadioButton 
+	           android:id="@+id/rb_act_bt1"
+	           android:gravity="center"
+	           android:layout_weight="1"
+	         android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		      android:button="@android:color/transparent"
+             android:background="@android:color/transparent"
+             android:textColor="@color/text_blue"
+		     android:text="一个月"
+	           />
+	       <LinearLayout 
+	      android:layout_gravity="center_vertical"
+	     
+          android:layout_width="1dp"
+	      android:layout_height="20dp"
+	      android:background="#20000000">
+         </LinearLayout>
+	      
+	       <RadioButton 
+	           android:id="@+id/rb_act_bt2"
+	         android:gravity="center"
+	         android:layout_weight="1"
+	         android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		       android:button="@android:color/transparent"
+             android:background="@android:color/transparent"
+		     android:text="半年"
+		     android:textColor="@color/text_gray"
+	           />
+	         <LinearLayout 
+	             android:layout_gravity="center_vertical"
+	         
+	          android:layout_width="1dp"
+		      android:layout_height="20dp"
+		      android:background="#20000000">
+	         </LinearLayout>
+         
+	       <RadioButton 
+	           android:id="@+id/rb_act_bt3"
+	           android:gravity="center"
+	         android:layout_weight="1"
+	         android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		       android:button="@android:color/transparent"
+             android:background="@android:color/transparent"
+		     android:text="一年"
+		     android:textColor="@color/text_gray"
+	           />
+	         </RadioGroup>
+         </LinearLayout>
+         
+	
+          
+	         
+	         
+	  <!-- 本应是List的展示效果，现在暂时使用FrameLayout替代展示 -->
+	   <FrameLayout
+	          android:id="@+id/fl_act_showlist"
+	          android:layout_marginTop="1dp"
+              android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+              >
+	       <LinearLayout 
+            android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+              >
+	  
+	  <!-- No.1 -->
+      <LinearLayout 
+          android:id="@+id/ll_firstitem_actions" 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" 
+		    >
+	         <RelativeLayout 
+	              android:layout_width="match_parent"
+		    	  android:layout_height="wrap_content"
+		    	  android:layout_marginTop="10dp"
+	             >
+	             <TextView 
+	                    android:layout_centerInParent="true"
+		                android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				    	android:text="NO.1"
+					    android:textSize="30dp"
+					    android:textColor="#a1c9e2"
+	                 />
+	             <RelativeLayout 
+	                 android:layout_marginRight="5dp"
+	                android:layout_centerInParent="true"
+	                 android:layout_alignParentRight="true"
+	                 android:layout_width="wrap_content"
+		    	     android:layout_height="wrap_content"
+		    	     
+	                 >
+	                 <ImageView 
+	                     android:id="@+id/iv_fans11"
+	                     android:layout_width="20dp"
+		    	    	 android:layout_height="20dp"
+		    	    	 android:src="@drawable/icon_activities"/>
+	                 <TextView
+	                     android:layout_toRightOf="@id/iv_fans11"
+	                     android:layout_marginLeft="5dp"
+	                      android:layout_width="wrap_content"
+		    	    	  android:layout_height="wrap_content"
+		    	    	  android:text="128"
+						    android:textSize="16dp"
+						    android:textColor="#60000000"
+		    	    	 />
+	             </RelativeLayout>
+	         </RelativeLayout>
+	         
+	         <TextView 
+	             android:layout_marginTop="5dp"
+	             android:layout_marginLeft="10dp"
+	            android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="星巴克（东方商厦杨浦店）"
+			    android:textSize="16dp"
+			    android:textColor="#80000000"
+			    android:layout_marginBottom="10dp"
+	             />
+          </LinearLayout>
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+         
+           
+         <!-- No.2 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" 
+		    >
+	         <RelativeLayout 
+	              android:layout_width="match_parent"
+		    	  android:layout_height="wrap_content"
+		    	  android:layout_marginTop="10dp"
+	             >
+	             <TextView 
+	                    android:layout_centerInParent="true"
+		                android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				    	android:text="NO.2"
+					    android:textSize="30dp"
+					    android:textColor="#a1c9e2"
+		    	  
+	                 />
+	             <RelativeLayout 
+	                 android:layout_marginRight="5dp"
+	                android:layout_centerInParent="true"
+	                 android:layout_alignParentRight="true"
+	                 android:layout_width="wrap_content"
+		    	     android:layout_height="wrap_content"
+		    	     
+	                 >
+	                 <ImageView 
+	                     android:id="@+id/iv_fans12"
+	                     android:layout_width="20dp"
+		    	    	 android:layout_height="20dp"
+		    	    	 android:src="@drawable/icon_activities"/>
+	                 <TextView
+	                     android:layout_toRightOf="@id/iv_fans12"
+	                     android:layout_marginLeft="5dp"
+	                      android:layout_width="wrap_content"
+		    	    	  android:layout_height="wrap_content"
+		    	    	  android:text="124"
+						    android:textSize="16dp"
+						    android:textColor="#60000000"
+		    	    	 />
+	             </RelativeLayout>
+	             
+	         </RelativeLayout>
+	         <TextView 
+	             android:layout_marginTop="5dp"
+	             android:layout_marginLeft="10dp"
+	            android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="星巴克（上海书城店）"
+			    android:textSize="16dp"
+			    android:textColor="#80000000"
+			    android:layout_marginBottom="10dp"
+	             />
+          </LinearLayout>
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+                
+           <!-- No.3 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff" 
+		    >
+	         <RelativeLayout 
+	              android:layout_width="match_parent"
+		    	  android:layout_height="wrap_content"
+		    	  android:layout_marginTop="10dp"
+	             >
+	             <TextView 
+	                    android:layout_centerInParent="true"
+		                android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="15dp"
+				    	android:text="NO.3"
+					    android:textSize="30dp"
+					    android:textColor="#a1c9e2"
+		    	  
+	                 />
+	             <RelativeLayout 
+	                 android:layout_marginRight="5dp"
+	                android:layout_centerInParent="true"
+	                 android:layout_alignParentRight="true"
+	                 android:layout_width="wrap_content"
+		    	     android:layout_height="wrap_content"
+		    	     
+	                 >
+	                 <ImageView 
+	                     android:id="@+id/iv_fans13"
+	                     android:layout_width="20dp"
+		    	    	 android:layout_height="20dp"
+		    	    	 android:src="@drawable/icon_activities"/>
+	                 <TextView
+	                     android:layout_toRightOf="@id/iv_fans13"
+	                     android:layout_marginLeft="5dp"
+	                      android:layout_width="wrap_content"
+		    	    	  android:layout_height="wrap_content"
+		    	    	  android:text="115"
+						    android:textSize="16dp"
+						    android:textColor="#60000000"
+		    	    	 />
+	             </RelativeLayout>
+	             
+	         </RelativeLayout>
+	         <TextView 
+	             android:layout_marginTop="5dp"
+	             android:layout_marginLeft="10dp"
+	            android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:text="星巴克（来福士一店）"
+			    android:textSize="16dp"
+			    android:textColor="#80000000"
+			    android:layout_marginBottom="10dp"
+	             />
+          </LinearLayout>
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+          
+         <!-- No.4 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" 
+		    android:orientation="horizontal"
+		    android:paddingTop="5dp"
+		    android:paddingBottom="5dp"
+		    >
+	         
+              <RelativeLayout 
+		            android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    
+				    android:background="#ffffff" 
+			        >
+		             <TextView 
+			            android:layout_marginTop="10dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="星巴克（西藏路店）"
+					    android:textSize="16dp"
+					    android:textColor="#80000000"
+					    />
+		            
+	             <RelativeLayout 
+		                 android:layout_marginRight="5dp"
+		                 android:layout_marginBottom="10dp"
+		                 android:layout_marginTop="15dp"
+		                 android:layout_centerInParent="true"
+		                 android:layout_alignParentRight="true"
+		                 android:layout_width="wrap_content"
+			    	     android:layout_height="wrap_content"
+			    	     
+		                 >
+		                 <ImageView 
+		                     
+		                     android:id="@+id/iv_fans14"
+		                     android:layout_width="20dp"
+			    	    	 android:layout_height="20dp"
+			    	    	 android:src="@drawable/icon_activities"/>
+		                 <TextView
+		                     android:layout_centerInParent="true"
+		                     android:layout_toRightOf="@id/iv_fans14"
+		                     android:layout_marginLeft="5dp"
+		                      android:layout_width="wrap_content"
+			    	    	  android:layout_height="wrap_content"
+			    	    	  android:text="108"
+							  android:textSize="16dp"
+							  android:textColor="#60000000"
+			    	    	 />
+		             </RelativeLayout>
+		           </RelativeLayout> 
+          </LinearLayout >
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+           
+                <!-- No.5 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" 
+		    android:orientation="horizontal"
+		    android:paddingTop="5dp"
+		    android:paddingBottom="5dp"
+		    >
+	         
+              <RelativeLayout 
+		            android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    
+				    android:background="#ffffff" 
+			        >
+		             <TextView 
+			            android:layout_marginTop="5dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="星巴克（西藏路店）"
+					    android:textSize="16dp"
+					    android:textColor="#80000000"
+					    />
+		            
+	             <RelativeLayout 
+		                 android:layout_marginRight="10dp"
+		                 android:layout_marginBottom="10dp"
+		                 android:layout_marginTop="15dp"
+		                 android:layout_centerInParent="true"
+		                 android:layout_alignParentRight="true"
+		                 android:layout_width="wrap_content"
+			    	     android:layout_height="wrap_content"
+			    	     
+		                 >
+		                 <ImageView 
+		                     
+		                     android:id="@+id/iv_fans15"
+		                     android:layout_width="20dp"
+			    	    	 android:layout_height="20dp"
+			    	    	 android:src="@drawable/icon_activities"/>
+		                 <TextView
+		                     android:layout_centerInParent="true"
+		                     android:layout_toRightOf="@id/iv_fans15"
+		                     android:layout_marginLeft="5dp"
+		                      android:layout_width="wrap_content"
+			    	    	  android:layout_height="wrap_content"
+			    	    	  android:text="86"
+							  android:textSize="16dp"
+							  android:textColor="#60000000"
+			    	    	 />
+		             </RelativeLayout>
+		           </RelativeLayout> 
+          </LinearLayout >
+           <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:background="#20000000">
+          </LinearLayout>
+          
+            
+         <!-- No.6 -->
+         <LinearLayout 
+            android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:background="#ffffff" 
+		    android:orientation="horizontal"
+		    android:paddingTop="5dp"
+		    android:paddingBottom="5dp"
+		    >
+	         
+              <RelativeLayout 
+		            android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    
+				    android:background="#ffffff" 
+			        >
+		             <TextView 
+			            android:layout_marginTop="5dp"
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="星巴克（西藏路店）"
+					    android:textSize="16dp"
+					    android:textColor="#80000000"
+					    />
+		            
+	             <RelativeLayout 
+		                 android:layout_marginRight="10dp"
+		                 android:layout_marginBottom="10dp"
+		                 android:layout_marginTop="15dp"
+		                 android:layout_centerInParent="true"
+		                 android:layout_alignParentRight="true"
+		                 android:layout_width="wrap_content"
+			    	     android:layout_height="wrap_content"
+			    	     
+		                 >
+		                 <ImageView 
+		                     
+		                     android:id="@+id/iv_fans16"
+		                     android:layout_width="20dp"
+			    	    	 android:layout_height="20dp"
+			    	    	 android:src="@drawable/icon_activities"/>
+		                 <TextView
+		                     android:layout_centerInParent="true"
+		                     android:layout_toRightOf="@id/iv_fans16"
+		                     android:layout_marginLeft="5dp"
+		                      android:layout_width="wrap_content"
+			    	    	  android:layout_height="wrap_content"
+			    	    	  android:text="56"
+							  android:textSize="16dp"
+							  android:textColor="#60000000"
+			    	    	 />
+		             </RelativeLayout>
+		           </RelativeLayout> 
+               </LinearLayout >
+	               <LinearLayout 
+			          android:layout_width="match_parent"
+				      android:layout_height="1dp"
+				      android:background="#20000000">
+	         	  </LinearLayout>
+         	 
+          </LinearLayout><!-- 这里面必须得有个线性布局，为的是将其中的每个条目正常展现出来 -->
+          </FrameLayout><!--这是原本ListView展示的部分 -->
+	     
+         </LinearLayout><!-- 将FrameLayout转化为内部的LinearLayout，及所有控件都在这个LinearLayout中 -->
+      </FrameLayout><!-- 这是包含RadioGroup部分的全部界面 -->
+     
+</LinearLayout>
