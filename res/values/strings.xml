@@ -35,7 +35,7 @@
     <string name="customer_service_phone">客服中心：400&#8211;996&#8211;1555</string>
     <string name="login">登录</string>
     <string name="logout">退出账号</string>
-    <string name="register">申请开通</string>
+    <string name="register">注册</string>
     <string name="forget_pwd">忘记密码</string>
     <string name="input_phonenum">输入手机号</string>
     <string name="password">密码</string>
@@ -94,6 +94,8 @@
     <string name="goon_bidding">继续竞价</string>
     <string name="sure_bidding">确认竞价</string>
 	<string name="QR_Code">扫二维码添加客户</string>
+	<string name="bg1">背景1</string>
+	<string name="bg2">背景2</string>
 	<string name="wan">万</string>
 	<string name="about_icon">关于图片描述</string>
 	<string name="QR_camera_tips">将二维码放入框内，即可自动扫描</string>

@@ -36,7 +36,8 @@ public class AppDownloader {
 	
 	public void addNewDownloadTask(DownloadItem item, IHttpNotify listener) {
 		
-		//CallbackListener: implements IHttpNotify 
+		//CallbackListener  implements IHttpNotify ,so you know ~
+		//Do not remember insert IHttpNotify listener
 		IHttpNotify callback = listener == null ? new CallbackListener(item, true) : listener;
 		
 		if(!mRunningTask.containsKey(item.url)) {
@@ -61,6 +62,8 @@ public class AppDownloader {
 	public Map<String, Integer> getRunningTask() {
 		return mRunningTask;
 	}
+	
+	
 	
 	public void cancelDownloadTask(String url) {
 		String path = FileUtils.getFilePathByUrl(url, AppContext.getDirManager().getDirPath(DirType.DOWNLOAD));

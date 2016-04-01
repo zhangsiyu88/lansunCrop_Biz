@@ -26,7 +26,7 @@ public  class DownloadHttpListener extends CancelHttpListener{
 	
 	
 	//FileOutputStream mFos = null;
-	RandomAccessFile mAccessFile = null;
+	RandomAccessFile mAccessFile = null; //java.io.RandomAccessFile
 	private long mContentLen = -1L;
 	private long mPos = 0L;
 

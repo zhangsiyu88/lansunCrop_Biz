@@ -114,11 +114,8 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 		case R.id.im_releaseacts://发布活动
 			sToast("发布活动");
 			ReleaseActWriteInfoFragment f = new ReleaseActWriteInfoFragment();
-//			AboutFragment f = new AboutFragment();
 			((MainActivity) getActivity()).entrySubFragment(f);
-//			Intent intent1 = new Intent();
-//			intent1.setClass(mActivity, ReleaseActsActivity.class);
-//			mActivity.startActivity(intent1);
+
 			break;
 		case R.id.ll_tomystore://我的门店
 			sToast("我的门店");
@@ -143,9 +140,6 @@ public class HomeFragment extends BaseFragment implements OnClickListener {
 			sToast("扫一扫");
 			CaptureFragment cf = new CaptureFragment();
 			((MainActivity) getActivity()).entrySubFragment(cf);
-//			Intent intent = new Intent();
-//			intent.setClass(mActivity, BarCodeTestActivity.class);
-//			mActivity.startActivity(intent);
 			break;
 		case R.id.bt_sureStore://确认门店
 			sToast("确认门店");

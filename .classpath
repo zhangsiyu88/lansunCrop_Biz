@@ -19,5 +19,6 @@
 	<classpathentry exported="true" kind="lib" path="libs/umeng-analytics-v5.5.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/zxing.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/universal-image-loader-1.9.4.jar"/>
+	<classpathentry kind="lib" path="libs/LoonLibs.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

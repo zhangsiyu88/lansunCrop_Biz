@@ -62,6 +62,9 @@ public class HttpProvider {
     public final static int READ_TIMEOUT = 8000;  
     
 
+    /**
+     * 释放掉HttpClient对象
+     */
 	public static void freeHttpClient(){
     	if (customerHttpClient != null) {
 			customerHttpClient.getConnectionManager().shutdown();
@@ -143,7 +146,7 @@ public class HttpProvider {
 			HttpClient client = getHttpClient();			
 			HttpResponse response = null;
 			try {
-				response = client.execute(request);
+				response = client.execute(request);  //客户端执行请求内容
 			} catch (ClientProtocolException e) {
 				result.mNetworkError = NetworkError.FAIL_UNKNOWN;
 				notifyError(listener, result, e);
@@ -279,7 +282,7 @@ public class HttpProvider {
 
 			ClientConnectionManager conMgr = new ThreadSafeClientConnManager(
 					params, schReg);
-			customerHttpClient = new DefaultHttpClient(conMgr, params);
+			customerHttpClient = new DefaultHttpClient(conMgr, params);//org.apche.http.impl.client
 
 			customerHttpClient.getParams().setParameter(
 					"http.connection.timeout", Integer.valueOf(CONNECT_TIMEOUT));

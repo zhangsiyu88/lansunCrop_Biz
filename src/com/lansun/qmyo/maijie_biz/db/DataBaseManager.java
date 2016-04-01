@@ -13,7 +13,7 @@ import com.lansun.qmyo.maijie_biz.utils.AppContext;
 import com.lansun.qmyo.maijie_biz.utils.FileUtils;
 
 /**
- * 核心数据库管理类,可同时管理多个数据库
+ * 核心数据库管理类,可同时管理多个数据库db对象
  * @author  Yeun.Zhang
  *
  */
@@ -25,6 +25,7 @@ public class DataBaseManager {
 	private static Context mContext;
 	
 	private DataBaseManager(Context context){
+		//原本此处进行默认数据的创建
 		registDatabase(context);
 	}
 	
@@ -33,6 +34,10 @@ public class DataBaseManager {
 		_instance = new DataBaseManager(context);
 	}
 	
+	/**
+	 * 同步锁控制 DataBaseManager
+	 * @return
+	 */
 	public synchronized static DataBaseManager getInstance(){
 		if(_instance == null)
 			_instance = new DataBaseManager(mContext);
@@ -45,9 +50,12 @@ public class DataBaseManager {
 		mSqliteHashMap.clear();
 		
 		//注册默认数据库
-//		mSqliteHashMap.put(DbInfos.DB_NAME, new DefaultSqliteProvider(context));
+		mSqliteHashMap.put(DbInfos.DB_NAME, new DefaultSqliteProvider(context));
 	}
 	
+	/**
+	 * 使用迭代器进行数据库的关闭操作
+	 */
 	public void closeAllDb(){
 		if(mSqliteHashMap == null)
 			return;

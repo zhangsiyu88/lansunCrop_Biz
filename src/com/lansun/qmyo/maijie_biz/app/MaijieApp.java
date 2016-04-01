@@ -69,10 +69,6 @@ public class MaijieApp extends Application {
 	public static Context getAppContext() {
 		return mContext;
 	}
-	// public static App getMyApp(){
-	// return mApp;
-	// }
-
 
 	public Handler getMainThreadHandler() {
 		return mainThreadHandler;
@@ -144,13 +140,11 @@ public class MaijieApp extends Application {
 	}
 
 	public void initImageLoader(Context context) {
-		
-		/*DisplayImageOptions*/
 		DisplayImageOptions options = new DisplayImageOptions
 				.Builder()	
-				.showImageOnLoading(R.drawable.car_default)
-				.showImageForEmptyUri(R.drawable.car_default) //
-				.showImageOnFail(R.drawable.car_default) // resource
+				.showImageOnLoading(R.drawable.ic_launcher)
+				.showImageForEmptyUri(R.drawable.ic_launcher) //
+				.showImageOnFail(R.drawable.ic_launcher) // resource
 				.cacheInMemory(true)
 				.cacheOnDisk(true)
 				.considerExifParams(true)
@@ -159,7 +153,7 @@ public class MaijieApp extends Application {
 				//.displayer(new FadeInBitmapDisplayer(150, true, false, false))
 				.build();
 
-		/*File cacheDir = AppContext.getDirManager().getDir(DirType.CACHE);*/  //篡改
+		/*File cacheDir = AppContext.getDirManager().getDir(DirType.CACHE);*/  //此处篡改
 		File cacheDir = StorageUtils.getOwnCacheDirectory(context,"qmyo/Cachee");
 			if (!cacheDir.exists()) {
 				cacheDir.mkdir();
