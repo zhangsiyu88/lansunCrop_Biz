@@ -66,6 +66,17 @@
         <item name="android:layout_height">60dp</item>
     </style>
 
+    
+    <!-- RelativeLayout布局-->
+    <style name="rl_w_m_h_w">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+         <item name="android:paddingTop">@dimen/l_r_30</item>
+         <item name="android:paddingBottom">@dimen/l_r_30</item>
+        <item name="android:background">@color/bg_color</item>
+    </style>
+
+    
     <!-- 横向比例分布 -->
     <style name="w_weight_h_full">
         <item name="android:layout_height">fill_parent</item>

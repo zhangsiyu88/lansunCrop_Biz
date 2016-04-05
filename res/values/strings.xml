@@ -15,7 +15,7 @@
     <string name="loading">正在努力加载..</string>
     <string name="empty">暂时没有数据</string>
     <string name="fail">数据获取失败，下拉刷新试试哦</string>
-    <string name="hint_search">搜索</string>
+    <string name="hint_search">搜索您的门店</string>
     <string name="tab_inquiry">抢单</string>
     <string name="tab_bid">竞价</string>
     <string name="tab_customer">客户</string>
@@ -31,11 +31,13 @@
     <string name="bid">竞价</string>
     <string name="bid_history">历史竞价</string>
     <string name="login_tip">登录即同意并接受</string>
-    <string name="dada_sell_protocol">《嗒嗒卖车协议》</string>
+    <string name="protocol_name">《商家使用协议》</string>
     <string name="customer_service_phone">客服中心：400&#8211;996&#8211;1555</string>
     <string name="login">登录</string>
     <string name="logout">退出账号</string>
     <string name="register">注册</string>
+    <string name="noid_register">还没有账号，点击注册</string>
+    <string name="haveid_2login">已有账号，重新登录</string>
     <string name="forget_pwd">忘记密码</string>
     <string name="input_phonenum">输入手机号</string>
     <string name="password">密码</string>
@@ -214,7 +216,7 @@
     <string name="setting">设置</string>
     <string name="setting_clear_cache">清空缓存</string>
     <string name="feedback">意见反馈</string>
-    <string name="help_center">帮助中心</string>
+    <string name="help_center">迈界攻略</string>
     <string name="tel">拨打</string>
     <string name="btn_photo_take">照相机</string>
     <string name="btn_photo_select">相册</string>
@@ -247,7 +249,24 @@
     <string name="firstclassify">一级分类</string>
     <string name="secondclassify">二级分类</string>
        
+    
+    
+    <string name="bizcooperation_tip">恭喜你注册成功，请填写以下信息提交商户合作认证</string>
+    <string name="claim_store">认领门店</string>
+    <string name="biz_info">商户信息</string>
+    <string name="biz_user_info">认领人信息</string>
+    <string name="upload_verify_meaterial">上传认证资料</string>
+    <string name="verify_result">审核结果</string>
      
+    <string name="please_claim_store">请认领门店   ></string>
+    <string name="please_biz_info">请输入商户信息   ></string>
+    <string name="please_biz_user_info">请输入认领人信息   ></string>
+    <string name="please_upload_verify_meaterial">请上传认证资料   ></string>
+    <string name="please_verify_result">您还未提交审核   ></string>
+    
+    <string name="submit_2verify">提交审核</string>
+    <string name="go2homepage">进入首页</string>
+    
     
     <string name="qmyo_version">迈界 V1.0.1</string>
     <string name="qmyo_desc">收集世界各地惊喜\n伴随迈友走遍世界</string>

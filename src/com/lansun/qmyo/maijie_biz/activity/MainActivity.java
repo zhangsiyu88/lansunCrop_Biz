@@ -1,7 +1,6 @@
 package com.lansun.qmyo.maijie_biz.activity;
 
 
-
 import java.util.List;
 
 import android.content.Intent;
@@ -39,7 +38,7 @@ public class MainActivity extends FragmentActivity implements OnPageChangeListen
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         
         mPageIndicator = (TabPageIndicator) findViewById(R.id.main_indicator);
@@ -207,6 +206,7 @@ public class MainActivity extends FragmentActivity implements OnPageChangeListen
 				// TODO 需要的话这里可以增加退出对话框
 				// 目前主界面back键直接回到桌面
 				moveTaskToBack(true);
+				
 			}
 			
 			break;

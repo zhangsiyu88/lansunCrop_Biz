@@ -29,7 +29,8 @@ import com.lansun.qmyo.maijie_biz.uisupport.other.UiUtil;
  * @author Yeun.zhang
  *
  */
-@SuppressLint("InflateParams") public abstract class HeaderFragment extends SwipeBackFragment implements OnClickListener {
+@SuppressLint("InflateParams") 
+public abstract class HeaderFragment extends SwipeBackFragment implements OnClickListener {
 
 	private ImageView mBgSkin;
 	private ImageView mMenuIcon = null;

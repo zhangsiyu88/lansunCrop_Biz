@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -29,7 +30,7 @@ import com.lansun.qmyo.maijie_biz.R;
  * 实现了带underline动画效果的tab导航栏，如果tab数超出了屏幕（导航栏自动滑动），�?好使用默认的DefaultTabPageIndicator样式
  * 或�?�使用setTabCursor(int resId,int duration,boolean isStrongSupported),并将isStrongSupported
  * 置为true
- * @author  Yeun.Zhang
+ * @repairer  Yeun.Zhang
  *
  */
 public class TabPageIndicator extends HorizontalScrollView implements PageIndicator {
@@ -96,6 +97,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         mTabLayout = new IcsLinearLayout(context, R.attr.TabPageIndicatorStyle);
         addView(mTabLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
         
+        mTabLayout.setGravity(Gravity.CENTER_VERTICAL);                            //Yadd_04_05
         
         //mTabCursor为下划线
         if (mTabCursor == null) {
@@ -230,9 +232,13 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
          //tabView.setTextColor(getResources().getColorStateList(R.drawable.my_tabtext_selector));
          
          tabView.setText(text);
+         tabView.setTextSize(14);
+//         tabView.setTextColor(0xFF6F6F6F);
          
          if (icon != null) {
-             tabView.setCompoundDrawablesWithIntrinsicBounds(null, icon, null, null);        
+        	   icon.setBounds(0, 0, 50, 50);
+//             tabView.setCompoundDrawablesWithIntrinsicBounds(null, icon, null, null); 
+        	   tabView.setCompoundDrawables(null, icon, null, null); //注意区别上句和下面setBoundDrawables的区别
 //             tabView.setBackground(icon);  //Yadd 
 //             tabView.setBackgroundResource(R.drawable.tab_bg_selector);
          }
@@ -401,8 +407,10 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
                     int drawableHeight = 0;
                     drawableHeight = drawableTop.getIntrinsicHeight();
                     float bodyHeight = textHeight + drawableHeight + drawablePadding;
-//                    canvas.translate((getWidth() - textWidth) / 2,(getHeight() - bodyHeight) / 2);//Yadd
-                    canvas.translate(0,(getHeight() - bodyHeight) / 2);//Yadd
+                    
+                    //不对画布 进行移动的操作
+//                  canvas.translate((getWidth() - textWidth) / 2,(getHeight() - bodyHeight) / 2);  //Yadd
+//                  canvas.translate(0,(getHeight() - bodyHeight) / 2);								//Yadd
                     invalidate();
                 }
             }

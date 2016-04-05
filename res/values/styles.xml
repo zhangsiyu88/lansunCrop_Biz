@@ -38,7 +38,7 @@
         <!-- parent="Widget.TabPageIndicator" -->
         <!-- 导航栏高度 -->
         <item name="android:height">@dimen/tab_panel_height</item>
-        <!-- underline 显示的图片 -->
+        <!-- underline下划线 显示的图片 -->
         <!-- <item name="android:background">@drawable/my_tab_indicator</item> -->
         <!--
         <item name="android:divider">@drawable/tab_divider</item>
@@ -56,7 +56,7 @@
         <item name="android:textColor">@drawable/tab_text_selector</item>
         <item name="android:singleLine">true</item>
         <item name="android:drawablePadding">1dp</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
     
     <style name="NotificationText" parent="android:TextAppearance.StatusBar.EventContent">
@@ -83,7 +83,7 @@
 		<item name="android:scaleType">center</item>        
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
-        <item name="android:src">@drawable/selector_bg_header_back</item>
+        <item name="android:src">@drawable/back</item>
     </style>
     
     <style name="DialogStyle" parent="@android:style/Theme.Dialog">
