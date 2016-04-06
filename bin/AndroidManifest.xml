@@ -34,6 +34,12 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Wallpaper.NoTitleBar" >
         
+         <!--  包名为com.lansun.qmyo.maijie_biz  申请    发布Debug模式下的高德地图的key -->
+	     <meta-data
+	            android:name="com.amap.api.v2.apikey"
+	            android:value="7eb74a638fd6a075725a50ec3f3f0d83" />  
+        
+        
         <activity
             android:name="com.lansun.qmyo.maijie_biz.activity.SplashActivity"
             android:label="@string/app_name" >
@@ -81,6 +87,6 @@
     <meta-data
             android:name="UMENG_APPKEY"
             android:value="55caee7de0f55adead002d2d" />
-   
+    
 
 </manifest>
