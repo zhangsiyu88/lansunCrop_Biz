@@ -31,7 +31,7 @@ public class CustomDialog extends Dialog {
 		private String confirm_btnText; // 按钮名称“确定”
 		private String cancel_btnText; // 按钮名称“取消”
 		private View contentView; // 对话框中间加载的其他布局界面
-		/* 按钮坚挺事件 */
+		/* 按钮监听事件 */
 		private DialogInterface.OnClickListener confirm_btnClickListener;
 		private DialogInterface.OnClickListener cancel_btnClickListener;
 

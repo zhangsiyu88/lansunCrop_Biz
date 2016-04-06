@@ -42,6 +42,68 @@ public class DataFetchManager {
 	  return _instance;
       }
 
+      
+      
+      /**
+       * 获取未被认领的门店的信息
+       * @param city
+       * @param keyword
+       * @param listener
+       */
+      public void fetchUnClaimStoreListInfo(String city,String keyword,final FetchListener listener){
+    	  MaijieBizHttpTask task = MaijieBizRqstApi.getInstance().getUnClaimStoreInfo(city, keyword);
+    	  task.setListener(new TaskSimpleListener() {
+
+    	        @Override
+    	        public void onPreExecute(BaseTask task) {
+    		    listener.onPreFetch();
+    	        }
+
+    	        @Override
+    	        public void onTaskFinished(BaseTask task, TaskResult result) {
+    		    if (result.status == TaskResultStatus.OK) {
+    			try {
+    			      JSONObject jsonObj = (JSONObject) result.result;
+    			      User user = null;
+    			      if (jsonObj.has("d")) {
+    				  JSONObject jsonUser = jsonObj.getJSONObject("d");
+
+    				  user = new User();
+    				  user.parseJsonObj(jsonUser);
+
+    			      }
+
+    			      listener.onPostFetch(FetchListener.STATUS_OK, user);
+
+    			} catch (Exception e) {
+    			      e.printStackTrace();
+    			      listener.onPostFetch(FetchListener.STATUS_PARSER_ERROR, result);
+    			}
+    		    } else {
+    			try {
+    			      JSONObject jsonObj = (JSONObject) result.result;
+    			      JSONObject dataObj = jsonObj.getJSONObject("d");
+    			      String errMsg = dataObj.getString("m");
+    			      int errCode = Integer.parseInt(dataObj.getString("c"));
+    			      listener.onPostFetch(FetchListener.STATUS_NET_ERROR, errMsg, errCode);
+    			} catch (Exception e) {
+    			      e.printStackTrace();
+    			      listener.onPostFetch(FetchListener.STATUS_PARSER_ERROR, result);
+    			}
+    		    }
+    	        }
+    	  });
+
+    	  task.execute();
+          }
+      
+      
+      
+      
+      
+      
+      
+      
       /**
        * 登录
        * 

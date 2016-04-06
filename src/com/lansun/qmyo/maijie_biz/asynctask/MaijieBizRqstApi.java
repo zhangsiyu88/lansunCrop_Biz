@@ -28,7 +28,6 @@ public class MaijieBizRqstApi {
 
 	/**
 	 * 常见的单例模式（带同步锁的单例）
-	 * 
 	 * @return
 	 */
 	public static synchronized MaijieBizRqstApi getInstance() {
@@ -37,6 +36,22 @@ public class MaijieBizRqstApi {
 		}
 		return _instance;
 	}
+	
+	/**
+	 * 获取未被认领的门店的列表信息
+	 * @param city
+	 * @param keyword
+	 * @return
+	 */
+	public MaijieBizHttpTask getUnClaimStoreInfo(String city, String keyword) {
+		TArrayList paramsList = new TArrayList();
+		
+		paramsList.add(new BasicNameValuePair("city", city));
+		paramsList.add(new BasicNameValuePair("keyword", keyword));
+		return new MaijieBizHttpTask(UrlUtil.UnclaimStoreInfo(), paramsList, CommonHttpTask.GET);
+	}
+	
+	
 	
 	
 	/**
@@ -53,6 +68,9 @@ public class MaijieBizRqstApi {
 
 		return new MaijieBizHttpTask(UrlUtil.urlLogin(), paramsList, CommonHttpTask.GET);
 	}
+	
+	
+	
 
 	/**
 	 * 注册获取短信验证码
@@ -155,5 +173,7 @@ public class MaijieBizRqstApi {
 		paramsList.add(new BasicNameValuePair("type", "2"));
 		return new MaijieBizHttpTask(UrlUtil.urlUpdateInfo(), paramsList, CommonHttpTask.GET);
 	}
+
+	
 
 }

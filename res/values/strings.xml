@@ -250,9 +250,12 @@
     <string name="secondclassify">二级分类</string>
        
     
+    <string name="ok_create">确认创建</string>
+    <string name="bind_star">以上带*为必填项</string>
     
     <string name="bizcooperation_tip">恭喜你注册成功，请填写以下信息提交商户合作认证</string>
     <string name="claim_store">认领门店</string>
+    <string name="tip_claim_store">请仔细检查您认领的门店</string>
     <string name="biz_info">商户信息</string>
     <string name="biz_user_info">认领人信息</string>
     <string name="upload_verify_meaterial">上传认证资料</string>
@@ -266,6 +269,21 @@
     
     <string name="submit_2verify">提交审核</string>
     <string name="go2homepage">进入首页</string>
+    <string name="take_and_crate">确认创建并认领门店</string>
+    
+    <string name="store_name">*门店名称</string>
+    <string name="store_address">*门店地址</string>
+    <string name="address_plus">&#160;&#160;地址备注</string>
+    <string name="address_city">*所在城市</string>
+    <string name="address_biz_area">*所在商圈</string>
+    
+    <string name="please_store_name">请输入门店名称</string>
+    <string name="please_store_address">请选择定位地址   ></string>
+    <string name="please_address_plus">可输入相关楼层信息</string>
+    <string name="please_address_city">门店所在城市   ></string>
+    <string name="please_address_biz_area">门店所属商圈   ></string>
+    
+    
     
     
     <string name="qmyo_version">迈界 V1.0.1</string>

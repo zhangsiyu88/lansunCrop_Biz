@@ -26,6 +26,16 @@ public class UrlUtil {
 	public static String urlLogout() {
 		return HOST_URL + Url.URL_LOGOUT;
 	}
+	/**未被认领门店列表*/
+	public static String UnclaimStoreInfo() {
+		return HOST_URL + Url.URL_UNCLAIM_STORELISTINFO;
+	}
+	
+	/** 未被认领门店列表 */
+	public static String urlUnclaimStoreListInfo() {
+		return HOST_URL + Url.URL_LOGOUT;
+	}
+	
 	/** 城市列表 */
 	public static String urlCityList() {
 		return HOST_URL + Url.URL_CITY_LIST;
@@ -174,6 +184,8 @@ public class UrlUtil {
 		private static String URL_LOGIN = "chequan1/consul/login";
 		/** 登出接口 */
 		private static String URL_LOGOUT = "chequan1/consul/loginout";
+		/** 获取未被认领门店列表信息接口 */
+		private static String URL_UNCLAIM_STORELISTINFO = "...";
 		/** 城市列表 */
 		private static String URL_CITY_LIST = "";
 		/** 今日询价列表 */
@@ -359,6 +371,7 @@ public class UrlUtil {
 		}
 		return parts;
 	}
+	
 
 	// private static String toUtf8(String str) {
 	// String temp = null;

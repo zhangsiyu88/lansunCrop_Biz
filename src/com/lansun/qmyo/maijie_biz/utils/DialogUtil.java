@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 import com.lansun.qmyo.maijie_biz.R;
-
+import com.lansun.qmyo.maijie_biz.utils.DialogUtil.TipAlertDialogCallBack;
 
 
 public class DialogUtil {
@@ -83,6 +83,67 @@ public class DialogUtil {
 		void onPositiveButtonClick(DialogInterface dialog, int which);
 
 		void onNegativeButtonClick(DialogInterface dialog, int which);
+	}
+
+	/**
+	 * 门店创建的框架搭建
+	 * @param ctx
+	 * @param content
+	 * @param callBack
+	 */
+	public static void createStoreClaimDialog(Context ctx, String content,
+			final TipAlertDialogCallBack callBack) {
+		CustomDialog.Builder dialog = new CustomDialog.Builder(ctx);
+		dialog.setTitle(R.string.tip_claim_store);
+		dialog.setMessage(content);
+		dialog.setNegativeButton(android.R.string.cancel,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						callBack.onNegativeButtonClick(dialog, which);
+					}
+				});
+		dialog.setPositiveButton(R.string.ok_create,
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						callBack.onPositiveButtonClick(dialog, which);
+					}
+				});
+		dialog.create().show();
+	}
+	
+	
+	
+	/**
+	 * 普通Dialog的搭建
+	 * @param ctx
+	 * @param tip
+	 * @param content
+	 * @param callBack
+	 */
+	public static void createCommonDialog(Context ctx, String tip ,String content,String _ok,String _cancel,
+			final TipAlertDialogCallBack callBack) {
+		CustomDialog.Builder dialog = new CustomDialog.Builder(ctx);
+		dialog.setTitle(tip);
+		dialog.setMessage(content);
+		dialog.setNegativeButton(_cancel,
+				new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						callBack.onNegativeButtonClick(dialog, which);
+					}
+				});
+		dialog.setPositiveButton(_ok,
+				new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						callBack.onPositiveButtonClick(dialog, which);
+					}
+				});
+		dialog.create().show();
 	}
 
 //	public static void createUserLoginDialog(final Context ctx, int contentId) {
