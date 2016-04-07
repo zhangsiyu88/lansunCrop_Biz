@@ -270,6 +270,7 @@
     <string name="submit_2verify">提交审核</string>
     <string name="go2homepage">进入首页</string>
     <string name="take_and_crate">确认创建并认领门店</string>
+    <string name="take_and_save">确认保存</string>
     
     <string name="store_name">*门店名称</string>
     <string name="store_address">*门店地址</string>
@@ -284,6 +285,17 @@
     <string name="please_address_biz_area">门店所属商圈   ></string>
     
     
+    
+    <string name="industry_classification">行业分类:</string>
+    <string name="store_phone1">门店电话:</string>
+    <string name="store_phone2">点击添加电话</string>
+    <string name="business_duration">营业时间:</string>
+    
+    <string name="please_industry_classification">商户所属行业   ></string>
+    <string name="please_store_phone1">请输入门店联系电话</string>
+    <string name="please_store_phone2">点击添加电话</string>
+    <string name="please_business_duration">门店营业时间  ></string>
+  
     
     
     <string name="qmyo_version">迈界 V1.0.1</string>

@@ -21,7 +21,7 @@ public class DefaultSqliteProvider extends SQLiteOpenHelper implements SqlitePro
 	
 	private SQLiteDatabase mDatabase;
 	
-	protected DefaultSqliteProvider(Context context) {
+	public DefaultSqliteProvider(Context context) {
 		super(context, DbInfos.DB_NAME, null, VERSION);    //传null使用默认游标工厂
 		mDatabase = getWritableDatabase();
 	}
@@ -50,6 +50,31 @@ public class DefaultSqliteProvider extends SQLiteOpenHelper implements SqlitePro
 	 */
 	private List<String> getCreateSqlList(){
 		List<String> sqls = new ArrayList<String>();
+
+		
+		//下面是建立具体的创建新门店表格的sql代码
+		StringBuilder sql_store = new StringBuilder();
+		sql_store.append("CREATE TABLE ");
+		sql_store.append(DbInfos.NewStoreTableField.TB_NAME);
+		sql_store.append(" ( ");
+		sql_store.append(DbInfos.NewStoreTableField._ID);
+		sql_store.append(" integer primary key autoincrement, ");
+		sql_store.append(DbInfos.NewStoreTableField.STORE_NAME);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.STORE_ADDRESS);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.STORE_ADDRESS_PLUS);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.CITY);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.BIZ_AREA);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.STORE_EXPAND1);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.STORE_EXPAND2);
+		sql_store.append(" TEXT , ");
+		sql_store.append(DbInfos.NewStoreTableField.STORE_EXPAND3);
+		sql_store.append(" TEXT )");
 		
 		StringBuilder sql_w = new StringBuilder();
 		sql_w.append("CREATE TABLE ");
@@ -85,9 +110,13 @@ public class DefaultSqliteProvider extends SQLiteOpenHelper implements SqlitePro
 		sql_p.append(DbInfos.PhotoTableField.PHOTO_EXPAND3);
 		sql_p.append(" TEXT )");
 		
+		
+		
+		
 
-		sqls.add(sql_w.toString());//
-		sqls.add(sql_p.toString());//photo
+		sqls.add(sql_store.toString());//
+//		sqls.add(sql_w.toString());//
+//		sqls.add(sql_p.toString());//photo
 		return sqls;
 	}
 
