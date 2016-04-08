@@ -43,6 +43,8 @@
         android:id="@+id/give_up"
         android:text="@string/cancle"
         android:background="@null"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
         android:layout_gravity="center_horizontal"
 		style="@style/text_style_nomal_30"
         />

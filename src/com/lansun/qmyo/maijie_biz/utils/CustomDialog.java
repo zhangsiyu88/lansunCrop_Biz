@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lansun.qmyo.maijie_biz.R;
+import com.lansun.qmyo.maijie_biz.fragment.single.ReleaseActWriteInfoFragment;
 
 
 
@@ -196,12 +198,19 @@ public class CustomDialog extends Dialog {
 			} else if (contentView != null) {
 				// if no message set
 				// add the contentView to the dialog body
-				((LinearLayout) layout.findViewById(R.id.message))
-						.removeAllViews();
-				((LinearLayout) layout.findViewById(R.id.message)).addView(
-						contentView, new LayoutParams(
+				LinearLayout ll_message = ((LinearLayout) layout.findViewById(R.id.ll_message));
+				RelativeLayout rl_textview = ((RelativeLayout) layout.findViewById(R.id.rl_textview));
+				rl_textview.setVisibility(View.GONE);
+				ll_message.setVisibility(View.VISIBLE);
+				ll_message.removeAllViews();
+				ll_message.addView(contentView, new LayoutParams(
 								LayoutParams.WRAP_CONTENT,
 								LayoutParams.WRAP_CONTENT));
+				/*((LinearLayout) layout.findViewById(R.id.ll_message)).removeAllViews();
+				((LinearLayout) layout.findViewById(R.id.ll_message)).addView(
+						contentView, new LayoutParams(
+								LayoutParams.WRAP_CONTENT,
+								LayoutParams.WRAP_CONTENT));*/
 			}
 			dialog.setContentView(layout);
 			dialog.setCanceledOnTouchOutside(false);

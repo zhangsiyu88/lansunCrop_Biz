@@ -248,6 +248,12 @@
     <string name="cityconuntrypart">城市/区县/商圈</string>
     <string name="firstclassify">一级分类</string>
     <string name="secondclassify">二级分类</string>
+    
+    
+    
+    <string name="sample">【样例】</string>
+    <string name="see_store_num">上传可以看清门店名称或门牌号的照片</string>
+    <string name="see_idcard_num">上传可以看清身份证号码的照片</string>
        
     
     <string name="ok_create">确认创建</string>

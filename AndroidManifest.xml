@@ -125,6 +125,14 @@
             </intent-filter>
         </activity>
         
+         <activity android:name="com.ns.mutiphotochoser.GalleryActivity" 
+              android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="com.ns.mutiphotochoser.sample.action.CHOSE_PHOTOS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         </activity> 
+        
     </application>
     
     <meta-data
