@@ -22,8 +22,8 @@
     		    <FrameLayout
 		               android:layout_centerInParent="true"
                        android:id="@+id/rl_user_reg_login"
-                       android:layout_width="60dp"
-                       android:layout_height="60dp"
+                       android:layout_width="80dp"
+                       android:layout_height="80dp"
                        android:layout_gravity="center"
                        android:background="@drawable/picture_frame" >
 
