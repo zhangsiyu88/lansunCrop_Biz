@@ -1,21 +1,14 @@
 package com.lansun.qmyo.maijie_biz.activity;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,14 +16,10 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Images.ImageColumns;
-import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,10 +32,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ImageView.ScaleType;
 
 import com.lansun.qmyo.maijie_biz.R;
-import com.lansun.qmyo.maijie_biz.utils.BitmapUtils;
 import com.lansun.qmyo.maijie_biz.utils.ScreenInfo;
 import com.lansun.qmyo.maijie_biz.view.CustomToast;
 import com.ns.mutiphotochoser.GalleryActivity;
@@ -96,8 +83,6 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 		Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
 	}
 	
-	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -112,62 +97,10 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 		mContext = this;
 	}
 	
-
-//	@Override
-//	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//			Bundle savedInstanceState) {
-//		ViewGroup contentView = (ViewGroup) inflater.inflate(R.layout.fragment_upload_verify_material, null);
-//		rootView  = contentView;
-//		initView();
-//		return super.onCreateView(inflater, contentView, savedInstanceState);
-//	}
-	
 	private void initView() {
-		/*iv_take_idcard_photo = (ImageView) rootView.findViewById(R.id.iv_take_idcard_photo);
-		iv_take_store_photo = (ImageView) rootView.findViewById(R.id.iv_take_store_photo);
-		iv_storephoto = (ImageView) rootView.findViewById(R.id.iv_storephoto);
-		iv_manandidcard = (ImageView) rootView.findViewById(R.id.iv_manandidcard);
-		tv_manandid = (TextView) rootView.findViewById(R.id.tv_manandid);
-		tv_manandstore = (TextView) rootView.findViewById(R.id.tv_manandstore);*/
 		iv_take_store_photo.setOnClickListener(this);
 		iv_take_idcard_photo.setOnClickListener(this);
 	}
-
-//	@Override
-//	public void onViewCreated(View view, Bundle savedInstanceState) {
-//		super.onViewCreated(view, savedInstanceState);
-//		
-//		
-//	}
-//
-//	@Override
-//	protected String getTitle() {
-//		return getString(R.string.about_us);
-//	}
-//
-//	@Override
-//	protected int getMenuResId() {
-//		return -1;
-//	}
-//	public void onResume() {
-//	    super.onResume();
-//	    MobclickAgent.onPageStart("");
-//	}
-//	public void onPause() {
-//	    super.onPause();
-//	    MobclickAgent.onPageEnd(""); 
-//	}
-//
-//	@Override
-//	public boolean onKeyDown(int keyCode) {
-//		switch (keyCode) {
-//		case KeyEvent.KEYCODE_BACK:
-//			close();
-//			return true;
-//		default:
-//			return false;
-//		}
-//	}
 	
 	@Override
 	public void onClick(View v) {
@@ -215,8 +148,6 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 		
 		carema.setOnClickListener(new OnClickListener() {
 
-			
-
 			@Override
 			public void onClick(View v) {
 				dialog.dismiss();
@@ -224,45 +155,9 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 
 					String status = Environment.getExternalStorageState();
 					if (status.equals(Environment.MEDIA_MOUNTED)) {
-//						SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-//						Date date = new Date(System.currentTimeMillis());
-//						String filename = format.format(date);
-//						// 创建File对象用于存储拍照的图片 SD卡根目录
-//						// File outputImage = new
-//						// File(Environment.getExternalStorageDirectory(),test.jpg);
-//						// 存储至DCIM文件夹
-//						File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-////						File path = Environment.getExternalStorageDirectory();
-//						File outputImage = new File(path, filename + ".jpg");
-//						try {
-//							if (outputImage.exists()) {
-//								outputImage.delete();
-//							}
-//							outputImage.createNewFile();
-//						} catch (IOException e) {
-//							e.printStackTrace();
-//						}
-//						
-//
-////						if (9 - files.size() < 0) {
-////							CustomToast.show(mContext, R.string.tip,R.string.max_photos);
-////							return;
-////						}
-//						imageUri = Uri.fromFile(outputImage);
-//						Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); // 照相
-//						intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri); // 指定!图片!输出!地址
-//						intent.putExtra("return-data", true);
-						
-						
-						
-						
 						SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 						Date date = new Date(System.currentTimeMillis());
 						String filename = format.format(date);
-						// 创建File对象用于存储拍照的图片 SD卡根目录
-						// File outputImage = new
-						// File(Environment.getExternalStorageDirectory(),test.jpg);
-						// 存储至DCIM文件夹
 						File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
 //						File path = Environment.getExternalStorageDirectory();
 						File outputImage = new File(path, filename + ".jpg");
@@ -271,20 +166,13 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 		                uri = Uri.fromFile(outputImage);  
 		                // 获取拍照后未压缩的原图片，并保存在uri路径中  
 		                intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);   
-//			            intentPhote.putExtra(MediaStore.Images.Media.ORIENTATION, 180);  
-					
+//			            intent.putExtra(MediaStore.Images.Media.ORIENTATION, 180);  
 						if(FLAG_SELECT == IS_IDCARD){
 							startActivityForResult(intent, ACTION_IMAGE_CAPTURE_IDCARD); // 启动照相
 						}else if(FLAG_SELECT == IS_STORE){
 							startActivityForResult(intent, ACTION_IMAGE_CAPTURE_STORE); // 启动照相
 						}
 					}
-//					Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); 
-//					if(FLAG_SELECT == IS_IDCARD){
-//						startActivityForResult(intent, ACTION_IMAGE_CAPTURE_IDCARD); // 启动照相
-//					}else if(FLAG_SELECT == IS_STORE){
-//						startActivityForResult(intent, ACTION_IMAGE_CAPTURE_STORE); // 启动照相
-//					}
 				}
 			}
 		});
@@ -342,82 +230,7 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
     		
     		switch (requestCode) {	             //requestCode 根据请求码分配
 		    case ACTION_IMAGE_CAPTURE_IDCARD:
-//	    	/*String sdStatus = Environment.getExternalStorageState();
-//			if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
-//				Log.i("TestFile","SD card is not avaiable/writeable right now.");
-//				return;
-//			}*/
-//			String photoname_idcard = new DateFormat().format("yyyyMMdd_hhmmss",Calendar.getInstance(Locale.CHINA)) + ".jpg";	
-//			Bundle bundle_idcard = data.getExtras();
-//			Bitmap bitmap_idcard = (Bitmap) bundle_idcard.get("data");// 获取相机返回的数据，并转换为Bitmap图片格式
-//
-////			bp_idcard = convertToBitmap(images.get(0), width-20*DpiScale, 150*DpiScale);
-//			bp_idcard = bitmap_idcard;
-//				height_bp = bitmap_idcard.getHeight();
-//				width_bp = bitmap_idcard.getWidth();
-//			
-//			bp_idcard = Bitmap.createScaledBitmap(bitmap_idcard,width-20*DpiScale,(int)(height_bp*((width-20*DpiScale)/width_bp)),true);
-////			bp_idcard = Bitmap.createScaledBitmap(bp_idcard,width-20*DpiScale,(int)(height_bp/(width_bp/(width-20*DpiScale))),true);
-//			lToast("height_bp*((width-20*DpiScale)/width_bp):  "+ height_bp*((width-20*DpiScale)/width_bp));
-//			lToast("width-20*DpiScale:  "+ (width-20*DpiScale));
-////			lToast("height_bp/(width_bp/(width-20*DpiScale)):  "+ height_bp/(width_bp/(width-20*DpiScale)));
-//			
-//			
-//			FileOutputStream b_idcard = null;
-//			File file_idcard = new File("/sdcard/MJBizImage/");
-//			file_idcard.mkdirs();// 创建文件夹
-//			String fileName_idcard = "/sdcard/MJBizImage/"+photoname_idcard;
-//			try {
-//				b_idcard = new FileOutputStream(fileName_idcard);
-//				bp_idcard.compress(Bitmap.CompressFormat.PNG, 100, b_idcard);// 把数据写入文件
-//			} catch (FileNotFoundException e){
-//				e.printStackTrace();
-//			} finally {
-//				try {
-//					b_idcard.flush();
-//					b_idcard.close();
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//			
-////			if((width_bp/(width-20*DpiScale))==0){
-////				bp_idcard = Bitmap.createScaledBitmap(bp_idcard,width-20*DpiScale,(int)(height_bp*((width-20*DpiScale)/width_bp)),true);
-////			}else{
-////				bp_idcard = Bitmap.createScaledBitmap(bp_idcard,width-20*DpiScale,(int)(height_bp/(width_bp/(width-20*DpiScale))),true);
-////			}
-//			
-//			iv_manandidcard.setImageBitmap(bp_idcard);// 将图片显示在ImageView里
-//    		iv_manandidcard.setVisibility(View.VISIBLE);
-//    		iv_manandidcard.setScaleType(ScaleType.CENTER_CROP);
-//			//将浮在表面的图片和文字设置为gone
-//			tv_manandid.setVisibility(View.GONE);
-//			iv_manandidcard.setOnClickListener(this);
-//			
-//			lp_idcard = (android.widget.RelativeLayout.LayoutParams) iv_take_idcard_photo.getLayoutParams();
-//			lp_idcard.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-//			lp_idcard.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//			lp_idcard.setMargins(0, 0, 10, 10);
-//			iv_take_idcard_photo.setLayoutParams(lp_idcard);
-//
-//			Uri imageUri_idcard = Uri.parse(fileName_idcard);
-//			bp_idcard_path = getRealFilePath(mContext, imageUri_idcard);
-			
-			/*lToast("bp_idcard_path0:  "+getPath(mContext, imageUri_idcard));
-			lToast("bp_idcard_path1:  "+getRealFilePath(mContext, imageUri_idcard));
-			lToast("bp_idcard_path2:  "+bp_idcard_path);
-			lToast("fileName_idcard:  "+fileName_idcard);
-			lToast("imageUri_idcard:  "+imageUri_idcard);*/
-		    	
-		    	
-
-		    
 			bp_idcard = convertToBitmap(getRealFilePath(mContext, uri), width-20*DpiScale, 150*DpiScale);
-//			bp_idcard = Bitmap.createScaledBitmap(bp_idcard, width-20*DpiScale, 150*DpiScale, true);
-//			bp_idcard = convertToBitmap(images.get(0), width-20*DpiScale, 150*DpiScale);
-			
-//			int size = BitmapUtils.getInstance().getBitmapSize(bp_idcard);
-//			System.out.println("所选图片的大小：  "+size);
 			
     		iv_manandidcard.setImageBitmap(bp_idcard);// 将图片显示在ImageView里
     		iv_manandidcard.setOnClickListener(this);
@@ -432,94 +245,21 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 			iv_take_idcard_photo.setLayoutParams(lp_idcard);
 			
 			bp_idcard_path = getRealFilePath(mContext, uri);
-		    
-		    
-		    
-		    	
 			    break;
 			
 		    case ACTION_IMAGE_CAPTURE_STORE:
-//		    	/*String sdStatus = Environment.getExternalStorageState();
-//				if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
-//					Log.i("TestFile","SD card is not avaiable/writeable right now.");
-//					return;
-//				}*/
-//				String photoname_store = new DateFormat().format("yyyyMMdd_hhmmss",Calendar.getInstance(Locale.CHINA)) + ".jpg";	
-//				Bundle bundle_store = data.getExtras();
-//				Bitmap bitmap_store = (Bitmap) bundle_store.get("data");// 获取相机返回的数据，并转换为Bitmap图片格式
-//				
-//
-////				bp_idcard = convertToBitmap(images.get(0), width-20*DpiScale, 150*DpiScale);
-//				bp_store = bitmap_store;
-//				height_bp = bitmap_store.getHeight();
-//				width_bp = bitmap_store.getWidth();
-//				
-//				bp_store = Bitmap.createScaledBitmap(bitmap_store,width-20*DpiScale,(int)(height_bp*((width-20*DpiScale)/width_bp)),true);
-////				bp_idcard = Bitmap.createScaledBitmap(bp_idcard,width-20*DpiScale,(int)(height_bp/(width_bp/(width-20*DpiScale))),true);
-//				lToast("height_bp*((width-20*DpiScale)/width_bp):  "+ height_bp*((width-20*DpiScale)/width_bp));
-//				lToast("width-20*DpiScale:  "+ (width-20*DpiScale));
-////				lToast("height_bp/(width_bp/(width-20*DpiScale)):  "+ height_bp/(width_bp/(width-20*DpiScale)));
-//				
-//				
-//				
-//				
-//				FileOutputStream b_store = null;
-//				File file_store = new File("/sdcard/MJBizImage/");
-//				file_store.mkdirs();// 创建文件夹
-//				String fileName_store = "/sdcard/MJBizImage/"+photoname_store;
-//				try {
-//					b_store = new FileOutputStream(fileName_store);
-//					bp_store.compress(Bitmap.CompressFormat.JPEG, 100, b_store);// 把数据写入文件
-//				} catch (FileNotFoundException e){
-//					e.printStackTrace();
-//				} finally {
-//					try {
-//						b_store.flush();
-//						b_store.close();
-//					} catch (IOException e) {
-//						e.printStackTrace();
-//					}
-//				}
-//				
-//				iv_storephoto.setVisibility(View.VISIBLE);
-//				tv_manandstore.setVisibility(View.GONE);
-//				iv_storephoto.setImageBitmap(bp_store);// 将图片显示在ImageView里
-//	    		
-//	    		iv_storephoto.setOnClickListener(this);
-//				//将浮在表面文字设置为gone
-//
-//				//将门店照片拍照的按钮移至右下角
-//				lp_store = (android.widget.RelativeLayout.LayoutParams) iv_take_store_photo.getLayoutParams();
-//				lp_store.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-//				lp_store.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-//				lp_store.setMargins(0, 0, 10, 10);
-//				iv_take_store_photo.setLayoutParams(lp_store);
-//
-//				Uri imageUri_store = Uri.parse(fileName_store);
-//				bp_store_path= getRealFilePath(mContext, imageUri_store);
-
 				bp_store = convertToBitmap(getRealFilePath(mContext, uri), width-20*DpiScale, 150*DpiScale);
-				
-//				int size1 = BitmapUtils.getInstance().getBitmapSize(bp_store);
-//				System.out.println("所选图片的大小：  "+size1);
-
 	    		iv_storephoto.setImageBitmap(bp_store);// 将图片显示在ImageView里
-	    		
 	    		iv_storephoto.setOnClickListener(this);
-	    		
 				//将浮在表面文字设置为gone
 				tv_manandstore.setVisibility(View.GONE);
-
 				//将门店照片拍照的按钮移至右下角
 				lp_store = (android.widget.RelativeLayout.LayoutParams) iv_take_store_photo.getLayoutParams();
 				lp_store.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
 				lp_store.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 				lp_store.setMargins(0, 0, 10, 10);
 				iv_take_store_photo.setLayoutParams(lp_store);
-		    	
-				
 				bp_store_path = getRealFilePath(mContext, uri);
-		    	
 				break;
 			case ACTION_IMAGE_PICK_IDCARD:
 				lToast("返回到前一页");
@@ -527,39 +267,10 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 					return;
 				}
 				images = data.getStringArrayListExtra(Constant.EXTRA_PHOTO_PATHS);
-				/*for (String path : images) {
-					files.add("file://" + path);
-				}*/
+
 				iv_manandidcard.setVisibility(View.VISIBLE);//-------------------------!!!
 				bp_idcard_path = images.get(0);
-				
-//				bp_idcard = convertToBitmap(images.get(0), width-20*DpiScale, 150*DpiScale);
-//				
-//				String photoname_pick_idcard = new DateFormat().format("yyyyMMdd_hhmmss",Calendar.getInstance(Locale.CHINA)) + ".jpg";	
-//				FileOutputStream b_pick_idcard = null;
-//				File file_pick_idcard = new File("/sdcard/MJBizImage/");
-//				file_pick_idcard.mkdirs();// 创建文件夹
-//				String fileName_pick_idcard = "/sdcard/MJBizImage/"+photoname_pick_idcard;
-//				try {
-//					b_pick_idcard = new FileOutputStream(fileName_pick_idcard);
-//					bp_idcard.compress(Bitmap.CompressFormat.JPEG, 10, b_pick_idcard);// 把数据写入文件
-//				} catch (FileNotFoundException e){
-//					e.printStackTrace();
-//				} finally {
-//					try {
-//						b_pick_idcard.flush();
-//						b_pick_idcard.close();
-//					} catch (IOException e) {
-//						e.printStackTrace();
-//					}
-//				}
 				bp_idcard = convertToBitmap(images.get(0), width-20*DpiScale, 150*DpiScale);
-//				bp_idcard = Bitmap.createScaledBitmap(bp_idcard, width-20*DpiScale, 150*DpiScale, true);
-//				bp_idcard = convertToBitmap(images.get(0), width-20*DpiScale, 150*DpiScale);
-				
-//				int size = BitmapUtils.getInstance().getBitmapSize(bp_idcard);
-//				System.out.println("所选图片的大小：  "+size);
-				
 	    		iv_manandidcard.setImageBitmap(bp_idcard);// 将图片显示在ImageView里
 	    		iv_manandidcard.setOnClickListener(this);
 	    		
@@ -571,14 +282,7 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 				lp_idcard.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 				lp_idcard.setMargins(0, 0, 10, 10);
 				iv_take_idcard_photo.setLayoutParams(lp_idcard);
-				//iv_take_idcard_photo.setVisibility(View.GONE);
 
-//				sp_editor.putString("storePhoto", fileName);
-//				sp_editor.commit();
-				
-				//设置高度
-//				setListViewHeightBasedOnChildren(gv_upload_storephotos);
-//				adapter.notifyDataSetChanged();
 				break;
 				
 			case ACTION_IMAGE_PICK_STORE:
@@ -597,19 +301,10 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 				lToast("densityDpi: "+densityDpi1);
 				int DpiScale1 = densityDpi1/160;
 				bp_store = convertToBitmap(images.get(0), width1-20*DpiScale1, 150*DpiScale1);
-				
-//				int size1 = BitmapUtils.getInstance().getBitmapSize(bp_store);
-//				System.out.println("所选图片的大小：  "+size1);
-				
-
 	    		iv_storephoto.setImageBitmap(bp_store);// 将图片显示在ImageView里
-	    		
-	    		
 	    		iv_storephoto.setOnClickListener(this);
-	    		
 				//将浮在表面文字设置为gone
 				tv_manandstore.setVisibility(View.GONE);
-
 				//将门店照片拍照的按钮移至右下角
 				lp_store = (android.widget.RelativeLayout.LayoutParams) iv_take_store_photo.getLayoutParams();
 				lp_store.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
@@ -617,97 +312,6 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 				lp_store.setMargins(0, 0, 10, 10);
 				iv_take_store_photo.setLayoutParams(lp_store);
 				break;
-				
-//				
-//	    	case ACTION_IMAGE_CAPTURE_SINGLE_IDCARD:
-//    			/*String sdStatus = Environment.getExternalStorageState();
-//	    			if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
-//	    				Log.i("TestFile","SD card is not avaiable/writeable right now.");
-//	    				return;
-//	    			}*/
-//    			String photoname = new DateFormat().format("yyyyMMdd_hhmmss",Calendar.getInstance(Locale.CHINA)) + ".jpg";	
-//    			Bundle bundle = data.getExtras();
-//    			Bitmap bitmap = (Bitmap) bundle.get("data");// 获取相机返回的数据，并转换为Bitmap图片格式
-//    			FileOutputStream b = null;
-//    			File file = new File("/sdcard/myImage/");
-//    			file.mkdirs();// 创建文件夹
-//    			String fileName = "/sdcard/myImage/"+photoname;
-//    			try {
-//    				b = new FileOutputStream(fileName);
-//    				bitmap.compress(Bitmap.CompressFormat.JPEG, 100, b);// 把数据写入文件
-//    			} catch (FileNotFoundException e){
-//    				e.printStackTrace();
-//    			} finally {
-//    				try {
-//    					b.flush();
-//    					b.close();
-//    				} catch (IOException e) {
-//    					e.printStackTrace();
-//    				}
-//    			}
-//				//bitmap_store = bitmap;
-//	    		/*
-//	    		 * 因为在DialogFragment中	iv_manandidcard被 人为的gone掉了，要想再把值放上去，需要将其设置回来为可见属性
-//	    		 * 后面再向里面放值
-//	    		 */
-//	    		iv_manandidcard.setVisibility(View.VISIBLE);//-------------------------!!!
-//	    		iv_manandidcard.setImageBitmap(bitmap);// 将图片显示在ImageView里
-//	    		
-//				//将浮在表面的图片和文字设置为gone
-//				tv_manandid.setVisibility(View.GONE);
-//				iv_take_idcard_photo.setVisibility(View.GONE);
-//				
-//			
-////				sp_editor.putString("storePhoto", fileName);
-////				sp_editor.commit();
-//				
-//    			Uri imageUri1 = Uri.parse(fileName);
-//    			String path = getPath(mContext, imageUri1);
-//				singleIdCardPhotoPath.add("file://"+fileName);
-//			      break;
-//			case ACTION_IMAGE_CAPTURE_SINGLE_STORE:
-//    			String sdStatus1 = Environment.getExternalStorageState();
-//    			if (!sdStatus1.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
-//    				Log.i("TestFile","SD card is not avaiable/writeable right now.");
-//    				return;
-//    			}
-//    			String photoname1 = new DateFormat().format("yyyyMMdd_hhmmss",Calendar.getInstance(Locale.CHINA)) + ".jpg";	
-//    			Bundle bundle1 = data.getExtras();
-//    			Bitmap bitmap1 = (Bitmap) bundle1.get("data");// 获取相机返回的数据，并转换为Bitmap图片格式
-//    			FileOutputStream b1 = null;
-//    		   //为什么不能直接保存在系统相册位置呢
-//    			File file1 = new File("/sdcard/myImage/");
-//    			file1.mkdirs();// 创建文件夹
-//    			String fileName1 = "/sdcard/myImage/"+photoname1;
-//	    			try {
-//	    				b1 = new FileOutputStream(fileName1);
-//	    				bitmap1.compress(Bitmap.CompressFormat.JPEG, 100, b1);// 把数据写入文件
-//	    			} catch (FileNotFoundException e) {
-//	    				e.printStackTrace();
-//	    			} finally {
-//	    				try {
-//	    					b1.flush();
-//	    					b1.close();
-//	    				} catch (IOException e) {
-//	    					e.printStackTrace();
-//	    				}
-//	    			}
-//				iv_storephoto.setVisibility(View.VISIBLE);
-//				iv_storephoto.setImageBitmap(bitmap1);// 将图片显示在ImageView里
-//				iv_storephoto.setOnClickListener(this);
-//				
-//				
-//				tv_manandstore.setVisibility(View.GONE);
-//				iv_take_store_photo.setVisibility(View.GONE);
-//				iv_storephoto.setOnClickListener(this);
-//				
-////    				sp_editor1.putString("idcardPhoto", fileName1);
-////    				sp_editor1.commit();
-//				
-//				Uri imageUri2 = Uri.parse(fileName1);
-//    			String path2 = getPath(mContext, imageUri2);
-//				singleStorePhotoPath.add("file://"+fileName1);
-//				    break;
 		    	default:
 		    		break;
 	    		}	
@@ -799,23 +403,6 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
         	WeakReference<Bitmap> weak = new WeakReference<Bitmap>(BitmapFactory.decodeFile(path, opts));
         	return Bitmap.createScaledBitmap(weak.get(),(int)targetWidth,(int)targetHeight, true);
         }
-       
-//        if((int)(width/scale)<w){//保证生成的图片宽度至少满足屏幕的宽度
-//    	   
-//       }else{
-//    	    targetWidth = (int)(width/scale);
-//       }
-//       System.out.println("width/w的值：   "+width/w);
-//       System.out.println("targetHeight的值：   "+height);
-//       if(width/w==0){//目标预设的宽度还要大于图片本身的宽度，其值为0（0.***）
-//    	   //此时预设高度应为原本的值
-//    	   targetHeight = height ;
-//       }else{
-//    	   targetHeight = (int)(height/(width/w));
-//       }
-//      return Bitmap.createScaledBitmap(weak.get(),w,targetHeight, true);
-//        //下面按照真实的图片大小的尺寸进行等比例缩放
-////    return Bitmap.createScaledBitmap(weak.get(), width, height, true);
     }
 	
 	/**

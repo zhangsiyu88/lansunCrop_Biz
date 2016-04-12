@@ -99,22 +99,7 @@ public class ImageShowActivity extends Activity {
         }
         opts.inJustDecodeBounds = false;
         float scale = Math.max(scaleWidth, scaleHeight);
-//        opts.inSampleSize = (int)scale;
-        
-//        if(scale==0){//长宽都是小于预设的长宽值
-//        	opts.inSampleSize = 1;//情况：原图片的大小比设定目标大小还要小，会出现scale为0，造成报错unknown bitmap configuration
-//        	targetWidth = w;
-//        	targetHeight = height*(w/width);
-//        	WeakReference<Bitmap> weak = new WeakReference<Bitmap>(BitmapFactory.decodeFile(path, opts));
-//        	return Bitmap.createScaledBitmap(weak.get(),targetWidth,targetHeight, true);
-//        }else{
-//        	opts.inSampleSize = (int)scale;
-//        }
-//        
-//        WeakReference<Bitmap> weak = new WeakReference<Bitmap>(BitmapFactory.decodeFile(path, opts));
-////        return Bitmap.createScaledBitmap(weak.get(),(int)(width/scale), (int) (height/scale), true);
-//        //下面按照真实的图片大小的尺寸进行等比例缩放
-//        return Bitmap.createScaledBitmap(weak.get(), width, height, true);
+
         float targetHeight = 0;
         float targetWidth  = 0;
         
