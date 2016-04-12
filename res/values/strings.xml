@@ -105,7 +105,23 @@
 	<string name="no_dealer">请先在Boss端添加经销商信息</string>
 	
 	   <string name="hello">Hello World, JPush!</string>
-   
+	   
+	   
+	   <string name="example_store">上海香格里拉大酒店（浦东店）</string>
+	   <string name="example_blackgold">黑金级</string>
+	   <string name="reward_person_num">打赏总人数：   </string>
+	   <string name="focus_person_num">关注总人数：   </string>
+	   <string name="date">日期 </string>
+	   <string name="reward_counts">打赏数</string>
+	   <string name="reward_conclusion">打赏总数</string>
+	   
+	   <string name="add_focus_counts">增加的关注数</string>
+	   <string name="delete_focus_counts">取消关注数</string>
+	   <string name="all_fans_counts">总粉丝数</string>
+	   
+	   <string name="efficient_fans">有效粉丝</string>
+	   <string name="incharge_sum">兑换金额</string>
+	   <string name="state">状态</string>
     
     <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
     <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
@@ -301,6 +317,23 @@
     <string name="please_store_phone1">请输入门店联系电话</string>
     <string name="please_store_phone2">点击添加电话</string>
     <string name="please_business_duration">门店营业时间  ></string>
+    
+    
+    <string name="chargeman">负责人：   </string>
+    <string name="idcard">身份证号：   </string>
+    <string name="pnone_num">手机号：   </string>
+    <string name="store_degree">门店职位：   </string>
+    
+    <string name="please_chargeman">请输入商户负责人姓名   </string>
+    <string name="please_idcard">请输入负责人的身份证号码   </string>
+    <string name="please_pnone_num">13666666666   </string>
+    <string name="please_store_degree">请输入您的职位   </string>
+    
+    
+    <string name="go2last_page">返回上一页</string>
+    <string name="audit_state_title">您的商户门店审核中</string>
+    <string name="audit_state_content1">您的门店认证已成功提交</string>
+    <string name="audit_state_content2">审核会在3-7工作日内完成</string>
   
     
     

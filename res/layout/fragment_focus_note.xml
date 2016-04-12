@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+      <!-- 公共头部  -->
+    <include 
+        android:id="@+id/header"
+        layout="@layout/header"/>
+    
+    <RelativeLayout
+        android:id="@+id/rl_store_title"
+        android:layout_below="@id/header" 
+        style="@style/w_match_h_wrap"
+        android:padding="5dp"
+        android:background="@color/app_bg"
+        >
+        <TextView 
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_store_name"
+            android:layout_centerVertical="true"
+            style="@style/text_style_big_32"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            android:text="@string/example_store"/>
+         <TextView 
+            android:layout_toRightOf="@id/tv_store_name"
+            style="@style/text_style_big_32"
+            android:text="@string/example_blackgold"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:background="@drawable/btn_bg_normal"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_rewards"
+        android:layout_below="@id/rl_store_title" 
+        style="@style/w_match_h_wrap"
+        android:padding="5dp"
+        android:background="@color/app_bg"
+        >
+        <TextView 
+            android:id="@+id/tv_focus_persons"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/focus_person_num"/>
+         <TextView 
+            android:id="@+id/tv_"
+            style="@style/text_style_big_32"
+            android:layout_toRightOf="@id/tv_focus_persons"
+            android:text="6423"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:padding="5dp"
+           />
+    </RelativeLayout>
+    
+    
+    <!--此处需要一个控件：日历式控件  -->
+    <!--  -->
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_below="@id/rl_rewards" 
+        style="@style/w_match_h_wrap"
+        android:padding="20dp"
+        android:background="@color/app_white"
+        android:orientation="horizontal">
+    </LinearLayout>
+    
+    
+    <LinearLayout
+        android:id="@+id/ll_listtitle"
+        android:layout_below="@id/ll_date" 
+        style="@style/w_match_h_wrap"
+        android:padding="5dp"
+        android:background="@color/app_bg"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        >
+        <TextView 
+            android:id="@+id/tv_date_focus"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/date"/>
+         <TextView 
+            android:id="@+id/tv_add_focus_counts"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/add_focus_counts"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/tv_date"
+            android:padding="5dp"/>
+         <TextView
+             android:id="@+id/tv_delete_focus_counts" 
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/delete_focus_counts"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/tv_date"
+            android:padding="5dp"/>
+          <TextView 
+            android:id="@+id/tv_all_fans_counts"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/all_fans_counts"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"/>
+    </LinearLayout>
+    
+    <com.lansun.qmyo.maijie_biz.uisupport.pullrefresh.PullToRefreshListView
+	        android:id="@+id/lv_focus_note"
+            android:layout_below="@id/ll_listtitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:divider="@null"
+	        android:dividerPadding="0dp">
+	    </com.lansun.qmyo.maijie_biz.uisupport.pullrefresh.PullToRefreshListView>
+    
+
+</RelativeLayout>
+

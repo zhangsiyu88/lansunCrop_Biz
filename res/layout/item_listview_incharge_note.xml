@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+     <LinearLayout
+        android:id="@+id/ll_listtitle"
+        android:layout_below="@id/ll_date" 
+        style="@style/w_match_h_wrap"
+        android:padding="5dp"
+        android:background="@color/app_white"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        >
+         <!-- 日期 -->
+        <TextView 
+            android:id="@+id/tv_date"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/date"/>
+        <!-- 有效粉丝 -->
+         <TextView 
+            android:id="@+id/tv_efficient_fans"
+            android:layout_weight="1"
+            android:text="@string/efficient_fans"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/tv_date"
+            android:padding="5dp"/>
+         <!--兑换金额  -->
+          <TextView 
+            android:id="@+id/tv_incharge_sum"
+            android:layout_weight="1"
+            android:text="@string/incharge_sum"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:gravity="center"
+            />
+          <!--状态  -->
+          <TextView 
+            android:id="@+id/tv_state"
+            android:layout_weight="1"
+            android:text="@string/state"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:gravity="center"/>
+    </LinearLayout>
+    
+    <View
+        android:layout_below="@id/ll_listtitle"
+        android:id="@+id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/text_gray1" />
+
+</RelativeLayout>

@@ -34,6 +34,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lansun.qmyo.maijie_biz.R;
+import com.lansun.qmyo.maijie_biz.eventbus.EventBus;
 import com.lansun.qmyo.maijie_biz.utils.ScreenInfo;
 import com.lansun.qmyo.maijie_biz.view.CustomToast;
 import com.ns.mutiphotochoser.GalleryActivity;
@@ -76,6 +77,8 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 	private ScreenInfo screenInfo;
 	private int height_bp;
 	private int width_bp;
+
+	private Button btn_save_userinfo;
 	public Context getActivity(){
 		return this;
 	}
@@ -93,6 +96,9 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 		iv_manandidcard = (ImageView) findViewById(R.id.iv_manandidcard);
 		tv_manandid = (TextView) findViewById(R.id.tv_manandid);
 		tv_manandstore = (TextView)findViewById(R.id.tv_manandstore);
+		btn_save_userinfo = (Button)findViewById(R.id.btn_save_userinfo);
+		
+		btn_save_userinfo.setOnClickListener(this);
 		initView();
 		mContext = this;
 	}
@@ -100,6 +106,7 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 	private void initView() {
 		iv_take_store_photo.setOnClickListener(this);
 		iv_take_idcard_photo.setOnClickListener(this);
+		
 	}
 	
 	@Override
@@ -116,6 +123,11 @@ public class UploadVerifyMaterialActivity extends Activity implements OnClickLis
 			break;
 		case R.id.iv_storephoto:
 			showPhotoDetailsOnClick(bp_store_path);
+			break;
+		case R.id.btn_save_userinfo:
+			String str = "图片已经存储";
+			EventBus.getDefault().post(str);
+			finish();
 			break;
 		default:
 			break;

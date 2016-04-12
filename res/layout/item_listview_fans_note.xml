@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/ll_listtitle"
+        android:layout_below="@id/ll_date" 
+        style="@style/w_match_h_wrap"
+        android:padding="5dp"
+        android:background="@color/app_white"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+        <TextView 
+            android:id="@+id/tv_date_item"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentLeft="true"
+            android:text="@string/date"/>
+         <TextView 
+            android:id="@+id/tv_rewards_counts_item"
+            android:layout_weight="1"
+            android:text="@string/reward_counts"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/tv_date"
+            android:padding="5dp"/>
+          <TextView
+            android:gravity="center"
+            android:id="@+id/tv_all_rewards_counts_item" 
+            android:layout_weight="1"
+            android:text="@string/reward_conclusion"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            />
+    </LinearLayout>
+    
+    <View
+        android:layout_below="@id/ll_listtitle"
+        android:id="@+id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/text_gray1" />
+
+</RelativeLayout>

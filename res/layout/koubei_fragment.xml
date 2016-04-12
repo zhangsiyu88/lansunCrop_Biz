@@ -8,59 +8,117 @@
     
     <!-- 口碑经营 的tittle  -->
     <RelativeLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="50dp"
-	      android:background="#ffffff"
-	      >
-         <TextView
-	           android:layout_width="wrap_content"
-	           android:layout_height="wrap_content"
-	           android:layout_centerInParent="true"
-	           android:text="口碑经营"
-	           android:textColor="#a1c9e2"
-	           android:textSize="20dp" />
-         
-        </RelativeLayout>
+      android:visibility="gone"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="#ffffff">
+    	 <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="口碑经营"
+          android:textColor="#a1c9e2"
+          android:textSize="20dp" />
+     </RelativeLayout>
+        
+    
+    
          <LinearLayout 
           android:layout_width="match_parent"
 	      android:layout_height="0.5dp"
 	      android:background="#20000000">
       </LinearLayout>                         
     
-    <!-- 粉丝数量 item -->
-   <LinearLayout 
-          android:layout_marginTop="17.5dp"
-          android:layout_width="match_parent"
-	      android:layout_height="1dp"
-	      android:background="#20000000">
-      </LinearLayout>
+         
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@color/app_bg">
+        <TextView 
+            android:id="@+id/store_name"
+            android:layout_marginTop="5dp"
+            style="@style/text_style_small_26"
+            android:textSize="14sp"
+			android:layout_centerHorizontal="true"
+            android:text="上海香格里拉大酒店（浦东店）"/>
+        <TextView
+            android:layout_marginTop="5dp" 
+            android:layout_marginRight="5dp"
+            style="@style/text_style_small_26"
+            android:textSize="12sp"
+            android:id="@+id/go_strategy"
+            android:layout_alignParentRight="true"
+            android:text="攻略"/>
+        
+       <android.support.v4.view.ViewPager
+            android:id="@+id/vp_store"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_centerInParent="true"/> 
+        
+        <ImageView style="@style/w_60_h_60"
+            android:id="@+id/iv_2right"
+            android:src="@drawable/to_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+       
+        <ImageView style="@style/w_60_h_60"
+            android:id="@+id/iv_2left"
+            android:visibility="gone"
+            android:src="@drawable/return_back"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            />
+        
+    </RelativeLayout>     
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+	  <!--打赏记录  -->
       <LinearLayout 
+          android:id="@+id/ll_fans_note"
          style="@style/w_m_h_45"
 	      android:background="#ffffff"
 	      android:orientation="horizontal">
 	        <ImageView
 	            android:layout_marginLeft="15dp"
 	            android:layout_gravity="center_vertical"
-		       style="@style/w_20_h_20"
+		        style="@style/w_20_h_20" 
 		        android:src="@drawable/fans" />
 	       <TextView
 	           android:layout_marginLeft="10dp"
 	           android:layout_gravity="center_vertical"
 	           android:layout_width="wrap_content"
 	           android:layout_height="20dp"
-	           android:text="粉丝数量"
+	           android:text="打赏记录"
 	           android:textColor="@color/text_gray1"
 	           android:textSize="14dp" />
       </LinearLayout>
-      <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="1dp"
-	      android:background="#20000000">
-      </LinearLayout>
       
-     <!-- 投诉管理 item -->
+      <View 
+       android:background="@color/text_nomal"
+       android:layout_height="1px"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"/>
+
+      
+     <!-- 兑换记录 item -->
       <LinearLayout 
-          
+          android:id="@+id/ll_incharge_note"
            style="@style/w_m_h_45"
 	      android:background="#ffffff"
 	      android:orientation="horizontal">
@@ -74,64 +132,40 @@
 	           android:layout_gravity="center_vertical"
 	           android:layout_width="wrap_content"
 	           android:layout_height="20dp"
-	           android:text="投诉管理"
+	           android:text="兑换记录"
 	           android:textColor="@color/text_gray1"
 	           android:textSize="14dp" />
       </LinearLayout>
-      <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="1dp"
-	      android:background="#20000000">
-      </LinearLayout>
-     <!-- 兄弟门店排名 item -->
+      
+      
+      <View 
+	       android:background="@color/text_nomal"
+	       android:layout_height="1px"
+	       android:layout_width="match_parent"
+	       android:layout_marginLeft="15dp"
+	       android:layout_marginRight="15dp"/>
+      
+     <!-- 关注记录 item -->
       <LinearLayout
-          android:id="@+id/ll_brorank" 
-           style="@style/w_m_h_45"
-	      android:background="#ffffff"
-	      android:orientation="horizontal">
-	        <ImageView
-	            android:layout_marginLeft="15dp"
-	            android:layout_gravity="center_vertical"
-		        style="@style/w_20_h_20"
-		        android:src="@drawable/bro_rank" />
-	       <TextView
-	           android:layout_marginLeft="10dp"
-	           android:layout_gravity="center_vertical"
-	           android:layout_width="wrap_content"
-	           android:layout_height="20dp"
-	           android:text="兄弟门店排名"
-	           android:textColor="@color/text_gray1"
-	           android:textSize="14dp" />
-      </LinearLayout>
-      <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="1dp"
-	      android:background="#20000000">
+         android:id="@+id/ll_foucus_note" 
+         style="@style/w_m_h_45"
+         android:background="#ffffff"
+         android:orientation="horizontal">
+       <ImageView
+           android:layout_marginLeft="15dp"
+           android:layout_gravity="center_vertical"
+           style="@style/w_20_h_20"
+           android:src="@drawable/bro_rank" />
+      <TextView
+          android:layout_marginLeft="10dp"
+          android:layout_gravity="center_vertical"
+          android:layout_width="wrap_content"
+          android:layout_height="20dp"
+          android:text="关注记录"
+          android:textColor="@color/text_gray1"
+          android:textSize="14dp" />
       </LinearLayout>
     
-    <!-- 同业排名 item -->
-      <LinearLayout 
-           style="@style/w_m_h_45"
-	      android:background="#ffffff"
-	      android:orientation="horizontal">
-	        <ImageView
-	            android:layout_marginLeft="15dp"
-	            android:layout_gravity="center_vertical"
-		        style="@style/w_20_h_20"
-		        android:src="@drawable/same_range" />
-	       <TextView
-	           android:layout_marginLeft="10dp"
-	           android:layout_gravity="center_vertical"
-	           android:layout_width="wrap_content"
-	           android:layout_height="20dp"
-	           android:text="同业排名"
-	           android:textColor="@color/text_gray1"
-	           android:textSize="14dp" />
-      </LinearLayout>
-        <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
-	      android:background="#20000000">
-      </LinearLayout>
+ 
 
 </LinearLayout>

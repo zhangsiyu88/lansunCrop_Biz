@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/transparent">
+    <ImageView 
+        style="@style/w_wrap_h_wrap"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:src="@drawable/circle_background_gray"
+        android:layout_centerInParent="true"
+        />
+    <ImageView 
+        style="@style/w_wrap_h_wrap"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:src="@drawable/circle_background_blue"
+        android:layout_centerInParent="true"
+        />
+    
+     <TextView 
+        android:layout_centerInParent="true"
+        android:id="@+id/tv_reward_counts"
+        style="@style/text_style_big_90"
+        android:textSize="50sp"
+        android:text="+58"/>
+     <TextView 
+        android:layout_above="@+id/tv_reward_counts"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_reward_title"
+        style="@style/text_style_big_46"
+        android:textStyle="bold"
+        android:text="今日打赏"/>
+     <TextView 
+        android:layout_below="@+id/tv_reward_counts"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_reward_season"
+        style="@style/text_style_big_46"
+        android:text="本季度打赏数"/>
+     <TextView
+         android:layout_marginTop="20dp" 
+        android:layout_below="@+id/tv_reward_season"
+        android:layout_centerInParent="true"
+        android:id="@+id/tv_reward_season_counts"
+        style="@style/text_style_big_46"
+        android:text="+1,580"/>
+
+</RelativeLayout>

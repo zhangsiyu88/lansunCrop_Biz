@@ -154,7 +154,8 @@
              android:textSize="16sp"
              android:gravity="center"
              android:layout_centerVertical="true"/>
-          <TextView 
+          <TextView
+             android:id="@+id/tv_biz_user_info" 
              android:layout_alignParentRight="true"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
@@ -202,6 +203,7 @@
              android:gravity="center"
              android:layout_centerVertical="true"/>
           <TextView 
+             android:id="@+id/tv_upload_verify_meaterial"
              android:layout_alignParentRight="true"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
@@ -251,6 +253,7 @@
              android:gravity="center"
              android:layout_centerVertical="true"/>
           <TextView 
+             android:id="@+id/tv_verify_result"
              android:layout_alignParentRight="true"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
@@ -312,9 +315,9 @@
 	        android:text="@string/go2homepage"
 	        android:textColor="@color/app_white" 
 	        android:focusable="true"/><!-- 让其获取焦点 -->
-     <TextView
+     <Button
 	        android:layout_above="@id/tv_go2homepage"
-	        android:id="@+id/tv_submit_verify"
+	        android:id="@+id/btn_submit_verify"
 	        style="@style/text_style_small_24"
 	        android:layout_width="@dimen/register_item_w"
 	        android:layout_height="@dimen/register_item_h"
