@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res/com.lansun.qmyo"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scrollbars="none"
+       android:background="@color/app_white" > 
+     
+     <ImageView 
+         android:layout_centerVertical="true"
+         android:id="@+id/register_bg"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:src="@drawable/log_in"/>  
+    
+     
+    
+     <TextView
+         android:layout_marginBottom="50dp"
+         android:layout_alignParentBottom="true"
+         
+       
+        android:id="@+id/btn_login"
+        style="@style/text_style_small_24"
+        android:layout_width="@dimen/register_item_w"
+        android:layout_height="@dimen/register_item_h"
+        android:layout_below="@id/fl_register_pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_top_50"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/app_white" 
+        android:focusable="true"/><!-- 让其获取焦点 -->
+     <TextView
+        android:layout_above="@id/btn_login"
+        android:id="@+id/btn_register"
+        style="@style/text_style_small_24"
+        android:layout_width="@dimen/register_item_w"
+        android:layout_height="@dimen/register_item_h"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/app_white" 
+        android:focusable="true"/><!-- 让其获取焦点 -->
+        
+        <FrameLayout 
+           android:id="@+id/entry_frame"
+	       android:layout_width="match_parent"
+	       android:layout_height="match_parent"
+	       android:background="@color/transparent" 
+	       android:visibility="gone"><!--  -->
+            
+            
+        </FrameLayout>
+    
+    
+</RelativeLayout>
+

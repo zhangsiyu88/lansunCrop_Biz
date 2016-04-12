@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout 
+        android:padding="10dp"
+        android:id="@+id/rl_up"
+        style="@style/w_match_h_wrap">
+        <TextView
+            android:layout_centerVertical="true"
+           android:id="@+id/tv_store_name" 
+           style="@style/w_wrap_h_wrap"
+           android:layout_alignParentLeft="true" 
+           android:text="商户名称"/>
+        <TextView 
+            android:layout_centerVertical="true"
+           android:id="@+id/tv_statue"
+           android:layout_alignParentRight="true"
+           style="@style/w_wrap_h_wrap" 
+           android:background="@drawable/btn_bg_normal"
+           android:padding="5dp"
+           android:text="待认领"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_down"
+        android:padding="10dp"
+        android:layout_below="@id/rl_up"
+        style="@style/w_match_h_wrap">
+        <TextView 
+            android:id="@+id/tv_address"
+           style="@style/w_wrap_h_wrap"
+           android:layout_alignParentLeft="true" 
+           android:text="地址信息"/>
+    </RelativeLayout>
+    <View 
+        android:id="@+id/v_line"
+        android:layout_below="@id/rl_down"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="1px"
+        android:background="@color/app_bg"
+        
+        />
+    
+
+</RelativeLayout>

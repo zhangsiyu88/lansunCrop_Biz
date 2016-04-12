@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+    
+    
+    <RelativeLayout 
+      style="@style/rl_w_m_h_w"
+      android:id="@+id/rl_city_search"
+      android:background="@color/bg_color"
+      android:layout_below="@id/header"
+      
+      >
+        <TextView 
+           android:layout_marginLeft="10dp"
+           android:id="@+id/tv_city"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" 
+           android:layout_centerVertical="true"
+           android:text="城市"
+           android:textColor="@color/text_gray1"
+           android:textSize="16sp"
+           android:drawableRight="@drawable/down_arrow"/>
+        
+       <!-- <TextView
+            android:id="@+id/tv_header_left_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="3dp"
+            android:drawableRight="@drawable/down_arrow"
+            android:gravity="center"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="invisible" /> -->
+        
+        
+        
+         <!-- SearchBar -->
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/tv_city"
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="32.0dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/search_bg">
+            <!-- android:visibility="gone"  -->
+           <ImageView
+                android:layout_marginLeft="10dip"
+                android:id="@+id/iv_magnifying_glass"
+                android:layout_width="20.0dip"
+                android:layout_height="20.0dip"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginTop="4.0dip"
+                android:background="@drawable/search" />
+            
+            <EditText
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_magnifying_glass"
+                android:id="@+id/search_bar_et"
+                android:layout_width="fill_parent"
+                android:layout_height="32.0dip"
+                android:background="@null"
+                android:drawablePadding="5.0dip"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_search"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@color/search_input"
+                android:textColorHint="@color/search_hint"
+                android:textSize="13.0sp" /><!-- android:paddingLeft="15.0dip" -->
+        </RelativeLayout> 
+        
+        
+    </RelativeLayout>
+    
+    <com.lansun.qmyo.maijie_biz.uisupport.pullrefresh.PullToRefreshListView 
+        android:layout_below="@id/rl_city_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_claim_store">
+    </com.lansun.qmyo.maijie_biz.uisupport.pullrefresh.PullToRefreshListView>
+    
+    <RelativeLayout 
+       android:id="@+id/rl_create_button"
+       style="@style/w_match_h_wrap"
+       android:layout_height="@dimen/tab_panel_height"
+       android:background="@color/app_bg"
+       android:layout_alignParentBottom="true">
+       
+       <Button
+           android:id="@+id/btn_create_store"
+           android:layout_centerInParent="true"
+           style="@style/w_wrap_h_wrap"
+           android:layout_width="match_parent"
+           android:layout_marginLeft="30dp"
+           android:layout_marginRight="30dp"
+           android:paddingTop="10dp"
+           android:paddingBottom="10dp"
+           android:background="@drawable/btn_bg_normal"
+           android:text="创建新门店"
+           android:textColor="@color/app_white"
+           android:gravity="center"/>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

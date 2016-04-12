@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:padding="10dp"
+    android:background="@color/app_bg">
+    <TextView 
+       android:id="@+id/tv_location"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"  
+       android:singleLine="true"
+       android:text="地址"
+       android:textColor="@color/text_nomal"
+       android:textSize="14sp"
+       android:layout_margin="5dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp" />
+    
+     <View 
+       android:layout_alignParentBottom="true"
+       android:id="@+id/line_1"
+       android:background="@color/text_nomal"
+       android:layout_height="1px"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"/>
+    
+
+</RelativeLayout>

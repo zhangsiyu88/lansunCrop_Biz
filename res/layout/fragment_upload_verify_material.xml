@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg" >
+    
+    
+     <!-- 公共头部  -->
+    <include 
+        android:id="@+id/header"
+        layout="@layout/header"/>
+    
+    
+    <!-- 与身份证的照片  -->
+    <LinearLayout
+         android:layout_below="@id/header" 
+         android:id="@+id/ll_idcard"
+         android:layout_width="match_parent"
+      	 android:layout_height="wrap_content"
+      	 android:paddingBottom="10dp"
+      	 android:background="#ffffff"
+      	 android:orientation="vertical">
+             
+            <RelativeLayout 
+	             android:layout_marginTop="5dp"
+	             android:layout_width="match_parent"
+		      	 android:layout_height="wrap_content"
+		      	 android:background="#ffffff"
+             	>
+	             <TextView 
+	              android:id="@+id/tv_shenfezhneg"
+	              android:layout_marginTop="5dp"
+	              android:layout_marginLeft="10dp"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="认证人手持身份证清晰大头照一张"
+		      	  android:textColor="#99000000"/>
+	             
+	              <TextView 
+	              android:id="@+id/tv_sameple_idcard_man"
+	              android:layout_alignParentRight="true"
+	              android:layout_marginTop="5dp"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="@string/sample"
+		      	  android:textColor="#a1c9e2" />
+	              
+            </RelativeLayout>
+            <RelativeLayout 
+                android:id="@+id/fl_idcardphoto"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp">
+             <ImageView
+                 android:layout_width="match_parent"
+                 android:layout_height="150dp"
+                 android:layout_margin="5dp"
+                 android:layout_gravity="center"
+                 android:background="@drawable/photo_dashedline_rectangle"/>    
+             <ImageView 
+                 android:layout_centerInParent="true"
+                 android:id="@+id/iv_manandidcard"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="5dp"
+                 android:scaleType="centerCrop"
+                 android:layout_gravity="center"/>
+                <ImageView 
+                 android:layout_centerInParent="true"
+                 android:id="@+id/iv_take_idcard_photo"
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:src="@drawable/send_photo"
+                 android:layout_gravity="center"/>
+                <TextView
+                 android:layout_below="@id/iv_take_idcard_photo"
+                 android:layout_centerInParent="true" 
+                 android:layout_marginTop="10dp"
+                 android:id="@+id/tv_manandid"
+                 android:layout_gravity="center" 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@string/see_idcard_num"
+                 android:textSize="16dp"
+                 android:textColor="#60000000"/>
+            </RelativeLayout>
+        </LinearLayout>
+      
+    
+     <View 
+       android:id="@+id/line_splite_3"
+       android:background="@color/text_nomal"
+       android:layout_below="@id/ll_idcard"
+       android:layout_height="1px"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"/>
+    
+    
+    <!-- 与门店的合照 -->
+    <LinearLayout
+	         android:layout_below="@id/line_splite_3"
+	         android:paddingTop="10dp" 
+	         android:layout_width="match_parent"
+	     	 android:layout_height="wrap_content"
+	     	 android:background="#ffffff"
+	     	 android:orientation="vertical">
+	            
+	        <RelativeLayout 
+	             android:layout_marginTop="5dp"
+	             android:layout_width="match_parent"
+		      	 android:layout_height="wrap_content"
+		      	 android:background="#ffffff">
+	             <TextView 
+	              android:layout_centerInParent="true"
+	              android:layout_marginLeft="10dp"
+	              android:layout_alignParentLeft="true"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="认证人与门店合照一张"
+		      	  android:textColor="#99000000"/>
+	              <TextView 
+	              android:id="@+id/tv_sameple_store_man"
+	              android:layout_centerInParent="true"
+	              android:layout_alignParentRight="true"
+	              android:layout_marginTop="5dp"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="@string/sample"
+		      	  android:textColor="#a1c9e2"/>
+             </RelativeLayout>
+             <RelativeLayout 
+                 android:id="@+id/fl_storephoto"
+                 android:layout_width="match_parent"
+                 android:layout_height="160dp"
+                 android:layout_gravity="center"
+                 android:layout_marginTop="5dp"
+                 android:layout_marginBottom="10dp">
+                 <ImageView 
+	                 android:layout_width="match_parent"
+	                 android:layout_height="150dp"
+	                 android:layout_margin="10dp"
+	                 android:layout_gravity="center"
+	                 android:background="@drawable/photo_dashedline_rectangle"/>
+		         <ImageView 
+		             android:layout_centerInParent="true"
+                     android:id="@+id/iv_storephoto"
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_margin="10dp"
+	                 android:scaleType="centerCrop"
+	                 android:layout_gravity="center"/>
+                 <ImageView
+                     android:layout_centerInParent="true" 
+                     android:id="@+id/iv_take_store_photo"
+	                 android:layout_width="30dp"
+	                 android:layout_height="30dp"
+	                 android:src="@drawable/send_photo"
+	                 android:layout_gravity="center"/>
+                 <TextView 
+                     android:layout_below="@id/iv_take_store_photo"
+                     android:layout_centerInParent="true"
+                     android:id="@+id/tv_manandstore"
+                     android:layout_marginTop="10dp"
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_gravity="center" 
+	                 android:text="@string/see_store_num"
+	                 android:textSize="16dp"
+	                 android:textColor="#60000000"/>
+             </RelativeLayout>
+        </LinearLayout>
+         <Button
+            android:id="@+id/btn_save_userinfo"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+	        style="@style/text_style_small_24"
+	        android:layout_width="@dimen/register_item_w"
+	        android:layout_height="@dimen/register_item_h"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="@dimen/margin_top_50"
+	        android:background="@drawable/button"
+	        android:gravity="center"
+	        android:text="@string/take_and_save"
+	        android:textColor="@color/app_white" 
+	        android:focusable="true"/>
+</RelativeLayout>

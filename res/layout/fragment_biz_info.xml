@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"> -->
+         
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/app_bg">
+   
+    <!-- 公共头部  -->
+    <include 
+        android:id="@+id/header"
+        layout="@layout/header"/>
+
+    
+    <RelativeLayout
+       android:background="@color/app_white"
+       android:layout_below="@id/header"
+       android:id="@+id/rl_industry_classification"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" 
+       android:paddingLeft="5dp"
+       android:paddingRight="5dp"
+       android:paddingTop="15dp"
+       android:paddingBottom="15dp">
+
+        <TextView 
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/industry_classification"
+             android:textSize="16sp"
+             android:gravity="center"
+             android:layout_centerVertical="true"/>
+          <TextView 
+             android:id="@+id/tv_select_location_address"
+             android:layout_alignParentRight="true"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/please_industry_classification"
+             android:textSize="12sp"
+             android:textColor="@color/text_nomal"
+             android:gravity="center"
+             android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+    
+    <LinearLayout 
+       android:layout_marginTop="20dp"
+       android:background="@color/app_white"
+       android:id="@+id/ll_store_phone1"
+       android:layout_below="@id/rl_industry_classification"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" 
+       android:paddingLeft="5dp"
+       android:paddingRight="5dp"
+       android:paddingTop="15dp"
+       android:paddingBottom="15dp"
+       android:orientation="vertical">
+        <RelativeLayout
+	       android:background="@color/app_white"
+	       android:id="@+id/rl_store_phone1"
+	       
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content" >
+
+        <TextView 
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/store_phone1"
+             android:textSize="16sp"
+             android:layout_centerVertical="true"/>
+          <EditText 
+              android:id="@+id/et_store_phone1"
+             android:layout_alignParentRight="true"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="@string/please_store_phone1"
+             android:textSize="12sp"
+             android:textColor="@color/text_nomal"
+             android:layout_centerVertical="true"
+             android:background="@null"
+             android:layout_marginRight="5dp" />
+    </RelativeLayout>
+        
+        
+        
+    </LinearLayout>
+    
+    
+    
+   
+    <View 
+       android:id="@+id/line_split2"
+       android:background="@color/text_nomal"
+       android:layout_below="@id/ll_store_phone1"
+       android:layout_height="1px"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"/>
+    
+    <RelativeLayout
+       android:background="@color/app_white"
+       android:id="@+id/rl_store_phone2"
+       android:layout_below="@id/line_split2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" 
+       android:paddingLeft="15dp"
+       android:paddingRight="5dp"
+       android:paddingTop="15dp"
+       android:paddingBottom="15dp">
+          
+        <ImageView 
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_label"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/label"/>
+        <TextView
+            android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+             android:layout_toRightOf="@id/iv_label"
+             android:text="@string/store_phone2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="14sp"
+             android:gravity="center"/>
+        <!-- 
+          <EditText 
+             android:layout_alignParentRight="true"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="@string/please_store_name"
+             android:textSize="12sp"
+             android:textColor="@color/text_nomal"
+             android:layout_centerVertical="true"
+             android:background="@null"
+             android:layout_marginRight="5dp" /> -->
+    </RelativeLayout>
+    
+    <RelativeLayout
+       android:layout_marginTop="20dp"
+       android:background="@color/app_white"
+       android:layout_below="@id/rl_store_phone2"
+       android:id="@+id/rl_business_duration"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" 
+       android:paddingLeft="5dp"
+       android:paddingRight="5dp"
+       android:paddingTop="15dp"
+       android:paddingBottom="15dp">
+        <TextView 
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/business_duration"
+             android:textSize="16sp"
+             android:gravity="center"
+             android:layout_centerVertical="true"/>
+          <TextView 
+              android:id="@+id/tv_business_duration"
+             android:layout_alignParentRight="true"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/please_business_duration"
+             android:textSize="12sp"
+             android:textColor="@color/text_nomal"
+             android:gravity="center"
+             android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    
+    <Button
+            android:id="@+id/btn_save_userinfo"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+	        style="@style/text_style_small_24"
+	        android:layout_width="@dimen/register_item_w"
+	        android:layout_height="@dimen/register_item_h"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="@dimen/margin_top_50"
+	        android:background="@drawable/button"
+	        android:gravity="center"
+	        android:text="@string/take_and_save"
+	        android:textColor="@color/app_white" 
+	        android:focusable="true"/>
+</RelativeLayout>
+<!-- </ScrollView> -->
