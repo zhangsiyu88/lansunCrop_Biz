@@ -3,6 +3,8 @@
     android:id="@+id/timePicker1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/app_white"
+    android:padding="10dp"
     android:orientation="horizontal" >
      <com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.WheelView
          android:id="@+id/year"

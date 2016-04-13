@@ -129,10 +129,6 @@ public class BizCooperationActivity extends BaseFragmentActivity implements OnCl
 					dialog.dismiss();
 				}
 			});
-			
-			
-			
-			
 			break;
 		}
 	}

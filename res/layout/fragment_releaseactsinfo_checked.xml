@@ -100,26 +100,115 @@
          
 
          <!--活动标题  -->
+
+        <RelativeLayout
+            style="@style/w_m_h_45"
+            android:background="#ffffff" >
+
+            <TextView
+                android:id="@+id/tv_actsdegree_infochecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="活动级别:"
+                android:textColor="@color/text_gray1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/tv_actsdegree_infochecked"
+                android:text="黑金级"
+                android:textColor="@color/text_gray1" />
+        </RelativeLayout>
+
+        <View 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</View>
+      
+        <RelativeLayout
+            style="@style/w_m_h_45"
+            android:background="#ffffff" >
+
+            <TextView
+                android:id="@+id/tv_actsclassify_infochecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="活动分类:"
+                android:textColor="#99000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_actsclassify_infochecked"
+                android:text="餐饮美食/咖啡"
+                android:textColor="@color/text_gray1" />
+        </RelativeLayout>
+        
+         
+        <View 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</View>
+        
+
+        <RelativeLayout
+            style="@style/w_m_h_45"
+            android:background="#ffffff" >
+
+            <TextView
+                android:id="@+id/tv_actstag_infochecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="活动标签:"
+                android:textColor="#99000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/tv_actstag_infochecked"
+                android:text="普通"
+                android:textColor="@color/text_gray1" />
+        </RelativeLayout>
+          
+        <View 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</View>
+
          <TextView 
              android:layout_marginTop="10dp"
              android:layout_marginLeft="10dp"
              android:layout_marginBottom="5dp"
              android:layout_width="wrap_content"
 	      	 android:layout_height="wrap_content"
-	      	 android:text="活动的基本信息"
+	      	 android:text="活动信息"
 	      	 android:textColor="#50000000"
 	      	 android:textSize="12dp"
              />
          
          <!-- 整个优惠券的Item -->
          <LinearLayout 
+            android:visibility="gone"
             android:id="@+id/ll_usecoupons"
             style="@style/w_match_h_wrap"
             android:orientation="vertical"
-            android:background="#ffffff"
-            
-            
-            >
+            android:background="#ffffff">
             
 	        <TextView 
 	            android:layout_width="wrap_content"
@@ -128,8 +217,7 @@
 	            android:textSize="12dp"
 	            android:layout_marginLeft="10dp"
 	            android:layout_marginTop="10dp"
-	            android:textColor="@color/text_gray2"
-	            />
+	            android:textColor="@color/text_gray2"/>
 	        
 		      <LinearLayout 
 		          
@@ -217,11 +305,12 @@
 		            </LinearLayout>
 		      </LinearLayout>
         </LinearLayout>
-        <LinearLayout 
+        
+        <View 
           android:layout_width="match_parent"
 	      android:layout_height="0.5dp"
 	      android:background="#20000000">
-     	</LinearLayout>
+     	</View>
          
          
          
@@ -258,165 +347,131 @@
      
         
 
-        <LinearLayout 
+        <View 
           android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
+	      android:layout_height="1px"
 	      android:background="#20000000">
-     	</LinearLayout>
-         
-        
-         
-        <RelativeLayout 
-             
-             style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-	      	 android:layout_gravity="center_vertical"
-             >
-            
-            
-            <TextView 
-              android:layout_marginLeft="10dp"
-              android:layout_centerVertical="true"
-              android:id="@+id/tv_actsdegree_infochecked"
-              android:layout_width="wrap_content"
-	      	  android:layout_height="wrap_content"
-	      	  android:text="活动级别:"
-	      	  android:textColor="@color/text_gray1"
-              />
-            
-            
-              
-              <TextView 
-                  android:layout_marginLeft="5dp"
-                  android:layout_toRightOf="@id/tv_actsdegree_infochecked"
-	              android:layout_marginRight="5dp"
-	              android:layout_centerVertical="true"
-	              
-	              android:layout_width="wrap_content"
-		      	  android:layout_height="wrap_content"
-		      	  android:text="黑金级"
-		      	  android:textColor="@color/text_gray1"
-              />
-              
-             
-              
-             
-              <!-- 光标是否闪烁! 
-               android:cursorVisible="false" -->
-        </RelativeLayout>
-        
-        <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
-	      android:background="#20000000">
-     	</LinearLayout>
+     	</View>
+       
      	
         
-     	<RelativeLayout 
-             style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-	      	 
-             >
-              <TextView 
-              android:layout_marginLeft="10dp"
-              android:layout_centerVertical="true"
-              android:id="@+id/tv_actsclassify_infochecked"
-              android:layout_width="wrap_content"
-	      	  android:layout_height="wrap_content"
-	      	  android:text="活动分类:"
-	      	  android:textColor="#99000000"
-              />
-             
-              
+        
+      <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</LinearLayout>
+        
+     	
+        
+        <LinearLayout 
+          android:layout_width="match_parent"
+	      android:layout_height="wrap_content"
+	      android:background="#ffffff"
+	      android:orientation="vertical">
              <TextView 
-              android:layout_marginLeft="5dp"
-              android:layout_centerVertical="true"
-              android:layout_toRightOf="@id/tv_actsclassify_infochecked"
-              android:layout_width="wrap_content"
-	      	  android:layout_height="wrap_content"
-	      	  android:text="餐饮美食/咖啡"
-	      	  android:textColor="@color/text_gray1"
-              />
-              
-              
-              
-              
-              
-              
-        </RelativeLayout>
-        <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
-	      android:background="#20000000">
-     	</LinearLayout>
-     	
-     	<RelativeLayout 
-             style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-	      	 
-             >
-              <TextView 
-              android:layout_centerVertical="true"
-              android:id="@+id/tv_actstag_infochecked"
-              android:layout_width="wrap_content"
-	      	  android:layout_height="wrap_content"
-	      	  android:text="活动标签:"
-	      	  android:textColor="#99000000"
-	      	  android:layout_marginLeft="10dp"
-              />
-
-               <TextView 
-              android:layout_marginLeft="5dp"
-              android:layout_centerVertical="true"
-              android:layout_toRightOf="@id/tv_actstag_infochecked"
-              android:layout_width="wrap_content"
-	      	  android:layout_height="wrap_content"
-	      	  android:text="普通"
-	      	  android:textColor="@color/text_gray1"
-              />
+                 android:layout_marginTop="15dp"
+                 android:layout_marginBottom="10dp"
+               
+                  android:layout_marginLeft="10dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="活动详情描述"
+                  android:textColor="@color/text_gray2"
+                  android:textSize="12dp"
+                  /> 
+                  <TextView 
+                
+                 android:layout_marginBottom="10dp"
+                  
+                  android:layout_marginLeft="10dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="1.第二条说的是假话\n2.第一条说的是假话"
+                  android:textColor="@color/text_gray1"
+                  android:textSize="14dp"
+                  /> 
              
-              
-        </RelativeLayout>
+     	</LinearLayout>
+     	
         
-        <LinearLayout 
+        <View 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</View>
+        
+        
+         
+        <!--活动照片 -->
+         <TextView 
+             android:layout_marginTop="5dp"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+	      	 android:layout_height="wrap_content"
+	      	 android:text="活动图片"
+	      	 android:textColor="#50000000"
+	      	 android:textSize="12dp"
+             />
+         
+         <LinearLayout 
+          android:layout_marginTop="5dp"
           android:layout_width="match_parent"
 	      android:layout_height="0.5dp"
 	      android:background="#20000000">
      	</LinearLayout>
      	
-        <RelativeLayout 
-             style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-           >
-              <TextView 
-                  android:id="@+id/tv_actsvalidtime_checked"
-	              android:layout_centerVertical="true"
-	              android:layout_width="wrap_content"
-		      	  android:layout_height="wrap_content"
-		      	  android:text="活动时效："
-		      	  android:textColor="#99000000"
-		      	  android:layout_marginLeft="10dp"
-              />
-              
-               <TextView 
+          <LinearLayout 
+	          android:layout_width="match_parent"
+		      android:layout_height="wrap_content"
+		      android:background="@color/white"
+		      android:orientation="vertical">
+	         <GridView
+	             android:layout_margin="5dp"
+	             android:id="@+id/photoGridView"
+	             android:layout_width="match_parent"
+	             android:layout_height="125dp"
+	             android:columnWidth="90dp"
+	             android:gravity="center_horizontal"
+	             android:numColumns="auto_fit"
+	             android:stretchMode="columnWidth"
+	             android:verticalSpacing="5dp" 
+	             android:horizontalSpacing="5dp">
+				</GridView>
+	       </LinearLayout>
+     
+        <View 
+          android:layout_width="match_parent"
+	      android:layout_height="1px"
+	      android:background="#20000000">
+     	</View>
+     	
+	    <RelativeLayout 
+	         style="@style/w_m_h_45"
+	      	 android:background="#ffffff">
+          <TextView 
+              android:id="@+id/tv_actsvalidtime_checked"
+              android:layout_centerVertical="true"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动时效："
+	      	  android:textColor="#99000000"
+	      	  android:layout_marginLeft="10dp"/>
+           <TextView 
               android:layout_marginLeft="5dp"
               android:layout_centerVertical="true"
               android:layout_toRightOf="@id/tv_actsvalidtime_checked"
               android:layout_width="wrap_content"
 	      	  android:layout_height="wrap_content"
 	      	  android:text="30天"
-	      	  android:textColor="@color/text_gray1"
-              />
-
-             
-              
-        </RelativeLayout>
-        <LinearLayout 
+	      	  android:textColor="@color/text_gray1"/>
+          </RelativeLayout>
+          
+        <View 
           android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
+	      android:layout_height="1px"
 	      android:background="#20000000">
-     	</LinearLayout>
-        
+     	</View>
         
         <!-- 活动开始时间 -->
         <RelativeLayout 
@@ -456,9 +511,7 @@
           <!-- 活动结束时间 -->
         <RelativeLayout 
              style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-	      	 
-             >
+	      	 android:background="#ffffff">
               <TextView 
               android:layout_marginLeft="10dp"
               android:layout_centerVertical="true"
@@ -476,119 +529,27 @@
               android:layout_width="wrap_content"
 	      	  android:layout_height="wrap_content"
 	      	  android:text="2015年7月5日 19：00"
-	      	  android:textColor="@color/text_gray1"
-              />
-              
-        </RelativeLayout>
-        
-      <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
-	      android:background="#20000000">
-     	</LinearLayout>
-        
-     	
-        
-        <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="wrap_content"
-	      android:background="#ffffff"
-	      android:orientation="vertical">
-             <TextView 
-                 android:layout_marginTop="15dp"
-                 android:layout_marginBottom="10dp"
-               
-                  android:layout_marginLeft="10dp"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="活动详情描述"
-                  android:textColor="@color/text_gray2"
-                  android:textSize="12dp"
-                  /> 
-                  <TextView 
-                
-                 android:layout_marginBottom="10dp"
-                  
-                  android:layout_marginLeft="10dp"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="活动时间内到店刷卡即可享受此优惠"
-                  android:textColor="@color/text_gray1"
-                  android:textSize="14dp"
-                  /> 
-             
-     	</LinearLayout>
-     	
-        
-        <LinearLayout 
-          android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
-	      android:background="#20000000">
-     	</LinearLayout>
-        
-        
+	      	  android:textColor="@color/text_gray1"/>
+        </RelativeLayout>    
          
-        <!--活动照片 -->
-         <TextView 
-             android:layout_marginTop="5dp"
-             android:layout_marginLeft="10dp"
-             android:layout_width="wrap_content"
-	      	 android:layout_height="wrap_content"
-	      	 android:text="活动图片"
-	      	 android:textColor="#50000000"
-	      	 android:textSize="12dp"
-             />
          
-         <LinearLayout 
-          android:layout_marginTop="5dp"
+    	<View 
           android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
+	      android:layout_height="1px"
 	      android:background="#20000000">
-     	</LinearLayout>
+     	</View>
      	
-         <LinearLayout 
-          
-          android:layout_width="match_parent"
-	      android:layout_height="wrap_content"
-	      android:background="@color/white"
-	      android:orientation="vertical">
-	         <GridView
-	             android:layout_margin="5dp"
-	             android:id="@+id/photoGridView"
-	             android:layout_width="match_parent"
-	             android:layout_height="125dp"
-	             android:columnWidth="90dp"
-	             android:gravity="center_horizontal"
-	             android:numColumns="auto_fit"
-	             android:stretchMode="columnWidth"
-	             android:verticalSpacing="5dp" 
-	             android:horizontalSpacing="5dp">
-			</GridView>
-     </LinearLayout>
-     
-         
-    	<LinearLayout 
-    	  android:layout_marginTop="10dp"
-          android:layout_width="match_parent"
-	      android:layout_height="0.5dp"
-	      android:background="#20000000">
-     	</LinearLayout>
-     	
-    	
-    	<RelativeLayout 
+     	<RelativeLayout 
              style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-	      	
-           >
-              <TextView 
-                 
-	              android:layout_centerVertical="true"
-	              android:layout_width="wrap_content"
-		      	  android:layout_height="wrap_content"
-		      	  android:text="活动发布费用"
-		      	  android:textColor="#99000000"
-		      	  android:layout_marginLeft="10dp"
-              />
+	      	 android:background="#ffffff">
+	  
+         <TextView 
+              android:layout_centerVertical="true"
+              android:layout_width="wrap_content"
+	      	  android:layout_height="wrap_content"
+	      	  android:text="活动发布费用"
+	      	  android:textColor="#99000000"
+	      	  android:layout_marginLeft="10dp"/>
               
            <TextView 
               android:layout_alignParentRight="true"
@@ -598,16 +559,14 @@
               android:layout_width="wrap_content"
 	      	  android:layout_height="wrap_content"
 	      	  android:text="￥200.00"
-	      	  android:textColor="@color/text_gray1"
-              />
-              
-        </RelativeLayout>
-        
-    	<LinearLayout 
+	      	  android:textColor="@color/text_gray1"/>
+        </RelativeLayout> 
+    	
+    	<View 
           android:layout_width="match_parent"
 	      android:layout_height="0.5dp"
 	      android:background="#20000000">
-     	</LinearLayout>
+     	</View>
     	  
     	  <Button 
     	      android:id="@+id/bt_nextstep"

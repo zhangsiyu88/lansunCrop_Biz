@@ -428,8 +428,7 @@ public class WheelView extends View {
 		}
 
 		if (centerDrawable == null) {
-			centerDrawable = getContext().getResources().getDrawable(
-					R.drawable.wheel_val);
+			centerDrawable = getContext().getResources().getDrawable(R.drawable.wheel_val);
 		}
 
 		if (topShadow == null) {
@@ -799,10 +798,20 @@ public class WheelView extends View {
 	private void drawCenterRect(Canvas canvas) {
 		int center = getHeight() / 2;
 		int offset = getItemHeight() / 2;
-		centerDrawable.setBounds(0, center - offset, getWidth(), center
-				+ offset);
-		centerDrawable.draw(canvas);
+		/*centerDrawable.setBounds(0, center - offset, getWidth(), center+ offset);
+		centerDrawable.draw(canvas);*/
+		
+		//成功的将上面的方框变为上下线条
+		Paint paint = new Paint();
+		paint.setARGB(255, 199, 199, 199);
+		paint.setStrokeWidth((float) 3);
+		canvas.drawLine(0, center - offset, getWidth(), center - offset, paint);
+		canvas.drawLine(0, center + offset, getWidth(), center + offset, paint);
 	}
+	
+
+	
+	
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {

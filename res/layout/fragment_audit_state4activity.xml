@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    
+    
+        
+    <TextView
+         android:id="@+id/tv_audit_state_title"
+        android:layout_marginTop="10dp"
+         android:layout_centerInParent="true"
+         style="@style/w_wrap_h_wrap"
+         android:textSize="20sp"
+         android:text="@string/audit_state_title_activity"/>
+    
+    <TextView
+        android:layout_centerInParent="true"
+         android:layout_below="@id/tv_audit_state_title"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="10dp"
+         android:id="@+id/tv_audit_state_content1"
+         style="@style/w_wrap_h_wrap"
+         android:text="@string/audit_state_content1_activity"/>
+     <TextView
+         android:layout_marginTop="5dp"
+         android:layout_centerHorizontal="true"
+         android:layout_below="@id/tv_audit_state_content1"
+         android:id="@+id/tv_audit_state_content2"
+         style="@style/w_wrap_h_wrap"
+         android:text="@string/audit_state_content2_activity"/>
+ 
+    <ImageView
+        android:layout_above="@id/tv_audit_state_title"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/iv_audit_state_logo" 
+        android:src="@drawable/sys_msg"
+        style="@style/w_wrap_h_wrap"/> 
+     
+     
+     <Button 
+        android:id="@+id/btn_goback2homepage"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        style="@style/text_style_small_24"
+        android:layout_width="@dimen/register_item_w"
+        android:layout_height="@dimen/register_item_h"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="@string/goback2homepage"
+        android:textColor="@color/app_white" 
+        android:focusable="true"
+         />
+</RelativeLayout>

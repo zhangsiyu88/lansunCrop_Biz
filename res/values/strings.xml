@@ -291,6 +291,7 @@
     
     <string name="submit_2verify">提交审核</string>
     <string name="go2homepage">进入首页</string>
+    <string name="goback2homepage">返回首页</string>
     <string name="take_and_crate">确认创建并认领门店</string>
     <string name="take_and_save">确认保存</string>
     
@@ -334,6 +335,12 @@
     <string name="audit_state_title">您的商户门店审核中</string>
     <string name="audit_state_content1">您的门店认证已成功提交</string>
     <string name="audit_state_content2">审核会在3-7工作日内完成</string>
+    
+    <string name="audit_state_title_activity">已进入审核阶段耐心等待</string>
+    <string name="audit_state_content1_activity">审核会在3工作日内完成</string>
+    <string name="audit_state_content2_activity">你可以在我的活动中查询</string>
+    
+    
   
     
     

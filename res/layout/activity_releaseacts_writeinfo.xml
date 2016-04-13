@@ -14,6 +14,7 @@
     
      <!-- 意见核问题反馈  的tittle -->
     <RelativeLayout
+        
           android:layout_width="match_parent"
 	      android:layout_height="50dp"
 	      android:background="#ffffff">
@@ -307,40 +308,49 @@
      	
      	<RelativeLayout 
              style="@style/w_m_h_45"
-	      	 android:background="#ffffff"
-	      	 
-             >
+	      	 android:background="#ffffff">
               <TextView 
-              android:layout_centerVertical="true"
-              android:id="@+id/tv_actstag"
-              android:layout_width="wrap_content"
-	      	  android:layout_height="wrap_content"
-	      	  android:text="活动标签"
-	      	  android:textColor="#99000000"
-	      	  android:layout_marginLeft="10dp"
+	              android:id="@+id/tv_actstag"
+	              android:layout_centerVertical="true"
+	              android:layout_width="wrap_content"
+		      	  android:layout_height="wrap_content"
+		      	  android:text="活动标签"
+		      	  android:textColor="#99000000"
+		      	  android:layout_marginLeft="10dp"
               />
 
-              <RadioGroup 
+              <RadioGroup
+                  android:layout_marginLeft="10dp"
+                  android:layout_toRightOf="@id/tv_actstag"
+                  style="@style/w_wrap_h_wrap"
                   android:id="@+id/rg_isNew"
                   android:layout_centerVertical="true"
                   android:layout_marginRight="20dp"
-                  style="@style/w_wrap_h_wrap"
                   android:orientation="horizontal"
-                  android:layout_alignParentRight="true"
-                 
-                  >
+                  android:layout_alignParentRight="true">
 	              <RadioButton
+	                  android:layout_weight="1"
+	                  android:padding="5dp"
 	                  android:id="@+id/rb_isNew_1"
 	                  style="@style/w_wrap_h_wrap"
 	                  android:checked="true"
+	                  android:button="@null"
+	                  android:background="@drawable/selector_radio_button"
 	                  android:text="普通"
+	                  android:gravity="center_horizontal"
 	                  android:textColor="@color/text_gray1" />
 	              
 	              <RadioButton
+	                  android:gravity="center_horizontal"
+	                  android:layout_weight="1"
+	                  android:padding="5dp"
 	                  android:id="@+id/rb_isNew_2"
+	                  android:checked="false"
 	                  style="@style/w_wrap_h_wrap"
+	                  android:button="@null"
 	                  android:layout_centerVertical="true"
 	                  android:text="新品"
+	                  android:background="@drawable/selector_radio_button"
 	                  android:textColor="@color/text_gray1" />
               
               </RadioGroup>
@@ -358,7 +368,8 @@
              style="@style/w_m_h_45"
 	      	 android:background="#ffffff"
            >
-              <TextView 
+              <TextView
+                  android:id="@+id/tv_acts_duration" 
 	              android:layout_centerVertical="true"
 	              android:layout_width="wrap_content"
 		      	  android:layout_height="wrap_content"
@@ -367,36 +378,53 @@
 		      	  android:layout_marginLeft="10dp"
               />
 
-              <RadioGroup 
+              <RadioGroup
+                  android:layout_toRightOf="@id/tv_acts_duration" 
+                  android:layout_marginLeft="10dp"
                   android:id="@+id/rg_days"
                   android:layout_centerVertical="true"
                   android:layout_marginRight="18dp"
                   style="@style/w_wrap_h_wrap"
+                  android:layout_width="match_parent"
                   android:orientation="horizontal"
-                  android:layout_alignParentRight="true">
+                  android:layout_alignParentRight="true"> 
+                
 	              
 	              <RadioButton
 	                  android:id="@+id/rb_days_1"
 	                  style="@style/w_wrap_h_wrap"
-	                  android:checked="true"
+	                  android:gravity="center_horizontal"
+	                  android:padding="5dp"
+	                  android:background="@drawable/selector_radio_button"
 	                  android:text="7天"
 	                  android:textColor="@color/text_gray1" 
+	                  android:layout_weight="1"
+	                  android:checked="true"
+	                  android:button="@null"
 	                  android:layout_marginRight="4dp"/>
 	              <RadioButton
 	                  android:id="@+id/rb_days_2"
 	                  style="@style/w_wrap_h_wrap"
-	                  android:layout_centerVertical="true"
+	                  android:padding="5dp"
+	                  android:gravity="center_horizontal"
+	                  android:background="@drawable/selector_radio_button"
+	                  android:layout_weight="1"
 	                  android:text="30天"
-	                  android:textColor="@color/text_gray1" />
+	                  android:textColor="@color/text_gray1" 
+	                  android:button="@null"
+	                  android:layout_centerVertical="true"/>
+	              
+	           
 	              
               </RadioGroup>
               
         </RelativeLayout>
-        <LinearLayout 
+        
+        <View 
           android:layout_width="match_parent"
 	      android:layout_height="0.5dp"
 	      android:background="#20000000">
-     	</LinearLayout>
+     	</View>
         
         
         <!-- 活动开始时间 -->
@@ -471,19 +499,16 @@
           <RelativeLayout 
              android:layout_width="match_parent"
 	      	 android:layout_height="wrap_content"
-	      	 android:background="@color/app_bg"
 	      	 android:orientation="horizontal" 
 	      	 android:layout_marginTop="20dp"
-	      	 android:layout_marginBottom="10dp"
-	      	 >
+	      	 android:layout_marginBottom="10dp">
               <TextView 
                   android:id="@+id/tv_endtime"
                   android:layout_marginLeft="10dp"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="预计结束时间："
-                  android:textColor="@color/text_gray1"
-                  />
+                  android:textColor="@color/text_gray1"/>
               
               <TextView 
                   android:id="@+id/tv_actsendtime"
@@ -492,8 +517,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="2015年7月5日 19：00"
-                  android:textColor="@color/bg_blue"
-                  />
+                  android:textColor="@color/bg_blue"/>
               
        	 </RelativeLayout>
         
@@ -583,15 +607,78 @@
         
         
          
-        <!--活动照片 -->
+        
+        
+        <RelativeLayout 
+            style="@style/w_match_h_wrap">
+            <!--活动照片 -->
          <TextView 
+             android:id="@+id/tv_acts_photos"
              android:layout_marginTop="5dp"
              android:layout_marginLeft="10dp"
              android:layout_width="wrap_content"
 	      	 android:layout_height="wrap_content"
 	      	 android:text="活动图片"
-	      	 android:textColor="#50000000"
-             />
+	      	 android:textColor="#50000000"/>   
+            
+	           <FrameLayout
+	            android:layout_below="@id/tv_acts_photos"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="15dp"
+	        	android:layout_marginRight="15dp"
+	            android:layout_marginTop="2px"
+	            android:background="@drawable/rectangle_white_bottom_corner" ><!--  android:layout_marginTop="@dimen/margin_top_35" -->
+	
+	            <com.lansun.qmyo.maijie_biz.view.MyGridView
+	                android:id="@+id/gv_images"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:horizontalSpacing="@dimen/l_r_18"
+	                android:listSelector="@android:color/transparent"
+	                android:numColumns="4"
+	                android:paddingBottom="@dimen/margin_top_35"
+	                android:paddingLeft="@dimen/l_r_35"
+	                android:paddingRight="@dimen/l_r_35"
+	                android:paddingTop="@dimen/margin_top_35"
+	                android:scrollbars="none"
+	                android:verticalSpacing="@dimen/l_r_18" />
+	
+	            <LinearLayout
+	                android:id="@+id/ll_photo_upload"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:orientation="horizontal" 
+	                android:background="@drawable/rectangle_white_bottom_corner">
+	
+	                <LinearLayout
+	                    android:layout_width="@dimen/upload_photo_w"
+	                    android:layout_height="@dimen/upload_photo_h"
+	                    android:layout_marginBottom="@dimen/margin_top_35"
+	                    android:layout_marginLeft="@dimen/l_r_35"
+	                    android:layout_marginTop="@dimen/margin_top_35"
+	                    android:background="#EBEBEB"
+	                    android:gravity="center" >
+	
+	                    <ImageView
+	                        android:layout_width="30dp"
+	                        android:layout_height="30dp"
+	                        android:src="@drawable/up_load_photo" />
+	                </LinearLayout>
+	
+	                <TextView
+	                    android:id="@+id/textView1"
+	                    style="@style/text_style_nomal_28"
+	                    android:layout_gravity="center_vertical"
+	                    android:layout_marginLeft="@dimen/l_r_35"
+	                    android:text="@string/upload_photo" />
+	            </LinearLayout>
+	        </FrameLayout> 
+            
+            
+            
+        </RelativeLayout>
+        
          
          <LinearLayout 
           android:layout_marginTop="5dp"
@@ -643,11 +730,23 @@
     	  <Button 
     	      android:id="@+id/bt_nextstep"
     	      android:layout_margin="10dp"
+    	      android:layout_marginBottom="0dp"
     	      android:padding="5dp"
     	      android:layout_width="match_parent"
     	      android:layout_height="30dp"
     	      android:background="@drawable/rectangle_blue"
     	      android:text="下一步"
+    	      android:textSize="14dp"
+    	      android:textColor="#ffffff"
+    	      />
+    	   <Button 
+    	      android:id="@+id/bt_save2dropbox"
+    	      android:layout_width="match_parent"
+    	      android:layout_margin="10dp"
+    	      android:layout_marginTop="0dp"
+    	      android:layout_height="30dp"
+    	      android:background="@drawable/rectangle_blue"
+    	      android:text="保存至草稿箱"
     	      android:textSize="14dp"
     	      android:textColor="#ffffff"
     	      />

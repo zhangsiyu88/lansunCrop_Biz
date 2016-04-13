@@ -5,11 +5,11 @@ import java.text.SimpleDateFormat;
 public class JudgeDate {
 
 	/**
-      * �ж��Ƿ�Ϊ�Ϸ�������ʱ���ַ���
-      * @param str_input
-      * @param str_input
-      * @return boolean;����Ϊtrue,������Ϊfalse
-      */
+	 * 
+	 * @param str_input
+	 * @param rDateFormat
+	 * @return
+	 */
 	public static  boolean isDate(String str_input,String rDateFormat){
 		if (!isNull(str_input)) {
 	         SimpleDateFormat formatter = new SimpleDateFormat(rDateFormat);

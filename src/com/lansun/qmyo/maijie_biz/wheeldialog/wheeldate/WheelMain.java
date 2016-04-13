@@ -17,7 +17,7 @@ public class WheelMain {
 	private WheelView wv_mins;
 	public int screenheight;
 	private boolean hasSelectTime;
-	private static int START_YEAR = 1990, END_YEAR = 2100;
+	private static int START_YEAR = 2016, END_YEAR = 2020;
 
 	public View getView() {
 		return view;
@@ -79,20 +79,20 @@ public class WheelMain {
 		// 年
 		wv_year = (WheelView) view.findViewById(R.id.year);
 		wv_year.setAdapter(new NumericWheelAdapter(START_YEAR, END_YEAR));// 设置"年"的显示数据
-		wv_year.setCyclic(true);// 可循环滚动
+//		wv_year.setCyclic(true);// 可循环滚动
 		wv_year.setLabel("年");// 添加文字
 		wv_year.setCurrentItem(year - START_YEAR);// 初始化时显示的数据,wv_year是个WheelView对象，那么设置当前停留的第若干个Item  就是将传入进来的年数减去 启示年数
 
 		// 月
 		wv_month = (WheelView) view.findViewById(R.id.month);
 		wv_month.setAdapter(new NumericWheelAdapter(1, 12));
-		wv_month.setCyclic(true);
+//		wv_month.setCyclic(true);
 		wv_month.setLabel("月");
 		wv_month.setCurrentItem(month);
 
 		// 日
 		wv_day = (WheelView) view.findViewById(R.id.day);
-		wv_day.setCyclic(true);
+//		wv_day.setCyclic(true);
 		// 判断大小月及是否闰年,用来确定"日"的数据
 		if (list_big.contains(String.valueOf(month + 1))) {
 			wv_day.setAdapter(new NumericWheelAdapter(1, 31));
@@ -196,7 +196,7 @@ public class WheelMain {
 					.append((wv_month.getCurrentItem() + 1)).append("月")
 					.append((wv_day.getCurrentItem() + 1)).append("日 ")
 					.append(wv_hours.getCurrentItem()).append(":")
-					.append(wv_mins.getCurrentItem());
+					.append(wv_mins.getCurrentItem()<10?"0"+wv_mins.getCurrentItem():wv_mins.getCurrentItem());
 		return sb.toString();
 	}
 	

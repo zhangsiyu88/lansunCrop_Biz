@@ -38,6 +38,7 @@
     	      />
 
     	  <Button 
+    	         android:visibility="gone"
     	         android:id="@+id/bt_sureStore"
     	      	 android:layout_marginTop="115dp"
     	       	 android:layout_gravity="center_horizontal"

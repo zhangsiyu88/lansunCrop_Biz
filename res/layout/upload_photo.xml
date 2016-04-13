@@ -11,8 +11,8 @@
         android:gravity="center" >
 
         <com.android.pc.ioc.image.RecyclingImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/up_load_photo" />
     </LinearLayout>
 

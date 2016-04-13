@@ -1,8 +1,10 @@
 package com.lansun.qmyo.maijie_biz.utils;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import kankan.wheel.widget.OnWheelChangedListener;
@@ -29,6 +31,8 @@ import com.android.pc.ioc.view.PickerView;
 import com.android.pc.ioc.view.PickerView.onSelectListener;
 import com.lansun.qmyo.maijie_biz.R;
 import com.lansun.qmyo.maijie_biz.utils.CustomDialog.Builder;
+import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.JudgeDate;
+import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.ScreenInfo;
 import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.WheelMain;
 
 /**
@@ -38,13 +42,17 @@ import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.WheelMain;
  */
 public class TimerPickerUtils {
 	
-	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm");
+	DateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
 	private WheelMain wheelMain;
 	private static Activity mContext;
 	
-	
-	
+	/**
+	 * 默认时间间隔为 7天
+	 */
+	private boolean isSeven = true;
 
+	
 	private static int LAYOUT_RESOURCE = R.layout.default_picker_dialog;
 	private static int WINDOW_STYLE = R.style.transparentFrameWindowStyle;
 	private static int WINDOW_ANIMATION_STYLE = R.style.PopupWindowAnimation;
@@ -57,15 +65,34 @@ public class TimerPickerUtils {
 	public static List<String> mDataList;
 	private int disappearType;
 	private int showType;
-	private TextView mTextView;
 	
+	private TextView mTextView;
+	private TextView mSecondTextView;
+	
+	public TextView getAffectSecondTextView() {
+		return mSecondTextView;
+	}
+
+    public void setAffectSecondTextView(TextView tv) {
+		this.mSecondTextView = tv;
+	}
 	// Time changed flag
 	private boolean timeChanged = false;
 
 	// Time scrolled flag
 	private boolean timeScrolled = false;
+	private int[] pureCodeTimes;
 	
 	private static OnRoll2SelectListener mListener;
+	
+	
+	public boolean isSeven() {
+		return isSeven;
+	}
+
+	public void setSeven(boolean isSeven) {
+		this.isSeven = isSeven;
+	}
 	
 
 	public void setRoll2SelectListener(OnRoll2SelectListener mListener) {
@@ -259,23 +286,71 @@ public class TimerPickerUtils {
 					dialog.dismiss();
 				}
 			}).create().show();	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 	/**
-	 * 单一事件设置
+	 * 单一时间的选取
+	 */
+	public void startTimePicker() {
+		LayoutInflater inflater = LayoutInflater.from(mContext);
+		final View timepickerview = inflater.inflate(R.layout.timepicker,null);
+		ScreenInfo screenInfo = new ScreenInfo((Activity) mContext);
+		
+		wheelMain = new WheelMain(timepickerview);
+		wheelMain.screenheight = screenInfo.getHeight();
+		
+		Calendar calendar = Calendar.getInstance();
+		String time = mSecondTextView.getText().toString();
+		if (JudgeDate.isDate(time, "yyyy年MM月dd日 HH:mm")) {//注意"dd日 HH"之间空格的数目
+			try {
+				Date parsedate = dateFormat.parse(time);
+				System.out.println("重新设置时间成功"+parsedate.toString());
+				calendar.setTime(dateFormat.parse(time));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}else{
+			System.out.println("时间格式不符合 yyyy年MM月dd日  HH时mm分");
+		}
+		int year  = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH);
+		int day   = calendar.get(Calendar.DAY_OF_MONTH);
+		int hour  = calendar.get(Calendar.HOUR_OF_DAY);
+		int min   = calendar.get(Calendar.MINUTE);
+		
+		wheelMain.initDateTimePicker(year, month, day, hour, min);
+		
+		Builder _builder = new CustomDialog.Builder((Context)mContext);
+		_builder.setTitle("请选择活动开始时间").setContentView(timepickerview);
+		_builder.setPositiveButton("确定",new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog,int which) {
+					mTextView.setText(wheelMain.getTime());//开始时间的显示
+					showActEndTime(mSecondTextView,isSeven);//截止时间的显示
+					dialog.dismiss();
+				}
+			}).setNegativeButton("取消",
+			new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.dismiss();
+				}
+			}).create().show();	
+	}
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	/**
+	 * 单一时间设置（旧版）
 	 */
 	public void popTimePicker(){
 		LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -333,7 +408,7 @@ public class TimerPickerUtils {
 	
 	
 	/**
-	 * DataPicker的简单弹出和消失操作
+	 * DatePicker的简单弹出和消失操作
 	 */
 	@SuppressWarnings("unchecked")
 	public void popDataPicker(){
@@ -398,9 +473,94 @@ public class TimerPickerUtils {
 	}
 	
 	
+	
+	/**
+	 * 根据选中的活动时间的长度，计算得出活动结束的时间，并将其作为字符串显示在tv控件上
+	 * 
+	 * @param tv
+	 * @param isSevenDays
+	 */
+	protected void showActEndTime(TextView tv,boolean isSevenDays) {
+		
+		   //在WheelMain中定义了一个对外开发时间值的方法getPureCodeTime
+		   //将这个pureCodeTimes数组设计成全局变量，即当用户一旦点击过时间选择器之后，那么他选中的时间（纯数字格式）就会被保存起来，供后面点击使用
+			pureCodeTimes = wheelMain.getPureCodeTime();
+			StringBuffer sb = ComputeTheActsEndTime(pureCodeTimes,isSevenDays);
+			tv.setText(sb);
+		}
+
+
+	/**
+	 * 根据传入进来的数组，在此基础上加上活动时间间隔，组成需要的SB对象
+	 * 
+	 * @param codeTime
+	 * @param isSevenDays
+	 * @return
+	 */
+	public StringBuffer ComputeTheActsEndTime(int[] codeTime,boolean isSevenDays) {
+		int year = pureCodeTimes[0];
+		int month = pureCodeTimes[1];
+		int day = pureCodeTimes[2];
+		int hour = pureCodeTimes[3];
+		int min = pureCodeTimes[4];
+		
+		if(isSevenDays ){//即活动时间为7天
+			day = day+7;
+		}else {
+			day = day+30;
+			} 
+		
+		if(month == 1|month == 3|month == 5|month ==7|month ==8|month ==10|month == 12){//大月份
+			if(day>31){
+				++month;
+				if(month >12){
+					++year;
+					month=month-12;
+					
+				}
+				day = day-31;
+			}
+		}else if(month == 4|month == 6|month == 9|month ==11){
+			if(day>30){
+				month = month+1;
+				day = day-30;
+			}
+		}else if (month == 2){
+			if(year%4==0||year%400==0){
+				if(day>28){
+					++month;
+					day = day-29;
+			    }
+			}else{
+		    	++month;
+				day = day-28;
+		    }
+			
+		 }
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append(year).append("年")
+			.append(month).append("月")
+			.append(day).append("日 ")
+			.append(hour).append(":")
+			.append(min<10?"0"+min:min);
+		return sb;
+	}	
+	
+	
+	
+	
 	public interface OnRoll2SelectListener{
 		public void roll2select(String text);
 	}
+
+
+
+
+	
+
+
+
 
 
 	

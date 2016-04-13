@@ -23,8 +23,7 @@ import com.lansun.qmyo.maijie_biz.R;
 public class ActionSheetDialog {
 	private Context context;
 	private Dialog dialog;
-	private TextView txt_title;
-	private TextView txt_cancel;
+	private TextView txt_title,txt_cancel;
 	private LinearLayout lLayout_content;
 	private ScrollView sLayout_content;
 	private boolean showTitle = false;
@@ -48,8 +47,7 @@ public class ActionSheetDialog {
 
 		// 获取自定义Dialog布局中的控件
 		sLayout_content = (ScrollView) view.findViewById(R.id.sLayout_content);
-		lLayout_content = (LinearLayout) view
-				.findViewById(R.id.lLayout_content);
+		lLayout_content = (LinearLayout) view.findViewById(R.id.lLayout_content);
 		txt_title = (TextView) view.findViewById(R.id.txt_title);
 		txt_cancel = (TextView) view.findViewById(R.id.txt_cancel);
 		txt_cancel.setOnClickListener(new OnClickListener() {
@@ -108,6 +106,9 @@ public class ActionSheetDialog {
 		return this;
 	}
 
+	/**
+	 * 将之前放入进来的SheetItem设置到布局上来
+	 */
 	/**设置条目布局*/
 	private void setSheetItems() {
 		if (sheetItemList == null || sheetItemList.size() <= 0) {
@@ -116,11 +117,10 @@ public class ActionSheetDialog {
 
 		int size = sheetItemList.size();
 
-		// TODO高度控制, 非最佳解决办法
+		// 高度控制, 非最佳解决办法
 		// 添加条目过多的时候控制高度
 		if (size >= 7) {
-			LinearLayout.LayoutParams params = (LayoutParams) sLayout_content
-					.getLayoutParams();
+			LinearLayout.LayoutParams params = (LayoutParams) sLayout_content.getLayoutParams();
 			params.height = display.getHeight() / 2;
 			sLayout_content.setLayoutParams(params);
 		}
@@ -129,6 +129,7 @@ public class ActionSheetDialog {
 			final int index = i;
 			SheetItem sheetItem = sheetItemList.get(i - 1);
 			String strItem = sheetItem.name;
+			
 			SheetItemColor color = sheetItem.color;
 			final OnSheetItemClickListener listener = (OnSheetItemClickListener) sheetItem.itemClickListener;
 
@@ -144,19 +145,19 @@ public class ActionSheetDialog {
 				} else {
 					textView.setBackgroundResource(R.drawable.actionsheet_single_selector);
 				}
-			} else {
-				if (showTitle) {
+			} else {//size>1
+				if (showTitle) {//展示标题
 					if (i >= 1 && i < size) {
 						textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
 					} else {
 						textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
 					}
-				} else {
+				} else {//不展示标题
 					if (i == 1) {
 						textView.setBackgroundResource(R.drawable.actionsheet_top_selector);
 					} else if (i < size) {
 						textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
-					} else {
+					} else {//i>=size
 						textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
 					}
 				}
@@ -164,8 +165,7 @@ public class ActionSheetDialog {
 
 			// 设置条目的颜色
 			if (color == null) {
-				textView.setTextColor(Color.parseColor(SheetItemColor.Blue
-						.getName()));
+				textView.setTextColor(Color.parseColor(SheetItemColor.Blue.getName()));
 			} else {
 				textView.setTextColor(Color.parseColor(color.getName()));
 			}
@@ -173,8 +173,10 @@ public class ActionSheetDialog {
 			// 高度
 			float scale = context.getResources().getDisplayMetrics().density;
 			int height = (int) (45 * scale + 0.5f);
-			textView.setLayoutParams(new LinearLayout.LayoutParams(
-					LayoutParams.MATCH_PARENT, height));
+			LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, height);
+			lp.topMargin = (int) (1*scale);
+			textView.setLayoutParams(lp);
+			
 
 			// 点击事件
 			textView.setOnClickListener(new OnClickListener() {
@@ -213,7 +215,7 @@ public class ActionSheetDialog {
 		}
 	}
 
-	//TODO 再次添加颜色
+	//再次添加颜色
 	public enum SheetItemColor {
 		Blue("#037BFF"), Red("#FD4A2E");
 

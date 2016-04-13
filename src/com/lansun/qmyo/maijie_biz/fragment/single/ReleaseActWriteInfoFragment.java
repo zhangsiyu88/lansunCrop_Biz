@@ -1,24 +1,35 @@
 package com.lansun.qmyo.maijie_biz.fragment.single;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -30,18 +41,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lansun.qmyo.maijie_biz.R;
+import com.lansun.qmyo.maijie_biz.activity.MainActivity;
+import com.lansun.qmyo.maijie_biz.adapter.DetailHeaderDeletePagerAdapter;
+import com.lansun.qmyo.maijie_biz.adapter.UpLoadPhotoAdapter;
 import com.lansun.qmyo.maijie_biz.bean.ActsDegreeBean;
 import com.lansun.qmyo.maijie_biz.fragment.base.HeaderFragment;
-import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.JudgeDate;
-import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.ScreenInfo;
+import com.lansun.qmyo.maijie_biz.utils.BitmapUtils;
+import com.lansun.qmyo.maijie_biz.utils.TimerPickerUtils;
+import com.lansun.qmyo.maijie_biz.view.CustomToast;
+import com.lansun.qmyo.maijie_biz.view.ImageGalleryDeleteDialog;
+import com.lansun.qmyo.maijie_biz.view.ImageGalleryDeleteDialog.OnNotifyGridViewListener;
+import com.lansun.qmyo.maijie_biz.view.MyGridView;
 import com.lansun.qmyo.maijie_biz.wheeldialog.wheeldate.WheelMain;
 import com.lansun.qmyo.maijie_biz.wheeldialog.widget.ActionSheetDialog;
 import com.lansun.qmyo.maijie_biz.wheeldialog.widget.ActionSheetDialog.OnSheetItemClickListener;
 import com.lansun.qmyo.maijie_biz.wheeldialog.widget.ActionSheetDialog.SheetItemColor;
+import com.ns.mutiphotochoser.GalleryActivity;
+import com.ns.mutiphotochoser.constant.Constant;
 
 @SuppressLint("SimpleDateFormat") 
-public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnClickListener {
+public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnClickListener,OnNotifyGridViewListener {
 
+	private Uri imageUri;
 	private RelativeLayout addDesc;
 	private LinearLayout actsdetailsdesc;
 	private EditText et_actsdetailsdesc;
@@ -69,13 +90,23 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	private int[] pureCodeTimes;
 	private ViewGroup contentView;
-	
+	private MyGridView gv_images;
+	private LayoutInflater inflater ;
+	private Activity activity;
+	protected static final int ACTION_IMAGE_CAPTURE = 2;
+	protected static final int ACTION_IMAGE_PICK = 1;
+	private ArrayList<String> files = new ArrayList<>();
+	private UpLoadPhotoAdapter adapter;
+	private DetailHeaderDeletePagerAdapter headPagerAdapter;
+	private ImageGalleryDeleteDialog imageGalleryDeleteDialog;
+	private LinearLayout ll_photo_upload;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
 		ViewGroup view = (ViewGroup) inflater.inflate(R.layout.activity_releaseacts_writeinfo, null);
 		contentView = view;
+		activity = getActivity();
 		initView();
 		return super.onCreateView(inflater, view, savedInstanceState);
 	}
@@ -94,7 +125,7 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 				getActivity().runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						show(ResultType.RESULT);}});}}, 2000);
+						show(ResultType.RESULT);}});}}, 500);
 	}
 	
 	
@@ -162,8 +193,50 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 			degreeList.add(i,actsDegreeBean);
 		}
 		actsclassify .setOnClickListener(this);
+	
+		
+		adapter = new UpLoadPhotoAdapter(activity, files);
+		ll_photo_upload = (LinearLayout) contentView.findViewById(R.id.ll_photo_upload);
+		ll_photo_upload.setOnClickListener(this);
+		gv_images = (MyGridView) contentView.findViewById(R.id.gv_images);
+		gv_images.setAdapter(adapter);
+		/**
+		 * 给GridView设置上条目监听事件
+		 */
+		gv_images.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				if(position < 8){
+					if(position == adapter.getCount()-1){//点击的位置小于8（即个数小于9），且是所填图的最后一个时
+						upDataHead();
+						return;
+					}
+				}else if(position == 9){//点击对象为9张图片中的最后一张图像
+					View layout = LayoutInflater.from(activity).inflate(R.layout.custom_toast, null);
+		    		TextView tv_title = (TextView) layout.findViewById(R.id.tv_title);
+		    		TextView tv_content = (TextView) layout.findViewById(R.id.tv_content);
+		    		tv_title.setText("选择上传的照片已满");
+		    		tv_content.setText("最多上传9张照片哦");
+		    		Toast toast = new Toast(getActivity());
+		    		toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+		    		toast.setDuration(0);
+		    		toast.setView(layout);
+		    		toast.show();
+		    		
+//		    		openPhotoDetails(8);
+		    		return;
+				}
+				 openPhotoDetails(position);
+			}
+		});
 		
 	}
+	
+	
+	
+	
 	@Override
 	public void onClick(View v) {
 	switch (v.getId()) {
@@ -194,6 +267,8 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 			}
 			//试验成功！
 			lToast(sb.toString());
+			Fragment f = new ReleaseActsCheckedInfoFragment();
+			((MainActivity)getActivity()).entrySubFragment(f);
 			break;
 			
 			case R.id.tv_heijin:
@@ -204,7 +279,6 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 				//当我再Dialog中进行addSheetItem时，依次取出对应的List中的数据放进去
 				//这样根据点击Item的位置就可以拿到list中对应位置的
 				ActionSheetDialog actionSheetDialog = new ActionSheetDialog(mContext);
-				
 				ActionSheetDialog builder = actionSheetDialog.builder();
 				
 				builder.setTitle("请选择活动等级")
@@ -231,60 +305,11 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 				break;
 				
 				case R.id.tv_actsstarttime:
-				//五级级联动的WheelView界面  年、月、日、时、分
-					LayoutInflater inflater = LayoutInflater.from(mContext);
-					final View timepickerview = inflater.inflate(R.layout.timepicker,null);
-					ScreenInfo screenInfo = new ScreenInfo((Activity) mContext);
-					
-					wheelMain = new WheelMain(timepickerview);
-					wheelMain.screenheight = screenInfo.getHeight();
-					
-					String time = actsstarttime.getText().toString();
-					
-					Calendar calendar = Calendar.getInstance();
-					if (JudgeDate.isDate(time, "yyyy年MM月dd日")) {
-						try {
-							calendar.setTime(dateFormat.parse(time));
-						} catch (ParseException e) {
-							e.printStackTrace();
-							System.out.println("just goto report bug !");
-						}
-					}
-					int year = calendar.get(Calendar.YEAR);
-					int month = calendar.get(Calendar.MONTH);
-					int day = calendar.get(Calendar.DAY_OF_MONTH);
-					int hour = calendar.get(Calendar.HOUR_OF_DAY);
-					int min = calendar.get(Calendar.MINUTE);
-					
-					wheelMain.initDateTimePicker(year, month, day, hour, min);
-					
-					new AlertDialog.Builder(mContext)
-							.setTitle("选择活动时间")
-							.setView(timepickerview)
-							.setPositiveButton("确定",
-									new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(DialogInterface dialog,int which) {
-											//txttime.setText(wheelMain.getTime());
-											actsstarttime.setText(wheelMain.getTime());
-											
-											//此处还应将其结束时间计算出来,回显到actsendtime的TextView上
-											showTheActEndTime();
-										}
-									})
-							.setNegativeButton("取消",
-									new DialogInterface.OnClickListener() {
-										@Override
-										public void onClick(DialogInterface dialog,
-												int which) {
-										}
-									}).show();	
-					
-						
-				break;
-				
-				case R.id.rb_days_1:
-					//  选择7天
+					TimerPickerUtils.getInstance(getActivity()).setAffectView(actsstarttime);
+					TimerPickerUtils.getInstance(getActivity()).setAffectSecondTextView(actsendtime);
+					TimerPickerUtils.getInstance(getActivity()).startTimePicker();
+				    break;
+				case R.id.rb_days_1://  选择7天
 					rb_days_2.setChecked(false);
 					rb_days_1.setChecked(true);
 					isSevenDays = true;
@@ -292,13 +317,8 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 						StringBuffer sb_seven = ComputeTheActsEndTime(pureCodeTimes);
 						actsendtime.setText(sb_seven);
 					}
-					
-				
-					
-					//获取到当前结束时间上的值，将其
 					break;
-				case R.id.rb_days_2:
-					// 选择 30天
+				case R.id.rb_days_2:// 选择 30天
 					rb_days_1.setChecked(false);
 					rb_days_2.setChecked(true);
 					isSevenDays = false;
@@ -307,27 +327,27 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 						actsendtime.setText(sb_thirty);
 					}
 					break;
-				case R.id.rb_isNew_1:
-					//  选择普通
+				case R.id.rb_isNew_1://  选择普通
 					rb_isNew_1.setChecked(true);
 					rb_isNew_2.setChecked(false);
 					isNew = false;
 					break;
-				case R.id.rb_isNew_2:
-					// 选择 新品
+				case R.id.rb_isNew_2:// 选择 新品
 					rb_isNew_1.setChecked(false);
 					rb_isNew_2.setChecked(true);
 					isNew = true;
 					break;
-			
-		default:
-			break;
+				case R.id.ll_photo_upload:
+					upDataHead();
+					break;
+				default:
+					break;
 		}
 	}
 	/*
 	 * 根据选中的活动时间的长度，计算得出活动结束的时间
 	 */
-	protected void showTheActEndTime() {
+	protected void showActEndTime() {
 		
 		   //在WheelMain中定义了一个对外开发时间值的方法getPureCodeTime
 		   //将这个pureCodeTimes数组设计成全局变量，即当用户一旦点击过时间选择器之后，那么他选中的时间（纯数字格式）就会被保存起来，供后面点击使用
@@ -383,7 +403,171 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 			.append(month).append("月")
 			.append(day).append("日 ")
 			.append(hour).append(":")
-			.append(min);
+			.append(min<10?"0"+min:min);
 		return sb;
 	}	
+	
+	public void upDataHead() {
+		inflater = LayoutInflater.from(getActivity());
+		View view = inflater.inflate(R.layout.photo_choose_dialog, null);
+		Button carema = (Button) view.findViewById(R.id.camera);
+		Button album = (Button) view.findViewById(R.id.album);
+		Button give_up = (Button) view.findViewById(R.id.give_up);
+		final Dialog dialog = new Dialog(activity,
+				R.style.transparentFrameWindowStyle);
+		dialog.setContentView(view, new LayoutParams(LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT));
+		Window window = dialog.getWindow();
+		// 设置显示动画
+		window.setWindowAnimations(R.style.mypopwindow_anim_style);
+		WindowManager.LayoutParams wl = window.getAttributes();
+		wl.x = 0;
+		wl.y = activity.getWindowManager().getDefaultDisplay().getHeight();
+		// 以下这两句是为了保证按钮可以水平满屏
+		wl.width = ViewGroup.LayoutParams.MATCH_PARENT;
+		wl.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+		// 设置显示位置
+		dialog.onWindowAttributesChanged(wl);
+		// 设置点击外围解散
+		dialog.setCanceledOnTouchOutside(true);
+		carema.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+				if (checkCameraHardWare(activity)) {
+
+					String status = Environment.getExternalStorageState();
+					if (status.equals(Environment.MEDIA_MOUNTED)) {
+						SimpleDateFormat format = new SimpleDateFormat(
+								"yyyyMMddHHmmss");
+						Date date = new Date(System.currentTimeMillis());
+						String filename = format.format(date);
+						// 创建File对象用于存储拍照的图片 SD卡根目录
+						// File outputImage = new
+						// File(Environment.getExternalStorageDirectory(),test.jpg);
+						// 存储至DCIM文件夹
+						File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+						File outputImage = new File(path, filename + ".jpg");
+						try {
+							if (outputImage.exists()) {
+								outputImage.delete();
+							}
+							outputImage.createNewFile();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+
+						if (9 - files.size() < 0) {
+							CustomToast.show(activity, R.string.tip,
+									R.string.max_photos);
+							return;
+						}
+						imageUri = Uri.fromFile(outputImage);
+						Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); // 照相
+						intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri); // 指定图片输出地址
+						intent.putExtra("return-data", true);
+						startActivityForResult(intent, ACTION_IMAGE_CAPTURE); // 启动照相
+					}
+				}
+			}
+		});
+		album.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+				Intent intent = new Intent(getActivity(), GalleryActivity.class);
+				// 指定图片选择数
+				int max = 9;
+				
+//				if(adapter==null||adapter.getCount()==0){
+//					max = 9;
+//				}else{
+//					max = 9 - adapter.getCount();
+//				}
+				
+				//此处判断写的好玩些
+				if (max - files.size() < 0) {
+					CustomToast.show(activity, R.string.tip,R.string.max_photos);
+					return;
+				} else {
+					max = max - files.size();
+				}
+				intent.putExtra(Constant.EXTRA_PHOTO_LIMIT, max);//max会随着files表的数目变化
+				startActivityForResult(intent, ACTION_IMAGE_PICK);
+			}
+		});
+
+		give_up.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
+	
+	public void openPhotoDetails(int position){
+		headPagerAdapter = new DetailHeaderDeletePagerAdapter(activity, files);
+		imageGalleryDeleteDialog = ImageGalleryDeleteDialog.newInstance(headPagerAdapter, position,files);
+		imageGalleryDeleteDialog.setOnNotifyGridViewListener(this);
+		imageGalleryDeleteDialog.show(getFragmentManager(), "galleryCanDelete");
+	}
+
+	@Override
+	public void notifyGridView(){
+		//此adapter是GridView挂钩的Adapter数据源
+		adapter.notifyDataSetChanged();
+	}
+	@Override
+	public void notifyGridView(int i) {
+		imageGalleryDeleteDialog.dismiss();
+		adapter.notifyDataSetChanged();
+	}
+	private boolean checkCameraHardWare(Context context) {
+		PackageManager packageManager = context.getPackageManager();
+		if (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+			return true;
+		}
+		return false;
+	}
+	/**
+	 * 图片返回的数据
+	 */
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch (requestCode) {
+		case ACTION_IMAGE_CAPTURE:
+			if (new File(BitmapUtils.getInstance().getRealFilePath(activity, imageUri)).length() == 0) {
+				return;
+			}
+			ll_photo_upload.setVisibility(View.GONE);
+			gv_images.setVisibility(View.VISIBLE);
+			files.add(imageUri.toString());
+			// setListViewHeightBasedOnChildren(v.gv_new_comment_images);
+			Intent intentBc = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+			intentBc.setData(imageUri);
+			getActivity().sendBroadcast(intentBc);
+			adapter.notifyDataSetChanged();
+			break;
+		case ACTION_IMAGE_PICK:
+			if (data == null) {
+				return;
+			}
+			ll_photo_upload.setVisibility(View.GONE);
+			gv_images.setVisibility(View.VISIBLE);
+			// String path = getPath(activity, uri);
+			ArrayList<String> images = data.getStringArrayListExtra(Constant.EXTRA_PHOTO_PATHS);
+			for (String path : images) {
+				files.add("file://" + path);
+			}
+			// setListViewHeightBasedOnChildren(v.gv_new_comment_images);
+			adapter.notifyDataSetChanged();
+			break;
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
 }
