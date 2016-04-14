@@ -606,6 +606,49 @@
      	</LinearLayout>
         
         
+        <!-- 使用规则  -->
+        <LinearLayout 
+	          android:id="@+id/ll_userules"
+	          android:layout_width="match_parent"
+		      android:layout_height="wrap_content"
+		      android:background="#ffffff"
+		      android:orientation="vertical">
+              <TextView 
+                  android:layout_marginTop="15dp"
+                  android:layout_marginBottom="10dp"
+                  android:layout_toRightOf="@id/tv_endtime"
+                  android:layout_marginLeft="10dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="使用规则"
+                  android:textColor="@color/text_gray1"/> 
+              <LinearLayout 
+                  android:id="@+id/ll_userules_desc"
+                  style="@style/w_full_h_wrap"
+                  android:orientation="vertical">
+	              <EditText 
+	                  android:id="@+id/et_userules_desc"
+	                  android:layout_toRightOf="@id/tv_endtime"
+	                  android:layout_marginLeft="10dp"
+	                  android:layout_marginRight="10dp"
+	                  android:layout_marginBottom="10dp"
+	                  android:padding="5dp"
+	                  android:layout_width="match_parent"
+	                  android:layout_height="100dp"
+	                  android:gravity="top"
+	                  android:hint="使用规则建议1000字符内，例如：没有规则，只管造"
+	                  android:background="@drawable/actsdetails__corner_rectangle"
+	                  android:textColor="@color/text_gray1"
+	                  android:textSize="12dp"/> 
+              </LinearLayout>
+     	</LinearLayout>
+     	
+        
+        <View 
+          android:layout_width="match_parent"
+	      android:layout_height="0.5dp"
+	      android:background="#20000000">
+     	</View>
          
         
         

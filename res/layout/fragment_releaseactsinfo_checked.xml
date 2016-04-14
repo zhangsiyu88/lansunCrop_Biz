@@ -79,6 +79,7 @@
 			    />
              
             <TextView 
+                android:id="@+id/tv_store_name"
                 android:layout_marginLeft="5dp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/iv_store_icon"
@@ -115,6 +116,7 @@
                 android:textColor="@color/text_gray1" />
 
             <TextView
+                android:id="@+id/tv_activity_degree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -145,6 +147,7 @@
                 android:textColor="#99000000" />
 
             <TextView
+                android:id="@+id/tv_activity_classfication"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -176,6 +179,7 @@
                 android:textColor="#99000000" />
 
             <TextView
+                android:id="@+id/tv_activity_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -336,6 +340,7 @@
                       android:textSize="12dp" />
 
                   <TextView
+                      android:id="@+id/tv_activity_title"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_marginBottom="10dp"
@@ -381,8 +386,8 @@
                   android:textSize="12dp"
                   /> 
                   <TextView 
-                
-                 android:layout_marginBottom="10dp"
+                  android:id="@+id/tv_activity_deatials"
+                  android:layout_marginBottom="10dp"
                   
                   android:layout_marginLeft="10dp"
                   android:layout_width="match_parent"
@@ -426,18 +431,32 @@
 		      android:layout_height="wrap_content"
 		      android:background="@color/white"
 		      android:orientation="vertical">
-	         <GridView
+	         <com.lansun.qmyo.maijie_biz.view.MyGridView
+	            android:id="@+id/gv_select_photos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="@dimen/l_r_18"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="4"
+                android:paddingBottom="@dimen/margin_top_35"
+                android:paddingLeft="@dimen/l_r_35"
+                android:paddingRight="@dimen/l_r_35"
+                android:paddingTop="@dimen/margin_top_35"
+                android:scrollbars="none"
+                android:verticalSpacing="@dimen/l_r_18">
+	         
+	         <!--android:id="@+id/gv_select_photos"
 	             android:layout_margin="5dp"
-	             android:id="@+id/photoGridView"
 	             android:layout_width="match_parent"
-	             android:layout_height="125dp"
+	             android:layout_height="wrap_content"
 	             android:columnWidth="90dp"
 	             android:gravity="center_horizontal"
 	             android:numColumns="auto_fit"
 	             android:stretchMode="columnWidth"
 	             android:verticalSpacing="5dp" 
-	             android:horizontalSpacing="5dp">
-				</GridView>
+	             android:horizontalSpacing="5dp" -->
+	             
+				</com.lansun.qmyo.maijie_biz.view.MyGridView>
 	       </LinearLayout>
      
         <View 
@@ -458,6 +477,7 @@
 	      	  android:textColor="#99000000"
 	      	  android:layout_marginLeft="10dp"/>
            <TextView 
+              android:id="@+id/tv_activity_duration"
               android:layout_marginLeft="5dp"
               android:layout_centerVertical="true"
               android:layout_toRightOf="@id/tv_actsvalidtime_checked"
@@ -489,7 +509,8 @@
 	      	  android:textColor="#99000000"
               />
              
-             <TextView 
+            <TextView 
+              android:id="@+id/tv_activity_start"
               android:layout_marginLeft="5dp"
               android:layout_centerVertical="true"
               android:layout_toRightOf="@id/tv_actsstarttime_checked"
@@ -522,7 +543,8 @@
 	      	  android:textColor="#99000000"
               />
              
-             <TextView 
+             <TextView
+              android:id="@+id/tv_activity_end" 
               android:layout_marginLeft="5dp"
               android:layout_centerVertical="true"
               android:layout_toRightOf="@id/tv_actsendtime_checked"

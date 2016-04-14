@@ -50,6 +50,57 @@ public class DbInfos {
 		public static final String STORE_EXPAND3 = "expend3";
 	}
 	
+	public static class ReleaseActivityTableField {
+		/** 表名*/
+		public static final String TB_NAME = "Activity_Release";
+		
+		/** ID自增长，不需要插入*/
+		public static final String _ID = "_id";
+		
+		/** 名称*/
+		public static final String ACTIVITY_NAME = "_name";
+		
+		/** 级别*/
+		public static final String ACTIVITY_DEGREE = "_degree";
+		
+		/** 分类*/
+		public static final String ACTIVITY_CLASSFICATION = "_classfication";
+		
+		/** 标签*/
+		public static final String ACTIVITY_TAG = "_tag";
+		
+		/** 标题*/
+		public static final String ACTIVITY_TITLE = "_title";
+		
+		/** 详情描述 */
+		public static final String ACTIVITY_DETAIL = "_detail";
+		
+		/** 使用规则 */
+		public static final String ACTIVITY_RULES = "_rules";
+		
+		/** 活动图片的path */
+		public static final String PICTURE_PATH = "_picture_path";
+		
+		/** 活动期限*/
+		public static final String  ACTIVITY_DURATION = "_duration";
+		
+		/** 活动开始时间*/
+		public static final String  ACTIVITY_START = "_start";
+		
+		/** 活动结束时间*/
+		public static final String  ACTIVITY_END = "_end";
+		
+		/** 预留字段*/
+		public static final String ACTIVITY_EXPAND1 = "expend1";
+		
+		/** 预留字段*/
+		public static final String ACTIVITY_EXPAND2 = "expend2";
+		
+		/** 预留字段*/
+		public static final String ACTIVITY_EXPAND3 = "expend3";
+	}
+	
+	
 	
 	public static class TextTableField {
 		/** 表名*/

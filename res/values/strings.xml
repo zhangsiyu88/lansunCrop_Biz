@@ -596,4 +596,16 @@ A：你可以在首页的右上角点击查看你的卡包或者通过点击“�
     <string name="delete_history">剩余可用人数：%1$s</string>
 
     <string name="wheelview_text">省名</string>
+    
+      <string name="to_pay">去付款</string>
+    <string name="myorder">我的订单</string>
+    <string name="act_name">活动名称:</string>
+    <string name="pay_money">付款金额:</string>
+    <string name="pay_money_way">付款方式:</string>
+    <string name="cash_coupon">代金券:</string>
+    <string name="act_release_money">活动发布金额:</string>
+     <string name="pay_result_callback_msg">微信支付结果： </string>
+    <string name="test_str">测试数据</string>
+     <string name="yes">是</string>
+    <string name="no">否</string>
 </resources>

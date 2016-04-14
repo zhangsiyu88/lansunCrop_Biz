@@ -18,7 +18,8 @@ public class VerifyMaterialFragment extends HeaderFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		ViewGroup contentView = (ViewGroup) inflater.inflate(R.layout.fragment_claimstore, null);
+		
+		ViewGroup contentView = (ViewGroup) inflater.inflate(R.layout.fragment_audit_state, null);
 //		mTvVersion = (TextView) contentView.findViewById(R.id.tv_version);
 		return super.onCreateView(inflater, contentView, savedInstanceState);
 	}

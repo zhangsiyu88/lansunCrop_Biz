@@ -16,6 +16,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -44,7 +46,10 @@ import com.lansun.qmyo.maijie_biz.R;
 import com.lansun.qmyo.maijie_biz.activity.MainActivity;
 import com.lansun.qmyo.maijie_biz.adapter.DetailHeaderDeletePagerAdapter;
 import com.lansun.qmyo.maijie_biz.adapter.UpLoadPhotoAdapter;
+import com.lansun.qmyo.maijie_biz.bean.ActivityInfoBean;
 import com.lansun.qmyo.maijie_biz.bean.ActsDegreeBean;
+import com.lansun.qmyo.maijie_biz.db.DataBaseManager;
+import com.lansun.qmyo.maijie_biz.db.DbInfos;
 import com.lansun.qmyo.maijie_biz.fragment.base.HeaderFragment;
 import com.lansun.qmyo.maijie_biz.utils.BitmapUtils;
 import com.lansun.qmyo.maijie_biz.utils.TimerPickerUtils;
@@ -65,8 +70,7 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 	private Uri imageUri;
 	private RelativeLayout addDesc;
 	private LinearLayout actsdetailsdesc;
-	private EditText et_actsdetailsdesc;
-	private EditText et_content;
+	private EditText et_actsdetailsdesc,et_content;
 	public int i = 0;
 	public ArrayList<EditText> editList;
 	private Button bt_nextstep;
@@ -75,15 +79,10 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 	CharSequence clickItem;
 	public ArrayList<ActsDegreeBean> degreeList;
 	public int j = 0;
-	private RadioGroup rg_days;
-	private RadioGroup rg_isNew;
-	private TextView actsclassify;
-	private TextView actsendtime;
-	private TextView actsstarttime;
-	private RadioButton rb_days_1;
-	private RadioButton rb_days_2;
-	private RadioButton rb_isNew_1;
-	private RadioButton rb_isNew_2;
+	private RadioGroup rg_days,rg_isNew;
+	private TextView actsclassify,actsendtime,actsstarttime;
+	private RadioButton rb_days_1,rb_days_2,rb_isNew_1,rb_isNew_2;
+	
 	public Boolean isSevenDays = true;
 	public Boolean isNew = true;
 	WheelMain wheelMain;
@@ -100,10 +99,13 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 	private DetailHeaderDeletePagerAdapter headPagerAdapter;
 	private ImageGalleryDeleteDialog imageGalleryDeleteDialog;
 	private LinearLayout ll_photo_upload;
+	private SQLiteDatabase db;
+	private EditText et_userules_desc;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
+		db = DataBaseManager.getInstance().getDataBase(DbInfos.DB_NAME);
 		ViewGroup view = (ViewGroup) inflater.inflate(R.layout.activity_releaseacts_writeinfo, null);
 		contentView = view;
 		activity = getActivity();
@@ -130,11 +132,6 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 	
 	
 	
-	
-	
-	
-	
-	
 	@Override
 	protected String getTitle() {
 		return null;
@@ -155,6 +152,7 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 		addDesc = (RelativeLayout) contentView.findViewById(R.id.rl_clicktoadd_actsdesc);
 		actsdetailsdesc = (LinearLayout)  contentView.findViewById(R.id.ll_addactsdetails_desc);
 		et_actsdetailsdesc = (EditText)  contentView.findViewById(R.id.et_actsdetailsdesc);
+		et_userules_desc = (EditText)  contentView.findViewById(R.id.et_userules_desc);
 		et_content = (EditText)  contentView.findViewById(R.id.et_content);
 		
 		bt_nextstep = (Button)  contentView.findViewById(R.id.bt_nextstep);
@@ -184,7 +182,7 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 				+ calendar.get(Calendar.DAY_OF_MONTH) + "日");
 		actsstarttime.setOnClickListener(this);
 		
-		hejin = (TextView)  contentView.findViewById(R.id.tv_heijin);
+		hejin = (TextView)contentView.findViewById(R.id.tv_heijin);
 		hejin.setOnClickListener(this);
 		degreeList = new ArrayList<ActsDegreeBean>();
 		for(int i=0;i<10;i++){
@@ -261,12 +259,14 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 			
 		case R.id.bt_nextstep:
 			
-			for (EditText et: editList) {
-				//Toast.makeText(ReleaseActsActivity.this, et.getText().toString(), Toast.LENGTH_LONG).show();
-				sb.append(et.getText().toString());
-			}
-			//试验成功！
-			lToast(sb.toString());
+			
+			
+			//将表格中的信息写入实体类中
+			 ActivityInfoBean actInfo= arrangeToEntity();
+			//将输入进入数据库表中
+			writeIntoDb(actInfo);
+			
+			
 			Fragment f = new ReleaseActsCheckedInfoFragment();
 			((MainActivity)getActivity()).entrySubFragment(f);
 			break;
@@ -344,11 +344,148 @@ public class ReleaseActWriteInfoFragment extends HeaderFragment implements OnCli
 					break;
 		}
 	}
+	
+	
+	private ActivityInfoBean arrangeToEntity() {
+		ActivityInfoBean bean = new ActivityInfoBean();
+		ArrayList<String> detailsList = new ArrayList<String>();
+		ArrayList<String> pathsList = new ArrayList<String>();
+		ArrayList<String> rulesList = new ArrayList<String>();
+		pathsList = files;
+		rulesList.add(et_userules_desc.getEditableText().toString());
+		
+		
+		
+		bean._name          = "MuYoU";
+		bean._title         = et_content.getEditableText().toString();
+		bean._degree        = (String) hejin.getText();
+		bean._classfication = (String) actsclassify.getText();
+		bean._duration      = (isSevenDays?String.valueOf(7):String.valueOf(30));
+		bean._end           = (String) actsendtime.getText();
+		bean._start         = (String) actsstarttime.getText();
+		bean._tag           = (isNew?"新品":"普通");
+		bean._picture_path  = pathsList;
+		bean._rules         = rulesList;
+		bean._detail        = detailsList;
+		
+		return bean;
+	}
+
+
+	private void writeIntoDb(ActivityInfoBean bean) {
+		//活动名称
+		//活动级别
+		//活动分类
+		//活动标签
+		//活动标题
+		//活动详情描述
+		//使用规则
+		//活动图片的本地path   
+		//活动期限                                   7天 or 30天
+		//活动开始时间
+		//活动结束时间
+		
+		
+		StringBuffer sb_details = new StringBuffer();
+		for (EditText et: editList) {
+			sb_details.append(et.getText().toString());
+			sb_details.append("%^&");
+		}
+		String details = sb_details.toString();
+		
+		//需单独处理bean._picture_path的图片地址类型为String
+		ArrayList<String> _picture_path = bean._picture_path;
+	    StringBuffer sb_pic_paths = new StringBuffer(); 
+		
+	    for(int i = 0;i<_picture_path.size();i++){
+	    	sb_pic_paths.append(_picture_path.get(i));
+	    	if(i!=_picture_path.size()-1){
+	    		sb_pic_paths.append("%^&");//在每个图片路径的后面加上"%^&"号作为分隔符
+	    	}
+		}
+	     String pic_paths = sb_pic_paths.toString();
+		
+		//以事物的方式将内容写入本地数据库
+		long start = System.currentTimeMillis();
+		db.beginTransaction();
+		try {
+			/*for (int i = 0; i < 2000; i++) {*/
+				//注意下面写入数据表中的数据格式，该加""的记得加双引号""
+				/*db.execSQL("insert into "+DbInfos.ReleaseActivityTableField.TB_NAME+
+						" (" +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_NAME+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_DEGREE+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_CLASSFICATION+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_TAG+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_TITLE+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_DETAIL+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_RULES+"," +
+						DbInfos.ReleaseActivityTableField.PICTURE_PATH+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_DURATION+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_START+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_END+
+						")" +
+						"values ("+bean._name+i+ ","
+								  +bean._degree+i+","
+								  +bean._classfication+i+","
+								  +bean._tag+i+","
+								  +bean._title+i+","
+								  
+								  +details+i+","//使用修整过后的多条详情描述
+								  +bean._rules.get(0)+i+","
+								  +pic_paths+i+","//使用修整过后的多张图片的地址
+
+								  +bean._duration+i+","
+								  +bean._start+i+","
+								  +bean._end+i+ ")");*/
+						
+//						"values ('呷哺呷哺"+i+"',"+"'新天地"+i+"',"+"'新世界城4楼"+i+"',"+"'上海"+i+"',"+"'人民广场"+i+ "')" );
+//						  ("呷哺呷哺100"，"新天地100"，"新世界城100"，"上海100"，"人民广场100")
+				
+				db.execSQL("insert into "+DbInfos.ReleaseActivityTableField.TB_NAME+
+						" (" +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_NAME+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_DEGREE+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_CLASSFICATION+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_TAG+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_TITLE+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_DETAIL+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_RULES+"," +
+						DbInfos.ReleaseActivityTableField.PICTURE_PATH+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_DURATION+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_START+"," +
+						DbInfos.ReleaseActivityTableField.ACTIVITY_END+
+						")" +
+						"values ('"+bean._name+i+ "','"
+								  +bean._degree+i+"','"
+								  +bean._classfication+i+"','"
+								  +bean._tag+i+"','"
+								  +bean._title+i+"','"
+								  
+								  +details+i+"','"//使用修整过后的多条详情描述
+								  +bean._rules.get(0)+i+"','"
+								  +pic_paths+"','"//使用修整过后的多张图片的地址
+
+								  +bean._duration+i+"','"
+								  +bean._start+i+"','"
+								  +bean._end+i+ "')");
+				
+				
+			/*}*/
+			db.setTransactionSuccessful();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			db.endTransaction();
+			long duration = System.currentTimeMillis() - start;
+			System.out.println("插入完毕, 总共用时: " + duration);
+		}
+	}
+
 	/*
 	 * 根据选中的活动时间的长度，计算得出活动结束的时间
 	 */
-	protected void showActEndTime() {
-		
+	protected void showActEndTime(){
 		   //在WheelMain中定义了一个对外开发时间值的方法getPureCodeTime
 		   //将这个pureCodeTimes数组设计成全局变量，即当用户一旦点击过时间选择器之后，那么他选中的时间（纯数字格式）就会被保存起来，供后面点击使用
 			pureCodeTimes = wheelMain.getPureCodeTime();

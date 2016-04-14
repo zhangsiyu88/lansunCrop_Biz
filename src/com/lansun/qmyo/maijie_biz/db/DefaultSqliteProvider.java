@@ -76,6 +76,50 @@ public class DefaultSqliteProvider extends SQLiteOpenHelper implements SqlitePro
 		sql_store.append(DbInfos.NewStoreTableField.STORE_EXPAND3);
 		sql_store.append(" TEXT )");
 		
+		
+		StringBuilder sql_activity_release = new StringBuilder();
+		sql_activity_release.append("CREATE TABLE ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.TB_NAME);
+		sql_activity_release.append(" ( ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField._ID);
+		sql_activity_release.append(" integer primary key autoincrement, ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_NAME);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_DEGREE);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_CLASSFICATION);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_TAG);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_TITLE);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_DETAIL);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_RULES);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.PICTURE_PATH);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_DURATION);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_START);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_END);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_EXPAND1);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_EXPAND2);
+		sql_activity_release.append(" TEXT , ");
+		sql_activity_release.append(DbInfos.ReleaseActivityTableField.ACTIVITY_EXPAND3);
+		sql_activity_release.append(" TEXT )");
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		StringBuilder sql_w = new StringBuilder();
 		sql_w.append("CREATE TABLE ");
 		sql_w.append(DbInfos.TextTableField.TB_NAME);
@@ -111,10 +155,11 @@ public class DefaultSqliteProvider extends SQLiteOpenHelper implements SqlitePro
 		sql_p.append(" TEXT )");
 		
 		
+		sqls.add(sql_activity_release.toString());
+		sqls.add(sql_store.toString());
 		
-		
-
-		sqls.add(sql_store.toString());//
+		System.out.println(sqls.get(0));
+		System.out.println(sqls.get(1));
 //		sqls.add(sql_w.toString());//
 //		sqls.add(sql_p.toString());//photo
 		return sqls;

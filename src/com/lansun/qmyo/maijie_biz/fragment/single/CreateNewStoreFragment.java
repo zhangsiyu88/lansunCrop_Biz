@@ -253,6 +253,16 @@ public class CreateNewStoreFragment extends HeaderFragment implements OnClickLis
 			db.endTransaction();
 			long duration = System.currentTimeMillis() - start;
 			System.out.println("插入完毕, 总共用时: " + duration);
+			int i=0;
+			System.out.println("insert into "+DbInfos.NewStoreTableField.TB_NAME+
+						" (" +
+						DbInfos.NewStoreTableField.STORE_NAME+"," +
+						DbInfos.NewStoreTableField.STORE_ADDRESS+"," +
+						DbInfos.NewStoreTableField.STORE_ADDRESS_PLUS+"," +
+						DbInfos.NewStoreTableField.CITY+"," +
+						DbInfos.NewStoreTableField.BIZ_AREA+
+						")" +
+						"values ('呷哺呷哺"+i+"',"+"'新天地"+i+"',"+"'新世界城4楼"+i+"',"+"'上海"+i+"',"+"'人民广场"+i+ "')" );
 		}
 	}
 

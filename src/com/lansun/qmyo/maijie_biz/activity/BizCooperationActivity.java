@@ -34,12 +34,10 @@ public class BizCooperationActivity extends BaseFragmentActivity implements OnCl
 
 
 
-	private TextView tv_pelase_claim_store;
-	private TextView tv_go2homepage;
-	private TextView tv_upload_verify_meaterial;
+	private TextView tv_pelase_claim_store,tv_go2homepage,
+					 tv_upload_verify_meaterial,tv_verify_result,
+					 tv_biz_user_info;
 	private Button btn_submit_verify;
-	private TextView tv_verify_result;
-	private TextView tv_biz_user_info;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
