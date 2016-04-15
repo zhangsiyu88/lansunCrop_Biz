@@ -63,9 +63,24 @@
         android:id="@+id/ll_date"
         android:layout_below="@id/rl_rewards" 
         style="@style/w_match_h_wrap"
-        android:padding="20dp"
         android:background="@color/app_white"
+        android:padding="10dp"
         android:orientation="horizontal">
+       <TextView 
+            android:id="@+id/tv_date_year"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"
+            android:text="@string/year"/>
+         <TextView 
+            android:id="@+id/tv_date_month"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/month"
+            style="@style/text_style_big_32"
+            android:textSize="16sp"/>
     </LinearLayout>
     
     

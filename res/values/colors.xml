@@ -18,6 +18,22 @@
     <color name="no_sdcard_color">#ff9b9b9b</color>
     
     
+    <color name="circle_background">#fff2f2f2</color>
+    <color name="line_background">#ffcccccc</color>
+    <color name="done_text_color_normal">#ff333333</color>
+    <color name="done_text_color_disabled">#ffcccccc</color>
+    <color name="blue">#ff33b5e5</color>
+    <color name="darker_blue">#ff0099cc</color>
+    <color name="date_picker_text_normal">#ff999999</color>
+    <color name="calendar_header">#ff999999</color>
+    <color name="date_picker_view_animator">#fff2f2f2</color>
+
+    <color name="ampm_text_color">#8c8c8c</color>
+    <color name="numbers_text_color">#8c8c8c</color>
+
+    <color name="transparent_black">#7F000000</color>
+    
+    
     <color name="tv_city_name">#ff6f6f6f</color>
     <color name="tv_city_letter">#ff6f6f6f</color>
     <color name="tv_city_letter_bg">#ffe2e2e2</color>

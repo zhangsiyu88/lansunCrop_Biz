@@ -96,10 +96,10 @@
             android:configChanges="keyboardHidden|orientation|locale|screenSize"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan|stateHidden" >
-            <intent-filter>
+            <!-- <intent-filter>
                 <action   android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>  
+            </intent-filter>   -->
         </activity>
         
         
@@ -136,10 +136,10 @@
             android:windowSoftInputMode="adjustPan|stateHidden">
             <!--android:windowSoftInputMode="adjustPan|stateHidden"  控件不移动
                  android:windowSoftInputMode="adjustResize|stateVisible"  控件移动且重新绘制  -->
-            <!-- <intent-filter>
+           <intent-filter>
                 <action   android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>   -->
+            </intent-filter>  
         </activity>
         
          <activity android:name="com.ns.mutiphotochoser.GalleryActivity" 
